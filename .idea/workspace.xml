@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e1db654-4a26-417d-a54d-b4ef5819e1df" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/_posts/2017-04-06-welcome-to-jekyll.markdown" afterPath="$PROJECT_DIR$/_posts/2017-04-06-welcome-to-jekyll.markdown" />
+      <change beforePath="$PROJECT_DIR$/_posts/2018-04-27-Test_post.markdown" afterPath="$PROJECT_DIR$/_posts/2018-04-27-Test_post.markdown" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,12 +33,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2017-04-06-welcome-to-jekyll.markdown" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2017-04-06-welcome-to-jekyll.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2017-04-06-welcome-to-jekyll.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="101">
-                <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+              <first_editor relative-caret-position="900">
+                <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -46,12 +46,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2018-04-27-Test_post.markdown" pinned="false" current-in-tab="false">
+      <file leaf-file-name="2018-04-27-Test_post.markdown" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2018-04-27-Test_post.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="798">
-                <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+              <first_editor relative-caret-position="266">
+                <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -63,8 +63,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2017-04-06-how-i-rest-from-work.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="484">
-                <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+              <first_editor relative-caret-position="76">
+                <caret line="2" column="27" lean-forward="true" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -82,8 +82,9 @@
       <list>
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/_layouts/main.html" />
-        <option value="$PROJECT_DIR$/_posts/2018-04-27-Test_post.markdown" />
         <option value="$PROJECT_DIR$/_posts/2017-04-06-welcome-to-jekyll.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2017-04-06-how-i-rest-from-work.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2018-04-27-Test_post.markdown" />
       </list>
     </option>
   </component>
@@ -365,11 +366,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2017-04-06-welcome-to-jekyll.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="900">
+            <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2017-04-06-how-i-rest-from-work.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="484">
-            <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <first_editor relative-caret-position="76">
+            <caret line="2" column="27" lean-forward="true" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
             <folding />
           </first_editor>
           <second_editor />
@@ -379,19 +391,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2018-04-27-Test_post.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="798">
-            <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2017-04-06-welcome-to-jekyll.markdown">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="101">
-            <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <first_editor relative-caret-position="266">
+            <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
             <folding />
           </first_editor>
           <second_editor />
