@@ -19,8 +19,11 @@ tags: [Network, Python Network Analysis, Folium]
 <img src="https://trello-attachments.s3.amazonaws.com/5b29ec749cfb0d90ada47d03/5b29ec90d281252a5f996b7d/aae479e60441eda9841ca6cdc4d14936/image.png">
 
 ## CSV 형식으로 변환 및 위도, 경도 데이터 추출
-위의 *.shp 파일을 파이썬으로 읽어와서 작업을 해보도록 하겠습니다.
+위의 *.shp 파일을 파이썬으로 읽어와서 작업을 해보도록 하겠습니다. 아래의 소스 코드는 제 [깃허브 링크][jp] 에서 확인 할 수 있습니다.
 먼저 아래의 항목들을 설치하여 줍니다.
+
+[jp]: https://github.com/JunPyoPark/Networkx-Projects/blob/master/%EC%9A%B8%EC%82%B0%20%EB%8F%84%EB%A1%9C%EA%B5%90%ED%86%B5%EC%A0%95%EB%B3%B4/shp_to_csv.ipynb
+
 ```python
 pip install pyshp
 pip install pyproj 
@@ -64,7 +67,7 @@ link_dataframe = pd.DataFrame(columns=fields_link, data=records_link)
 
 [stnl]: http://nodelink.its.go.kr/intro/intro06_05.aspx 
 
->####광역/특별시의 권역코드(STNL_REG)는 다음과 같습니다. <br>
+>광역/특별시의 권역코드(STNL_REG)는 다음과 같습니다. <br>
 >- 서울 : 100 ~ 124
 >- 부산 : 130 ~ 145
 >- 대구 : 150 ~ 157
