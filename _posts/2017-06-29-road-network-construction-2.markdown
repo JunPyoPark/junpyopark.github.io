@@ -102,9 +102,9 @@ nx.info(G) 명령어를 통해 다음과 같이 간단한 네트워크 정보를
 <img src="https://trello-attachments.s3.amazonaws.com/5b29ec749cfb0d90ada47d03/5b34a3a14be075bc986bba26/6bfbe2d5a13bfdcf9a2bd1dbbcf99ab5/image.png">
 
 nx.write_gexf(G,'Incheon_2015.gexf') 명령어를 통해 *.gexf 파일로 그래프를 내보낼 수 도 있습니다. Gephi 라는 네트워크 시각화 소프트웨어를 이용해서 다음과 같이 시각화 할 수 있습니다.<br> 
-<img src="https://trello-attachments.s3.amazonaws.com/59103d52b56a24582f00dc97/5ad394e5aded2485139e183c/77d81ebf997a213519cad0a94885fbd9/image.png"></img>
+<img src="https://trello-attachments.s3.amazonaws.com/59103d52b56a24582f00dc97/5ad394e5aded2485139e183c/77d81ebf997a213519cad0a94885fbd9/image.png">
 Gephi 소프트웨어를 사용하면 여러가지 네트워크 measurement나 특성 계산을 쉽게 해줘서 편리합니다. 아래 정보는 Gephi가 제공해 주는 계산기능을 이용해 작성한 인천 2015년 네트워크와 2018년 네트워크의 특성 비교 테이블 입니다.
-<img src="https://trello-attachments.s3.amazonaws.com/59103d52b56a24582f00dc97/5ad7045f9faca28f3223121c/b9e139fe8db5e9384303ae69b00db575/image.png">
+<center><img src="https://trello-attachments.s3.amazonaws.com/59103d52b56a24582f00dc97/5ad7045f9faca28f3223121c/b9e139fe8db5e9384303ae69b00db575/image.png"></center>
 
 ## Folium 라이브러리를 통한 시각화 지도 만들기
 이제 Folium 모듈을 통해 interactive 한 지도를 생성해 보도록 하겠습니다. 먼저 지도 상에서 기준점이 될 포인트를 잡아 줍니다. 저는 노드 데이터 상에서 첫번째에 나온 녀석을 기준점으로 잡았습니다. 
@@ -140,7 +140,7 @@ map_osm
 ```
 표시한 원의 지름(radius)을 노드의 degree(그 점에 연결된 link의 수)와 비례하게 설정 하였기 때문에 아래 사진처럼 도로가 많이 연결된 곳은 원의 크기가 크게 나오게 됩니다.
 
-<img src="https://trello-attachments.s3.amazonaws.com/5b29ec749cfb0d90ada47d03/5b34a3a14be075bc986bba26/c34c5b1c3a4523ec0133748a3034fa71/image.png" class="center">
+<center><img src="https://trello-attachments.s3.amazonaws.com/5b29ec749cfb0d90ada47d03/5b34a3a14be075bc986bba26/c34c5b1c3a4523ec0133748a3034fa71/image.png"></center>
 
 이제 링크 데이터를 표시해 보도록 하겠습니다. 저는 파란색 선을 통해 연결을 하였습니다.
 ```python
