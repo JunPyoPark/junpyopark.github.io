@@ -143,7 +143,7 @@ map_osm
 <center><img src="https://trello-attachments.s3.amazonaws.com/5b29ec749cfb0d90ada47d03/5b34a3a14be075bc986bba26/c34c5b1c3a4523ec0133748a3034fa71/image.png"></center>
 
 이제 링크 데이터를 표시해 보도록 하겠습니다. 저는 파란색 선을 통해 연결을 하였습니다.
-```python
+```css
 kw = {'opacity': 0.5, 'weight': 2}
 for ix, row in incheon_links.iterrows():
     start = tuple(nodes[nodes['Id']==row['Source']][['latitude','longitude']].iloc[0])
@@ -164,4 +164,4 @@ jupyter notebook --NotebookApp.iopub_data_rate_limit=10000000
 출력이 완료 되었다면 완성입니다! 제가 살고있는 송도 신도시를 2015년과 2018년 데이터로 출력하여 비교해 보았습니다.
 <img src="https://trello-attachments.s3.amazonaws.com/5b29ec749cfb0d90ada47d03/5b34a3a14be075bc986bba26/dc9e5da4071e8a258b7054a46ad7b10e/image.png">
 3년 동안 도로가 많이 생겼음을 확인 할 수 있습니다. 송도 유령도시라는 친구들에게 보여주고 싶군요.... <br> 
-어쨋든 오늘 글은 이 쯤에서 마무리 하도록 하고 앞으로도 공부하면서 여러가지 흥미롭거나 유용한 자료 올리도록 하겠습니다. 읽어주셔서 감사합니다! 
+어쨋든 오늘 글은 이 쯤에서 마무리 하도록 하고 앞으로도 공부하면서 여러가지 흥미롭거나 유용한 자료 올리도록 하겠습니다. 읽어주셔서 감사합니다!! 
