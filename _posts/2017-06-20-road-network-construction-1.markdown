@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 파이썬으로 도로 네트워크 구성 및 시각화 하기 - 1. 데이터 다운로드 및 프로세싱
-date: 2017-09-12 13:32:20 +0300
+date: 2018-06-20 13:32:20 +0300
 description: null
 img: network.jpg # Add image post (optional)
 tags: [Network, Python Network Analysis, Folium]
