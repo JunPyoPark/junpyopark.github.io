@@ -143,7 +143,7 @@ map_osm
 <center><img src="https://trello-attachments.s3.amazonaws.com/5b29ec749cfb0d90ada47d03/5b34a3a14be075bc986bba26/c34c5b1c3a4523ec0133748a3034fa71/image.png"></center>
 
 이제 링크 데이터를 표시해 보도록 하겠습니다. 저는 파란색 선을 통해 연결을 하였습니다.
-```css
+```python
 kw = {'opacity': 0.5, 'weight': 2}
 for ix, row in incheon_links.iterrows():
     start = tuple(nodes[nodes['Id']==row['Source']][['latitude','longitude']].iloc[0])
