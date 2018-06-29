@@ -68,10 +68,10 @@ apply(lambda x) 기능을 사용하여 True/False 로 이루어진 시리즈를 
 이제 networkx 모듈을 사용하여 네트워크를 구성해 보도록 하겠습니다. <br>
 G = nx.Graph() 명령어를 통해 빈 그래프(네트워크)를 생성할 수 있습니다. <br>
 G.add_node, G.add_link 를 통해 노드와 링크를 그래프에 추가 할 수 있습니다(자세한 설명은 documentation에 잘 나와있습니다). <br><br>
-Link 를 그냥 추가하면 재미가 없기 때문에 가중치를 부여해서 넣어 보려합니다. 도로 네트워크기 때문에 source 와 target 사이의 거리를 계산해서 넣어 보도록 하겠습니다. 우리는 source 와 target의 위도, 경도 정보를 알고 있기 때문에 아래 사진의 공식을 사용하여 두 지점 사이의 거리를 계산 할 수 있습니다(물론 지구가 완벽한 구가 아니기 때문에 오차가 조금 있을 것 입니다).
-<img src="https://trello-attachments.s3.amazonaws.com/59103d52b56a24582f00dc97/5ad6becddd7e2be0e8dbd88a/b83b4330a4e13fcfd5af94e8fbf954a5/image.png" class="center">
-<img src="https://trello-attachments.s3.amazonaws.com/59103d52b56a24582f00dc97/5ad6becddd7e2be0e8dbd88a/f096c344ea7edf005c3dbf681be5003e/image.png">
-이를 구현해서 다음과 같이 네트워크를 구성 할 수 있습니다.
+Link 를 그냥 추가하면 재미가 없기 때문에 가중치를 부여해서 넣어 보려합니다. 도로 네트워크기 때문에 source 와 target 사이의 거리를 계산해서 넣어 보도록 하겠습니다. 우리는 source 와 target의 위도, 경도 정보를 알고 있기 때문에 아래 사진의 공식을 사용하여 두 지점 사이의 거리를 계산 할 수 있습니다(물론 지구가 완벽한 구가 아니기 때문에 오차가 조금 있을 것 입니다). <br><br>
+<center><img src="https://trello-attachments.s3.amazonaws.com/59103d52b56a24582f00dc97/5ad6becddd7e2be0e8dbd88a/b83b4330a4e13fcfd5af94e8fbf954a5/image.png"></center><br><br>
+<img src="https://trello-attachments.s3.amazonaws.com/59103d52b56a24582f00dc97/5ad6becddd7e2be0e8dbd88a/f096c344ea7edf005c3dbf681be5003e/image.png"><br>
+이를 구현해서 다음과 같이 네트워크를 구성 할 수 있습니다.<br>
 
 ```python
 G = nx.Graph()
@@ -104,7 +104,7 @@ nx.info(G) 명령어를 통해 다음과 같이 간단한 네트워크 정보를
 nx.write_gexf(G,'Incheon_2015.gexf') 명령어를 통해 *.gexf 파일로 그래프를 내보낼 수 도 있습니다. Gephi 라는 네트워크 시각화 소프트웨어를 이용해서 다음과 같이 시각화 할 수 있습니다.<br> 
 <img src="https://trello-attachments.s3.amazonaws.com/59103d52b56a24582f00dc97/5ad394e5aded2485139e183c/77d81ebf997a213519cad0a94885fbd9/image.png"></img>
 Gephi 소프트웨어를 사용하면 여러가지 네트워크 measurement나 특성 계산을 쉽게 해줘서 편리합니다. 아래 정보는 Gephi가 제공해 주는 계산기능을 이용해 작성한 인천 2015년 네트워크와 2018년 네트워크의 특성 비교 테이블 입니다.
-<img src="https://trello-attachments.s3.amazonaws.com/59103d52b56a24582f00dc97/5ad7045f9faca28f3223121c/b9e139fe8db5e9384303ae69b00db575/image.png"></img>
+<img src="https://trello-attachments.s3.amazonaws.com/59103d52b56a24582f00dc97/5ad7045f9faca28f3223121c/b9e139fe8db5e9384303ae69b00db575/image.png">
 
 ## Folium 라이브러리를 통한 시각화 지도 만들기
 이제 Folium 모듈을 통해 interactive 한 지도를 생성해 보도록 하겠습니다. 먼저 지도 상에서 기준점이 될 포인트를 잡아 줍니다. 저는 노드 데이터 상에서 첫번째에 나온 녀석을 기준점으로 잡았습니다. 
