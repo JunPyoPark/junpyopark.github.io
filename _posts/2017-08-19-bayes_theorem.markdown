@@ -24,8 +24,9 @@ tags: [Bayes Theorem, Probability, Bayesian Statistics]
   <center><img src="https://blogfiles.pstatic.net/MjAxNzA4MTlfMjQw/MDAxNTAzMDg2NzYwNzc1.dLG90STLmpNw5EnEuKsbM5OcIXTC0nMA6tHdV3sgXbAg.v304_hNDSAyU9DHR6YDsccDi2tkee8vCAPV_IuarRJ4g.PNG.anthouse28/image.png?type=w1"></center>
   
   ## 독립사건(Independence)
-  고등학교 수학시간에 두 사건이 서로 독립이라면 다음 식이 성립해야 한다고 배웠습니다.
-  <center><img_src="https://latex.codecogs.com/gif.latex?%5Chuge%20P%28A%20%5Ccap%20B%29%20%3D%20P%28A%29P%28B%29"></center>
+  
+  고등학교 수학시간에 두 사건이 서로 독립이라면 다음 식이 성립해야 한다고 배웠습니다. <br>
+  <center><img src="https://latex.codecogs.com/gif.latex?%5Chuge%20P%28A%20%5Ccap%20B%29%20%3D%20P%28A%29P%28B%29"></center>
   
   이를 사건이 n개가 있는 경우로 확장시키면 다음과 같이 나타낼 수 있습니다.  <br>
 어떠한 $1≤i_1< · · · <i_k≤n$ 에 대해서도 다음 식을 만족시킨다면 사건 $A_1,...,A_n$ 를 독립인 사건이라고 합니다.
@@ -64,7 +65,7 @@ tags: [Bayes Theorem, Probability, Bayesian Statistics]
   
   위의 식을 일반적으로 베이즈 정리라고 합니다. 단순한 수식장난으로 보일 수 있지만 통계학에서는 매우 중요한 의미를 가지고 있는 식이며 베이지안 통계학(Bayesian Statistics)라는 응용 통계학의 분야도 따로 있습니다. 또 머신러닝등 다양한 다른분야에서도 활발하게 활용되고 있습니다. <br>
   
-  위 식에서 핵심은 사건 A가 일어났을 때의 확률( P\[Bj\|A] )을 계산함에 있어서 이를 거꾸로 뒤집어 B가 일어났을때의 확률들( P\[A|Bi]들 )로 표현 할 수 있다는 것 입니다. 즉 A가 조건으로 주어졌을 때 B의 확률에 대해서 궁금했던 것을 반대로 B가 조건으로 주어졌을 때 A의 확률에 대해서 이야기 하는 것으로 바꾸어 쓸 수 있다는 것 입니다. 예제를 통해 적용되는 방식을 살펴보도록 하겠습니다. <br>
+  위 식에서 핵심은 사건 A가 일어났을 때의 확률( P\[Bj\|A] )을 계산함에 있어서 이를 거꾸로 뒤집어 B가 일어났을때의 확률들( P\[A\|Bi]들 )로 표현 할 수 있다는 것 입니다. 즉 A가 조건으로 주어졌을 때 B의 확률에 대해서 궁금했던 것을 반대로 B가 조건으로 주어졌을 때 A의 확률에 대해서 이야기 하는 것으로 바꾸어 쓸 수 있다는 것 입니다. 예제를 통해 적용되는 방식을 살펴보도록 하겠습니다. <br>
   
    어떤 주식이 그날 상승할 확률을 Θ라고 합시다. 우리는 일별 주가 데이터 분석을 통해 Θ값이 0.4일 확률이 50%이고 0.6일 확률이 50%임을 발견하였습니다. 이를 식으로 표현하면 다음과 같습니다.
    
