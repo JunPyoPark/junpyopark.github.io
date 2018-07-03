@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e1db654-4a26-417d-a54d-b4ef5819e1df" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2017-08-19-bayes_theorem.markdown" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-06-20-road-network-construction-1.markdown" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-06-29-road-network-construction-2.markdown" afterPath="$PROJECT_DIR$/_posts/2018-06-29-road-network-construction-2.markdown" />
+      <change beforePath="$PROJECT_DIR$/_posts/2017-08-19-bayes_theorem.markdown" afterPath="$PROJECT_DIR$/_posts/2017-08-19-bayes_theorem.markdown" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,8 +27,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2017-08-19-bayes_theorem.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="789">
-                <caret line="74" column="4" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+              <first_editor relative-caret-position="515">
+                <caret line="75" column="78" lean-forward="true" selection-start-line="75" selection-start-column="78" selection-end-line="75" selection-end-column="78" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -495,8 +492,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2017-08-19-bayes_theorem.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="789">
-            <caret line="74" column="4" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+          <first_editor relative-caret-position="515">
+            <caret line="75" column="78" lean-forward="true" selection-start-line="75" selection-start-column="78" selection-end-line="75" selection-end-column="78" />
             <folding />
           </first_editor>
           <second_editor />
