@@ -10,7 +10,7 @@ tags: [Bayes Theorem, Probability, Bayesian Statistics]
 저번 게시글에서는 표본공간, 사건, 확률함수(확률측도), 확률변수와 분포, 기댓값 과 같은 기본적인 확률이론을 배웠습니다. <br>
 이번 글 에서는 조건부 확률, 독립사건, 그리고 베이즈 정리에 대하여 공부해 보도록 하겠습니다.
 
-## 조건부 확률(Conditional Probability)
+## **조건부 확률(Conditional Probability)**
 
   사건 B가 발생했을 때 사건 A가 발생할 확률은 사건 B의 영향을 받아 변하게 될 수도 있습니다. 조건부 확률은 어떤 사건 B가 일어났을 때(여기서 P[B] > 0 으로 가정합니다) 사건 A가 일어날 확률을 의미합니다. 수식으로는 다음과 같이 정의 됩니다.
  
@@ -23,13 +23,13 @@ tags: [Bayes Theorem, Probability, Bayesian Statistics]
   
   <center><img src="http://postfiles2.naver.net/MjAxNzA4MTlfMjQw/MDAxNTAzMDg2NzYwNzc1.dLG90STLmpNw5EnEuKsbM5OcIXTC0nMA6tHdV3sgXbAg.v304_hNDSAyU9DHR6YDsccDi2tkee8vCAPV_IuarRJ4g.PNG.anthouse28/image.png?type=w966"></center>
   
-  ## 독립사건(Independence)
+## **독립사건(Independence)**
   
   고등학교 수학시간에 두 사건이 서로 독립이라면 다음 식이 성립해야 한다고 배웠습니다. <br>
   <center><img src="https://latex.codecogs.com/gif.latex?%5Chuge%20P%28A%20%5Ccap%20B%29%20%3D%20P%28A%29P%28B%29"></center>
   
   이를 사건이 n개가 있는 경우로 확장시키면 다음과 같이 나타낼 수 있습니다.  <br>
-어떠한 $1≤i_1< · · · <i_k≤n$ 에 대해서도 다음 식을 만족시킨다면 사건 $A_1,...,A_n$ 를 독립인 사건이라고 합니다.
+어떠한 $$1≤i_1< · · · <i_k≤n$$ 에 대해서도 다음 식을 만족시킨다면 사건 $$A_1,...,A_n$$ 를 독립인 사건이라고 합니다.
 
 
 
