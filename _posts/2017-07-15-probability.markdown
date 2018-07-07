@@ -9,11 +9,11 @@ tags: [Probability, Probability Theory]
 
 ## **표본공간(Sample Space) 과 사건(Event)**
 
-어떤 시행에서 일어날 수 있는 모든 결과들의 모임을 표본 공간이라고 합니다. 예를 들어 주사위를 한번 던지는 시행의 경우 표본공간은 {1,2,3,4,5,6}와 같은 집합(set)이 됩니다. 그렇다면 이전 시간에 배운 동전던지는 시행을 예로 들어보겠습니다. 앞면과 뒷면이 나올 확률이 0.5로 동일한 동전을 3번 던지는 시행을 한다면 표본공간은 다음과 같이 나타낼 수 있습니다. <br>
+어떤 시행에서 일어날 수 있는 모든 결과들의 모임을 표본 공간이라고 합니다. 예를 들어 주사위를 한번 던지는 시행의 경우 표본공간은 {1,2,3,4,5,6}와 같은 집합(set)이 됩니다. 그렇다면 이전 시간에 배운 동전던지는 시행을 예로 들어보겠습니다. 앞면과 뒷면이 나올 확률이 0.5로 동일한 동전을 3번 던지는 시행을 한다면 표본공간은 다음과 같이 나타낼 수 있습니다. <br><br>
 <center><img src="https://latex.codecogs.com/gif.latex?%5CLARGE%20%5COmega%20%3D%20%5Cbegin%7BBmatrix%7D%20HHH%2C%20HHT%2CHTH%2CHTT%2CTHH%2CTHT%2CTTH%2CTTT%20%5Cend%7BBmatrix%7D"></center>
-<center>표본공간은 주로 Ω라는 문자로 표현합니다.</center> <br>
+<center><sup>표본공간은 주로 Ω라는 문자로 표현합니다.</sup></center> <br>
 <center><img src="https://latex.codecogs.com/gif.latex?%5CLARGE%20%5COmega%20%3D%20%5Cbegin%7BBmatrix%7D%20w_1w_2w_3%20%3A%20w_i%5Cin%20%5Cbegin%7BBmatrix%7D%20H%2CT%20%5Cend%7BBmatrix%7D%20for%20%5C%2C%5C%2C1%20%5Cleq%20i%5Cleq%203%20%5Cend%7BBmatrix%7D"></center>
-<center>위의 표본공간을 이렇게도 표현 할 수 있습니다. 학창시절 이런 표현방식을 조건제시법이라고 배웠습니다.</center>
+<center><sup>위의 표본공간을 이렇게도 표현 할 수 있습니다. 학창시절 이런 표현방식을 조건제시법이라고 배웠습니다.</sup></center>
 <br>
 표본공간 Ω의 부분집합을 사건(Event)라고 합니다. 예를 들어서 위의 표본공간 중에서 처음 동전을 던진 결과가 앞면인 경우는 다음과 같이 표현 할 수 있습니다.
 <br>
@@ -35,14 +35,14 @@ tags: [Probability, Probability Theory]
 처음의 예제를 확인해 보면 모든 w에 대해 확률이 1/8이고 확률이 똑같은 것들이 8가지가 있기 때문에 1번과 2번조건을 만족하는 것을 확인 할 수 있습니다. 따라서 '동전을 던졌을 때 앞면이 나올 확률이 1/2이고 뒷면이 나올 확률이 1/2' 라는 확률함수는 표본공간 Ω에 대해 올바르게 정의된 확률함수임을 확인 할 수 있습니다. <br>
 
 이런 확률함수를 이용해서 우리는 위에서 배운 사건에대한 확률도 정의 할 수 있습니다. 
-<br>
+<br><br>
 <center><img src="https://latex.codecogs.com/gif.latex?%5CLARGE%20For%20%5C%3A%20%5C%2C%20A%20%5Csubseteq%20%5COmega%20%2C%20%5C%3A%5C%3A%20%5Cmathbb%7BP%7D%28A%29%20%3D%20%5Csum_%7Bw%20%5Cin%20A%7D%5Cmathbb%7BP%7D%28w%29"></center>
-<center>사건(Event)에 대한 확률은 이렇게 정의 할 수 있습니다.</center>
+<center><sup>사건(Event)에 대한 확률은 이렇게 정의 할 수 있습니다.</sup></center>
 <br>
 예를 들어 위에서 본 처음 동전을 던진 결과가 앞면인 사건에 대해서 확률을 구해보면 다음과 같습니다.
 <br>
 <center><img src="http://postfiles16.naver.net/MjAxNzA3MTRfNzMg/MDAxNTAwMDQxNzY2NjU1.oy_fI0q82JSk8tDrd0nNKAOh8-qa4M3Hbpp-vOKF-oYg.GsO89wRSZb3fHSj_OithAvzPCOsLBeAWI01q25GgdzIg.PNG.anthouse28/image.png?type=w966"></center>
-<center>처음 동전을 던진 결과가 앞면인 확률은 직관적으로 1/2입니다. 직관과 우리가 정의한 수식이 일치함을 볼 수 있습니다.</center> <br>
+<center><sup>처음 동전을 던진 결과가 앞면인 확률은 직관적으로 1/2입니다. 직관과 우리가 정의한 수식이 일치함을 볼 수 있습니다.</sup></center> <br>
 <br>
 두 사건 A,B가 서로소 라는 것은 사건 A와 B의 교집합이 공집합이라는 뜻 입니다. 그런 경우 아래의 식이 성립합니다. 이는 겹치는 부분이 없기 때문에 직관적으로 받아들일 수 있습니다. <br>
 <center><img src="https://latex.codecogs.com/gif.latex?%5CLARGE%20%5Cmathbb%7BP%7D%28A%20%5Ccup%20B%29%20%3D%20%5Cmathbb%7BP%7D%28A%29%20+%20%5Cmathbb%7BP%7D%28B%29%20%5C%3A%5C%3A%20when%20%5C%3A%5C%3A%20A%20%5Ccap%20B%20%3D%20%5Cvarnothing"></center>
@@ -52,12 +52,12 @@ tags: [Probability, Probability Theory]
 확률변수라 함은 표본공간 Ω에 정의된 실함수를 의미합니다(여기서 실함수는 결괏값이 실수인 함수를 말합니다). 예를 들어 우리가 배웠던 주식가격은 확률변수의 좋은 예제 입니다.
 <br>
 <center><img src="https://latex.codecogs.com/gif.latex?%5CLARGE%20S_3%28HHT%29%20%3D%20u%5E2dS_0%2C%20%5C%3A%20S_3%28TTT%29%3Dd%5E3S_0%20%5C%2C%20..."></center>
-<center>주식가격 S가 Ω의 원소를 어떤 실수값으로 대응시키는 것을 확인 할 수 있습니다.</center>
+<center><sup>주식가격 S가 Ω의 원소를 어떤 실수값으로 대응시키는 것을 확인 할 수 있습니다.</sup></center>
 <br>
 주어진 확률변수 X에 대해서 '확률함수 P에대한 X의 분포'는 X가 가지는 값에 따라 그 확률을 나열해 놓은 것 입니다. 예를 들어 처음예제의 Ω에서 X를 앞면이 나온 횟수로 정의한다면 X는 0에서 3사이의 값을 가지게 됩니다. 그러면 확률함수 P에 대한 X의 분포는 다음과 같이 적을 수 있습니다.
 <br>
 <center><img src="http://postfiles8.naver.net/MjAxNzA3MTVfMjI3/MDAxNTAwMDQ2NDU0NDcy.dTyKHjDfTD3Xnyk9X3vOyBGhKqP42BxIctQMqkiKG74g.b_D6p9ehbLJi41ofKQ8VX9SxLZttpmL_oOjla-vEQt4g.PNG.anthouse28/image.png?type=w966"></center>
-<center>확률변수 X의 P에 대한 분포는 이런식으로 X가 가질 수 있는 값들에 대해서 그 확률들을 나열해 주어야 합니다.</center>
+<center><sup>확률변수 X의 P에 대한 분포는 이런식으로 X가 가질 수 있는 값들에 대해서 그 확률들을 나열해 주어야 합니다.</sup></center>
 <br>
 확률변수와 분포의 개념을 혼동하기 쉬운데 둘은 엄연히 다른 개념입니다. 확률변수는 함수입니다. 반면에 분포는 확률변수가 가질 수 있는 값들에대해서 그 확률들을 나열해 놓은 것 입니다. 
 <br>
@@ -73,7 +73,6 @@ X의 분산은 Var[X]라고 나타내고 다음과 같은 식으로 주어집니
 <br>
 <center><img src="https://latex.codecogs.com/gif.latex?%5CLARGE%20Var%5BX%5D%20%3D%20%5Cmathbb%7BE%7D%5B%28X-%5Cmathbb%7BE%7D%28X%29%29%5E2%5D"></center>
 <center><sup>분산의 정의 입니다.</sup></center>
-<br>
 <center><img src="https://latex.codecogs.com/gif.latex?%5CLARGE%20Var%5BX%5D%20%3D%20%5Cmathbb%7BE%7D%5BX%5E2%5D-%28%5Cmathbb%7BE%7D%5BX%5D%29%5E2"></center>
 <center><sup>실제 계산은 변형된 이 식을 더 많이 사용합니다.</sup></center>
 <br>
@@ -94,11 +93,11 @@ X의 분산은 Var[X]라고 나타내고 다음과 같은 식으로 주어집니
 
 <br>
 따라서 확률변수 X,Y와 임의의 실수 a,b에 대해서 다음 식이 성립하게 됩니다. 증명은 기대값의 정의를 풀어서 써 보시면 시그마(summation)기호가 선형성을 가지기 때문에 쉽게 유도가 가능합니다.
-<br>
+<br><br>
 <center><img src="https://latex.codecogs.com/gif.latex?%5CLARGE%20%5Cmathbb%7BE%7D%5BaX+bY%5D%20%3D%20a%5Cmathbb%7BE%7D%5BX%5D%20+%20b%5Cmathbb%7BE%7D%5BY%5D"></center>
 <br>
 특히 선형함수인 L(x)에 대해서 다음 식이 성립하게 됩니다. 아래의 위의 방식과 똑같이 증명 할 수 있습니다.
-<br>
+<br><br>
 <center><img src="https://latex.codecogs.com/gif.latex?%5CLARGE%20%5Cmathbb%7BE%7D%5BL%28X%29%5D%20%3D%20L%28%5Cmathbb%7BE%7D%5BX%5D%29"></center>
 <center><sup>선형인 함수 L에 대해서만 기대값 과의 계산 순서를 바꿀 수 있습니다.</sup></center>
 
