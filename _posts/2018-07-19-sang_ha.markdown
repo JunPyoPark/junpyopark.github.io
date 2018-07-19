@@ -3,7 +3,7 @@ layout: post
 title: 상/하한가 산출 구현하기
 date: 2018-07-19 20:21:13 +0300
 description: null
-img: sang.jpg # Add image post (optional)
+img: sang.JPG
 tags: [Financial Data, 상한가, 하한가]
 ---
 이 게시글에서는 상/하한가 산출 방식과 그 과정을 파이썬 코드로 옮겨서 정리해 보도록 하겠습니다.
@@ -141,7 +141,7 @@ print ('하한가 : ', sang_ha[1])
 하한가 :  8480<br>
 
 다음과 같이 기준가에 대한 데이터를 pandas.Series 형태로 가지고 있다면 이에 대한 상/하한가는 다음 코드로 쉽게 계산 할 수 있습니다.
-<center><img src="https://trello-attachments.s3.amazonaws.com/5b29ec749cfb0d90ada47d03/5b5098b1d2cbbcfba8c16357/1a02b9eb0c70d922eefd359bd1a45b8b/image.png"></center>
+<img src="https://trello-attachments.s3.amazonaws.com/5b29ec749cfb0d90ada47d03/5b5098b1d2cbbcfba8c16357/2a09256aa9fec3ecb797d9d5ad332fd8/image.png">
 
 <br>
 
@@ -151,4 +151,4 @@ pd.Series(list(zip(bp,bp.index)),index=bp.index).apply(lambda x : get_sang_ha(x[
 
 실행 결과는 다음과 같습니다.
 
-<center><img src="https://trello-attachments.s3.amazonaws.com/5b29ec749cfb0d90ada47d03/5b5098b1d2cbbcfba8c16357/cdd640823bc54bba77c95175f771ceac/image.png"></center>
+<img src="https://trello-attachments.s3.amazonaws.com/5b29ec749cfb0d90ada47d03/5b5098b1d2cbbcfba8c16357/cdd640823bc54bba77c95175f771ceac/image.png">
