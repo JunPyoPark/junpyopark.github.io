@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 상/하한가 산출 구현하기
+title: 상/하한가 산출 방식과 파이썬으로 구현하기
 date: 2018-07-19 20:21:13 +0300
 description: null
 img: sang.JPG
