@@ -21,7 +21,7 @@ tags: [pseudoscience]
 <center><img src = "https://trello-attachments.s3.amazonaws.com/5b29ec749cfb0d90ada47d03/5b8bcb0650c50c0e2f67294d/a6c89ff85877f917d863331301571a27/image.png">
 
 
-쇼핑몰 링크 : http://www.kimswater.com/product/list.html?cate_no=12</center>
+<br>쇼핑몰 링크 : http://www.kimswater.com/product/list.html?cate_no=12</center>
 
 하... 집에서 저거 4개는 본거 같은데 갑자기 화가 나기 시작했다...
 
@@ -81,7 +81,7 @@ Torsion field 라는 개념은 역시 pseudo science 로 분류되고 있었다.
 <center><img src="https://trello-attachments.s3.amazonaws.com/5b29ec749cfb0d90ada47d03/5b8bce4641d6fa1eb2777f73/46f94606ec396878a87546f38f9f753c/image.png">
 
 
-기사 링크 : http://www.dailymedi.com/detail.php?number=717343</center> 
+<br>기사 링크 : http://www.dailymedi.com/detail.php?number=717343</center> 
 
 
 
@@ -92,7 +92,7 @@ Torsion field 라는 개념은 역시 pseudo science 로 분류되고 있었다.
 <center><img src="https://trello-attachments.s3.amazonaws.com/5b29ec749cfb0d90ada47d03/5b8bcfbffcb78425f7dc663e/f74d707338128e9c62badc49e87aeb20/image.png">
 
 
-판결에 관한 2013년 기사 : http://www.seoul.co.kr/news/newsView.php?id=20130725010011<br></center>
+<br>판결에 관한 2013년 기사 : http://www.seoul.co.kr/news/newsView.php?id=20130725010011<br></center>
 
 
 
