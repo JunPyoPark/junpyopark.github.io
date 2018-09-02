@@ -3,7 +3,7 @@ layout: post
 title: 유사과학 - 착한전기 유엘을 알아보자
 date: 2018-09-02 20:21:13 +0300
 description: null
-img: pseudoscience.JPG
+img: pseudoscience.jpg
 tags: [pseudoscience]
 ---
 
