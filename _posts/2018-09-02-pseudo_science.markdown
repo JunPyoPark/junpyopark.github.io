@@ -90,7 +90,9 @@ Torsion field 라는 개념은 역시 pseudo science 로 분류되고 있었다.
 
 
 <center><img src="https://trello-attachments.s3.amazonaws.com/5b29ec749cfb0d90ada47d03/5b8bcfbffcb78425f7dc663e/f74d707338128e9c62badc49e87aeb20/image.png">
-판결에 관한 2013년 기사 <br></center>
+
+
+판결에 관한 2013년 기사 : http://www.seoul.co.kr/news/newsView.php?id=20130725010011<br></center>
 
 
 
