@@ -1,7 +1,7 @@
 ---
 layout: post
 title: jupyter markdown test
-date: 2019-01-04 03:46:13 +0300
+date: 2019-01-04 04:40:13 +0300
 description: null
 img: python.jpg
 tags: [Jupyter Notebook]

@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e1db654-4a26-417d-a54d-b4ef5819e1df" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2019-01-04-jupyter-md-test.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2019-01-04-jupyter-notebook-test_files/2019-01-04-jupyter-notebook-test_33_1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2019-01-04-jupyter-notebook-test_files/2019-01-04-jupyter-notebook-test_36_0.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2019-01-04-jupyter-notebook-test_files/2019-01-04-jupyter-notebook-test_39_0.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2019-01-04-jupyter-notebook-test_files/2019-01-04-jupyter-notebook-test_50_0.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2019-01-04-jupyter-notebook-test_files/2019-01-04-jupyter-notebook-test_62_0.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2019-01-04-jupyter-notebook-test_files/2019-01-04-jupyter-notebook-test_67_0.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_posts/2019-01-04-jupyter-notebook-test.html" afterPath="$PROJECT_DIR$/_posts/2019-01-04-jupyter-notebook-test.html" />
+      <change beforePath="$PROJECT_DIR$/_posts/2019-01-04-jupyter-md-test.md" afterPath="$PROJECT_DIR$/_posts/2019-01-04-jupyter-md-test.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -84,8 +77,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2019-01-04-jupyter-md-test.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="875">
-                <caret line="1011" column="20" lean-forward="true" selection-start-line="1011" selection-start-column="20" selection-end-line="1011" selection-end-column="20" />
+              <first_editor relative-caret-position="80">
+                <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -294,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546543882777</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="jupyter markdown test">
+      <created>1546544378392</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1546544378392</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -335,7 +335,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new post" />
     <MESSAGE value="jupyter test" />
-    <option name="LAST_COMMIT_MESSAGE" value="jupyter test" />
+    <MESSAGE value="jupyter markdown test" />
+    <option name="LAST_COMMIT_MESSAGE" value="jupyter markdown test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -667,8 +668,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2019-01-04-jupyter-md-test.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="875">
-            <caret line="1011" column="20" lean-forward="true" selection-start-line="1011" selection-start-column="20" selection-end-line="1011" selection-end-column="20" />
+          <first_editor relative-caret-position="80">
+            <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
             <folding />
           </first_editor>
           <second_editor />
