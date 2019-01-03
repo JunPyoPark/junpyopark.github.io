@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e1db654-4a26-417d-a54d-b4ef5819e1df" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2019-01-04-intro_to_research2.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_posts/2019-01-04-intro_to_python.markdown" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_posts/2019-01-04-intro_to_research.markdown" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_posts/2019-01-04_Introduction_to_Python.html" afterPath="$PROJECT_DIR$/_posts/2019-01-04_Introduction_to_Python.html" />
-      <change beforePath="$PROJECT_DIR$/assets/img/python.jpg" afterPath="$PROJECT_DIR$/assets/img/python.jpg" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,7 +37,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2019-01-04_Introduction_to_Python.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2019-01-04_Introduction_to_Python.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2019-01-04_Introduction_to_Python.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
@@ -586,6 +583,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="2019-01-04-intro_to_research2.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2019-01-04-intro_to_research2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="2018-09-02-pseudo_science.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2018-09-02-pseudo_science.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -636,6 +643,7 @@
         <option value="$PROJECT_DIR$/_posts/2019-01-04-jupyter-md-test.md" />
         <option value="$PROJECT_DIR$/_posts/2019-01-04-intro_to_research.html" />
         <option value="$PROJECT_DIR$/_posts/2019-01-04_Introduction_to_Python.html" />
+        <option value="$PROJECT_DIR$/_posts/2019-01-04-intro_to_research2.html" />
       </list>
     </option>
   </component>
@@ -837,7 +845,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546546330063</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="jupyter html posting">
+      <created>1546546547166</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1546546547166</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -887,16 +902,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_posts/2018-06-20-road-network-construction-1.markdown">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1168">
-            <caret line="73" column="17" lean-forward="true" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -1754,6 +1759,14 @@
             <element signature="e#341893#341898#0" expanded="true" />
             <element signature="e#341907#341912#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2019-01-04-intro_to_research2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
