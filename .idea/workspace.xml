@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0e1db654-4a26-417d-a54d-b4ef5819e1df" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_posts/code_test.markdown" afterPath="$PROJECT_DIR$/_posts/2019-01-04-code_test.markdown" />
+      <change beforePath="$PROJECT_DIR$/_posts/2019-01-04-code_test.markdown" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_posts/2019-01-04-intro_to_python.markdown" afterPath="$PROJECT_DIR$/_posts/2019-01-04-intro_to_python.markdown" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,28 +41,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2019-01-04-intro_to_python.markdown" pinned="false" current-in-tab="false">
+      <file leaf-file-name="2019-01-04-intro_to_python.markdown" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2019-01-04-intro_to_python.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="570">
-                <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <first_editor relative-caret-position="540">
+                <caret line="965" column="5" lean-forward="false" selection-start-line="965" selection-start-column="5" selection-end-line="965" selection-end-column="5" />
                 <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2019-01-04-code_test.markdown" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_posts/2019-01-04-code_test.markdown">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="155">
-                <caret line="78" column="12" lean-forward="true" selection-start-line="78" selection-start-column="12" selection-end-line="78" selection-end-column="12" />
-                <folding>
-                  <marker date="1546537923531" expanded="true" signature="2075:2251" ph="def has_a_vowel(word):... 'u']" />
-                </folding>
               </first_editor>
               <second_editor />
             </state>
@@ -82,6 +68,12 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>https://</find>
+      <find>https://trello</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -104,8 +96,8 @@
         <option value="$PROJECT_DIR$/_posts/2018-07-19-sang_ha.markdown" />
         <option value="$PROJECT_DIR$/_posts/2018-09-02-pseudo_science.markdown" />
         <option value="$PROJECT_DIR$/_posts/2019-01-04-intro_to_research.markdown" />
-        <option value="$PROJECT_DIR$/_posts/2019-01-04-intro_to_python.markdown" />
         <option value="$PROJECT_DIR$/_posts/code_test.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2019-01-04-intro_to_python.markdown" />
       </list>
     </option>
   </component>
@@ -240,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546537938167</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="new post">
+      <created>1546538067838</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1546538067838</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -593,25 +592,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2019-01-04-intro_to_python.markdown">
+    <entry file="file://$PROJECT_DIR$/_posts/2019-01-04-code_test.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="570">
-            <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <first_editor relative-caret-position="152">
+            <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2019-01-04-code_test.markdown">
+    <entry file="file://$PROJECT_DIR$/_posts/2019-01-04-intro_to_python.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="155">
-            <caret line="78" column="12" lean-forward="true" selection-start-line="78" selection-start-column="12" selection-end-line="78" selection-end-column="12" />
-            <folding>
-              <marker date="1546537923531" expanded="true" signature="2075:2251" ph="def has_a_vowel(word):... 'u']" />
-            </folding>
+          <first_editor relative-caret-position="540">
+            <caret line="965" column="5" lean-forward="false" selection-start-line="965" selection-start-column="5" selection-end-line="965" selection-end-column="5" />
+            <folding />
           </first_editor>
           <second_editor />
         </state>
