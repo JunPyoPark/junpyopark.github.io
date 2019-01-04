@@ -45,22 +45,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2019-01-04-Research_Overview.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="2019-01-04-Research_Overview.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2019-01-04-Research_Overview.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="56" lean-forward="true" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
+            <state relative-caret-position="175">
+              <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2019-01-04-Research_Overview.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2019-01-04-Research_Overview.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2019-01-04-Research_Overview.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="171">
-                <caret line="9" column="88" lean-forward="true" selection-start-line="9" selection-start-column="88" selection-end-line="9" selection-end-column="88" />
+              <first_editor relative-caret-position="38">
+                <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -167,8 +167,8 @@
         <option value="$PROJECT_DIR$/assets/css/scss/main.scss" />
         <option value="$PROJECT_DIR$/assets/css/main.css" />
         <option value="$PROJECT_DIR$/ipython_to_html.sh" />
-        <option value="$PROJECT_DIR$/_posts/2019-01-04-Research_Overview.html" />
         <option value="$PROJECT_DIR$/_posts/2019-01-04-Research_Overview.md" />
+        <option value="$PROJECT_DIR$/_posts/2019-01-04-Research_Overview.html" />
       </list>
     </option>
   </component>
@@ -443,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546616434173</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="table css change">
+      <created>1546616620877</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1546616620877</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -783,22 +790,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2019-01-04-Research_Overview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="56" lean-forward="true" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2019-01-04-Research_Overview.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="171">
-            <caret line="9" column="88" lean-forward="true" selection-start-line="9" selection-start-column="88" selection-end-line="9" selection-end-column="88" />
+          <first_editor relative-caret-position="38">
+            <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2019-01-04-Research_Overview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
