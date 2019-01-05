@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e1db654-4a26-417d-a54d-b4ef5819e1df" name="Default" comment="table css change">
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2019-01-05-MACD_Plotting.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/img/chart.jpg" />
+    <list default="true" id="0e1db654-4a26-417d-a54d-b4ef5819e1df" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2019-01-05-K_means.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/img/cluster.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,11 +15,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="2019-01-05-MACD_Plotting.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2019-01-05-MACD_Plotting.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2019-01-05-MACD_Plotting.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2019-01-05-K_means.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2019-01-05-K_means.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -105,6 +115,7 @@
         <option value="$PROJECT_DIR$/_layouts/post.html" />
         <option value="$PROJECT_DIR$/_layouts/main.html" />
         <option value="$PROJECT_DIR$/_posts/2019-01-05-MACD_Plotting.html" />
+        <option value="$PROJECT_DIR$/_posts/2019-01-05-K_means.html" />
       </list>
     </option>
   </component>
@@ -168,6 +179,17 @@
               <item name="JunPyoPark.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="JunPyoPark.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="_posts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JunPyoPark.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JunPyoPark.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JunPyoPark.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JunPyoPark.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -434,7 +456,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546620140947</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="new posting">
+      <created>1546682599630</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1546682599630</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -478,20 +507,14 @@
     <MESSAGE value="jupyter markdown test" />
     <MESSAGE value="jupyter html posting" />
     <MESSAGE value="table css change" />
-    <option name="LAST_COMMIT_MESSAGE" value="table css change" />
+    <MESSAGE value="new posting" />
+    <option name="LAST_COMMIT_MESSAGE" value="new posting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_includes/disqus.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2017-09-10-conference-on-javascript.markdown" />
     <entry file="file://$PROJECT_DIR$/assets/img/js-1.png">
       <provider selected="true" editor-type-id="images">
@@ -778,8 +801,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2019-01-05-MACD_Plotting.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2019-01-05-K_means.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding />
         </state>
       </provider>
