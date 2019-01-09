@@ -1,18 +1,15 @@
 ---
 layout: main
 ---
-{% include advertisement.html %}
 <article class="article-page">
   <div class="page-content">
     {% if page.img %}
-    {% include advertisement.html %}
     <div class="page-cover-image">
       <img class="page-image" src={{ "/assets/img/" | prepend: site.baseurl | append : page.img}} alt="{{page.title}}">
     </div> <!-- End Page Cover Image -->
     {% else %}
     {% endif %}
     <div class="wrap-content">
-      {% include advertisement.html %}
       <header class="header-page">
         <h1 class="page-title">{{page.title}}</h1>
         <div class="page-date"><span>{{page.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
@@ -33,6 +30,4 @@ layout: main
       {% include disqus.html %}
     </div> <!-- End Wrap Content -->
   </div> <!-- End Page Content -->
-  {% include advertisement.html %}
 </article> <!-- End Article Page -->
-{% include advertisement.html %}
