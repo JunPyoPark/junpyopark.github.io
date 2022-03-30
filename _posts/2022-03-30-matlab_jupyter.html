@@ -13123,7 +13123,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#매트랩-커널을-사용할-가상환경-생성" data-toc-modified-id="매트랩-커널을-사용할-가상환경-생성-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>매트랩 커널을 사용할 가상환경 생성</a></span><ul class="toc-item"><li><span><a href="#관리자-권한으로-터미널-실행" data-toc-modified-id="관리자-권한으로-터미널-실행-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>관리자 권한으로 터미널 실행</a></span></li><li><span><a href="#가상환경-만들기" data-toc-modified-id="가상환경-만들기-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>가상환경 만들기</a></span></li><li><span><a href="#가상환경에-주피터-설치" data-toc-modified-id="가상환경에-주피터-설치-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>가상환경에 주피터 설치</a></span></li></ul></li><li><span><a href="#Python용-MATLAB-Engine-API-설치" data-toc-modified-id="Python용-MATLAB-Engine-API-설치-2"><span class="toc-item-num">2&nbsp;&nbsp;</span><a href="https://kr.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html" rel="nofollow" target="_blank">Python용 MATLAB Engine API 설치</a></a></span><ul class="toc-item"><li><span><a href="#MATLAB-Root-디렉토리-확인" data-toc-modified-id="MATLAB-Root-디렉토리-확인-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>MATLAB Root 디렉토리 확인</a></span></li><li><span><a href="#Engine-API-설치" data-toc-modified-id="Engine-API-설치-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Engine API 설치</a></span></li></ul></li><li><span><a href="#Matlab-kernel-for-Jupyter-설치" data-toc-modified-id="Matlab-kernel-for-Jupyter-설치-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Matlab kernel for Jupyter 설치</a></span></li><li><span><a href="#주피터-노트북-실행" data-toc-modified-id="주피터-노트북-실행-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>주피터 노트북 실행</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#매트랩-커널을-사용할-가상환경-생성" data-toc-modified-id="매트랩-커널을-사용할-가상환경-생성-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>매트랩 커널을 사용할 가상환경 생성</a></span><ul class="toc-item"><li><span><a href="#관리자-권한으로-터미널-실행" data-toc-modified-id="관리자-권한으로-터미널-실행-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>관리자 권한으로 터미널 실행</a></span></li><li><span><a href="#가상환경-만들기" data-toc-modified-id="가상환경-만들기-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>가상환경 만들기</a></span></li><li><span><a href="#가상환경에-주피터-설치" data-toc-modified-id="가상환경에-주피터-설치-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>가상환경에 주피터 설치</a></span></li></ul></li><li><span><a href="#Python용-MATLAB-Engine-API-설치" data-toc-modified-id="Python용-MATLAB-Engine-API-설치-2"><span class="toc-item-num">2&nbsp;&nbsp;</span><a href="https://kr.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html" target="_blank">Python용 MATLAB Engine API 설치</a></a></span><ul class="toc-item"><li><span><a href="#MATLAB-Root-디렉토리-확인" data-toc-modified-id="MATLAB-Root-디렉토리-확인-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>MATLAB Root 디렉토리 확인</a></span></li><li><span><a href="#Engine-API-설치" data-toc-modified-id="Engine-API-설치-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Engine API 설치</a></span></li></ul></li><li><span><a href="#Matlab-kernel-for-Jupyter-설치" data-toc-modified-id="Matlab-kernel-for-Jupyter-설치-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Matlab kernel for Jupyter 설치</a></span></li><li><span><a href="#주피터-노트북-실행" data-toc-modified-id="주피터-노트북-실행-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>주피터 노트북 실행</a></span></li></ul></div>
 </div>
 </div>
 </div>
@@ -13217,8 +13217,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<pre><code>h
-conda create -n matlab python=3.8
+<pre><code>conda create -n matlab python=3.8
 conda activate matlab</code></pre>
 
 </div>
@@ -13235,8 +13234,7 @@ conda activate matlab</code></pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<pre><code>h
-pip install jupyter notebook</code></pre>
+<pre><code>pip install jupyter notebook</code></pre>
 
 </div>
 </div>
@@ -13306,8 +13304,7 @@ pip install jupyter notebook</code></pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<pre><code>h
-cd C:\Program Files\MATLAB\R2021b\extern\engines\python
+<pre><code>cd C:\Program Files\MATLAB\R2021b\extern\engines\python
 
 python setup.py install</code></pre>
 
