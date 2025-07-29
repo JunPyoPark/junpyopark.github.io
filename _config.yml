@@ -9,12 +9,17 @@ site-twitter: #if your site has a twitter account, enter it here
 # Author Settings
 author: JunPyo Park # add your name
 author-img: JP.jpg # add your photo
-about-author: UNIST FE Lab # add description
+about-author: 🚶Homo Viator  🎓UNIST, KAIST  👨🏻‍💻GCU Medicine
 social-twitter: # add your Twitter handle
+social-instagram: ticket.park # add your Instagram handle
 social-facebook: profile.php?id=100001823794299&ref=bookmarks # add your Facebook handle
 social-github: JunPyoPark # add your Github handle
 social-linkedin: junpyopark # add your Linkedin handle
-social-email: wnsvy1994@unist.ac.kr # add your Email address
+social-email: given_ticket@outlook.kr # add your Email address
+
+# SEO Settings
+lang: ko_KR
+timezone: Asia/Seoul
 
 # Disqus
 discus-identifier: mr-JP # add your discus identifier
@@ -28,8 +33,18 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jemoji
+  - jekyll-seo-tag
 
 paginate: 8
 paginate_path: "/page/:num"
 
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
+
+# SEO Plugin settings
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "JunPyo Park"

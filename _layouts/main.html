@@ -22,6 +22,11 @@ layout: default
         {% else %}
           <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
         {% endif %}
+        {% if site.social-instagram %}
+          <li class="instagram"><a href="https://instagram.com/{{site.social-instagram}}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        {% else %}
+          <li class="instagram"><a href="https://instagram.com/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        {% endif %}
         {% if site.social-github %}
           <li class="github"><a href="http://github.com/{{site.social-github}}" target="_blank"><i class="fa fa-github"></i></a></li>
         {% else %}

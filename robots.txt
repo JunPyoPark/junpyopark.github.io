@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://junpyopark.github.io/sitemap.xml
+
+# Disallow common crawler traps
+Disallow: /_includes/
+Disallow: /_layouts/
+Disallow: /_sass/
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow ads.txt for monetization verification
+Allow: /ads.txt 

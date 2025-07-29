@@ -2,9 +2,9 @@
 layout: post
 title: 마이클 세일러의 비트코인 매트릭스 - 심층 분석 인포그래픽
 date: 2025-07-29 13:43:20 +0900
-description: null
+description: 마이클 세일러의 비트코인 매트릭스를 통해 현대 금융 시스템의 위기를 진단하고, 디지털 자산 비트코인이 제시하는 해법과 한국 시장에의 시사점을 심층 분석합니다. 인터랙티브 차트와 포괄적인 보고서로 구성된 완전한 가이드입니다.
 img: coinview.jpg
-tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 매트릭스, 인터랙티브, 분석, 인포그래픽]
+tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 매트릭스, 인터랙티브, 분석, 인포그래픽, SEO, 금융, 투자, 암호화폐]
 ---
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -95,7 +95,7 @@ tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 
                     <p class="mb-4 text-gray-700">2020년 팬데믹 대응을 위한 전례 없는 양적완화(QE)는 시장에 막대한 유동성을 공급했습니다. 이는 미국 M2 통화 공급량의
                         폭발적인 증가로 이어졌으며, 자산 가격 급등의 직접적인 원인이 되었습니다.</p>
                     <div class="chart-container h-80 md:h-96">
-                        <canvas id="m2SupplyChart"></canvas>
+                        <canvas id="m2SupplyChart" aria-label="미국 M2 통화 공급량 변화 차트 (2019-2023)" role="img"></canvas>
                     </div>
                 </div>
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md">
@@ -103,7 +103,7 @@ tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 
                     <p class="mb-4 text-gray-700">풀린 유동성은 실물 경제 대신 자산 시장으로 흘러가 S&P 500과 같은 주가 지수의 급등을 초래했습니다. 반면, 노동의
                         대가인 실질 임금 상승률은 이를 따라가지 못하며 '칸티용 효과'를 명백히 보여주었습니다.</p>
                     <div class="chart-container h-80 md:h-96">
-                        <canvas id="assetVsWageChart"></canvas>
+                        <canvas id="assetVsWageChart" aria-label="S&P 500 수익률과 실질 임금 상승률 비교 차트 (2020-2023)" role="img"></canvas>
                     </div>
                 </div>
             </div>
@@ -253,17 +253,20 @@ tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 
         <section id="full-report" class="mb-20">
             <div class="text-center mb-8 flex flex-wrap justify-center items-center gap-4">
                 <button id="toggleReportBtn"
-                    class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                    class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                    aria-expanded="false" aria-controls="reportContent">
                     보고서 요약 보기
                 </button>
                 <a href="https://docs.google.com/document/d/1baa5u6MtC2ZvPuZBqy89HAgg8h5pG5YPiFyxVotvbcg/edit?usp=sharing" target="_blank" rel="noopener noreferrer"
-                    class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-gray-800 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">
+                    class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-gray-800 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50"
+                    title="완전한 보고서를 Google Docs에서 확인하세요">
                     전체 보고서 보기 (Google Docs)
                 </a>
             </div>
             <div id="reportContent"
-                class="hidden bg-gray-50 p-6 md:p-8 rounded-lg shadow-inner prose-lg max-w-4xl mx-auto prose-h3:text-blue-700 prose-h4:text-gray-800 prose-table:text-sm prose-table:w-full prose-thead:bg-gray-200 prose-th:p-2 prose-td:p-2 prose-td:border prose-td:border-gray-300">
-                <h2 class="text-center">세일러 매트릭스: 디지털 시대의 최고 준비자산으로서의 비트코인에 대한 비판적 분석</h2>
+                class="hidden bg-gray-50 p-6 md:p-8 rounded-lg shadow-inner prose-lg max-w-4xl mx-auto prose-h3:text-blue-700 prose-h4:text-gray-800 prose-table:text-sm prose-table:w-full prose-thead:bg-gray-200 prose-th:p-2 prose-td:p-2 prose-td:border prose-td:border-gray-300"
+                role="region" aria-labelledby="reportSummaryTitle">
+                <h2 id="reportSummaryTitle" class="text-center">세일러 매트릭스: 디지털 시대의 최고 준비자산으로서의 비트코인에 대한 비판적 분석</h2>
 
                 <h3>Executive Summary</h3>
                 <p>본 보고서는 마이크로스트레티지(MicroStrategy)의 회장 마이클 세일러(Michael Saylor)가 제시한 '비트코인 매트릭스'에 대한 심층적이고 비판적인 분석을 제공한다. 세일러의 논지는 현대 법정화폐 시스템이 통화 팽창, 자산 인플레이션, 부의 불평등이라는 근본적인 결함을 내포하고 있으며, 비트코인이 이러한 문제에 대한 유일하고 궁극적인 해결책이라는 주장에 기반한다. 본 분석은 그의 진단과 해법을 체계적으로 검토하고, 한국 경제 및 투자 전략에 미치는 시사점을 도출하는 것을 목표로 한다.</p>
@@ -504,10 +507,12 @@ tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 
             const isHidden = reportContent.classList.contains('hidden');
             if (isHidden) {
                 reportContent.classList.remove('hidden');
-                toggleBtn.textContent = '보고서 전문 접기';
+                toggleBtn.textContent = '보고서 요약 접기';
+                toggleBtn.setAttribute('aria-expanded', 'true');
             } else {
                 reportContent.classList.add('hidden');
-                toggleBtn.textContent = '보고서 전문 보기';
+                toggleBtn.textContent = '보고서 요약 보기';
+                toggleBtn.setAttribute('aria-expanded', 'false');
             }
         });
     </script>
