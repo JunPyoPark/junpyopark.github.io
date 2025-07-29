@@ -9,10 +9,11 @@ site-twitter: #if your site has a twitter account, enter it here
 # Author Settings
 author: JunPyo Park # add your name
 author-img: JP.jpg # add your photo
-about-author: 🚶Homo Viator  🎓UNIST, KAIST  👨🏻‍💻GCU Medicine
-social-twitter: # add your Twitter handle
+about-author: >-
+  🚶Homo Viator
+  🎓UNIST, KAIST
+  👨🏻‍💻GCU Medicine
 social-instagram: ticket.park # add your Instagram handle
-social-facebook: profile.php?id=100001823794299&ref=bookmarks # add your Facebook handle
 social-github: JunPyoPark # add your Github handle
 social-linkedin: junpyopark # add your Linkedin handle
 social-email: given_ticket@outlook.kr # add your Email address
