@@ -9,10 +9,8 @@ site-twitter: #if your site has a twitter account, enter it here
 # Author Settings
 author: JunPyo Park # add your name
 author-img: JP.jpg # add your photo
-about-author: >-
-  🚶Homo Viator
-  🎓UNIST, KAIST
-  👨🏻‍💻GCU Medicine
+about-author: "🚶Homo Viator<br>🎓UNIST, KAIST<br>👨🏻‍💻GCU Medicine"
+social-twitter: # add your Twitter handle
 social-instagram: ticket.park # add your Instagram handle
 social-github: JunPyoPark # add your Github handle
 social-linkedin: junpyopark # add your Linkedin handle
