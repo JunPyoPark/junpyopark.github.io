@@ -7,106 +7,99 @@ img: coinview.jpg
 tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 매트릭스, 인터랙티브, 분석, 인포그래픽]
 ---
 
-<html lang="ko" class="scroll-smooth">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+    data-ad-format="fluid" data-ad-client="ca-pub-4993132508717238" data-ad-slot="7426355186"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
-<html>
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
+<style>
+    body {
+        font-family: 'Noto Sans KR', sans-serif;
+        background-color: #ffffff;
+    }
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
-        data-ad-format="fluid" data-ad-client="ca-pub-4993132508717238" data-ad-slot="7426355186"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+    .chart-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 350px;
+        max-height: 450px;
+    }
 
-    <title>마이클 세일러의 비트코인 매트릭스 - 심층 분석 인포그래픽</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
-        rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background-color: #0d1a2e;
-        }
-
+    @media (min-width: 768px) {
         .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 350px;
-            max-height: 450px;
+            height: 400px;
         }
+    }
 
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 400px;
-            }
-        }
+    .kpi-card {
+        background-color: #f8f9fa;
+        border-left: 4px solid #007bff;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
 
-        .kpi-card {
-            background-color: #1a2942;
-            border-left: 4px solid #00e1ff;
-        }
+    .flowchart-item {
+        border: 2px solid #007bff;
+        background-color: #ffffff;
+        color: #343a40;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        flex-grow: 1;
+        margin: 0.5rem;
+        transition: all 0.3s ease;
+    }
 
-        .flowchart-item {
-            border: 2px solid #00e1ff;
-            background-color: #1a2942;
-            color: #f0f8ff;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            text-align: center;
-            flex-grow: 1;
-            margin: 0.5rem;
-            transition: all 0.3s ease;
-        }
+    .flowchart-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 123, 255, 0.1), 0 4px 6px -2px rgba(0, 123, 255, 0.05);
+    }
 
-        .flowchart-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 225, 255, 0.2), 0 4px 6px -2px rgba(0, 225, 255, 0.1);
-        }
+    .flowchart-arrow {
+        font-size: 2rem;
+        color: #007bff;
+        align-self: center;
+    }
+</style>
 
-        .flowchart-arrow {
-            font-size: 2rem;
-            color: #00e1ff;
-            align-self: center;
-        }
-    </style>
-</head>
+<div class="text-gray-800 bg-white">
 
-<body class="text-gray-200">
-
-    <header class="bg-[#0d1a2e] py-8 text-center sticky top-0 z-10 backdrop-blur-sm bg-opacity-80">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white">세일러 매트릭스: 비트코인 심층 분석</h1>
-        <p class="mt-4 text-lg text-gray-400">현대 금융의 위기와 디지털 자산의 미래</p>
+    <header class="bg-white py-8 text-center sticky top-0 z-10 backdrop-blur-sm bg-opacity-90 border-b border-gray-200">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">세일러 매트릭스: 비트코인 심층 분석</h1>
+        <p class="mt-4 text-lg text-gray-600">현대 금융의 위기와 디지털 자산의 미래</p>
     </header>
 
     <main class="container mx-auto px-4 py-8">
 
         <section id="problem" class="mb-20">
-            <h2 class="text-3xl font-bold text-center mb-4 text-[#00e1ff]">Part 1. 문제 진단: 무엇이 세일러를 움직였는가?</h2>
-            <p class="max-w-3xl mx-auto text-center text-gray-300 mb-12">마이클 세일러는 현대 법정화폐 시스템이 구조적으로 노동의 가치를 침식하고 부의
+            <h2 class="text-3xl font-bold text-center mb-4 text-blue-600">Part 1. 문제 진단: 무엇이 세일러를 움직였는가?</h2>
+            <p class="max-w-3xl mx-auto text-center text-gray-700 mb-12">마이클 세일러는 현대 법정화폐 시스템이 구조적으로 노동의 가치를 침식하고 부의
                 불평등을 심화시킨다고 진단합니다. 2020년 팬데믹 이후 가속화된 통화 팽창은 이러한 문제를 극명하게 드러냈습니다.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div class="bg-[#1a2942] p-6 rounded-lg shadow-2xl">
-                    <h3 class="text-2xl font-bold mb-4 text-white">거대한 통화 팽창의 시대</h3>
-                    <p class="mb-4 text-gray-300">2020년 팬데믹 대응을 위한 전례 없는 양적완화(QE)는 시장에 막대한 유동성을 공급했습니다. 이는 미국 M2 통화 공급량의
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">거대한 통화 팽창의 시대</h3>
+                    <p class="mb-4 text-gray-700">2020년 팬데믹 대응을 위한 전례 없는 양적완화(QE)는 시장에 막대한 유동성을 공급했습니다. 이는 미국 M2 통화 공급량의
                         폭발적인 증가로 이어졌으며, 자산 가격 급등의 직접적인 원인이 되었습니다.</p>
                     <div class="chart-container h-80 md:h-96">
                         <canvas id="m2SupplyChart"></canvas>
                     </div>
                 </div>
-                <div class="bg-[#1a2942] p-6 rounded-lg shadow-2xl">
-                    <h3 class="text-2xl font-bold mb-4 text-white">자산 인플레이션 vs 실질 임금 정체</h3>
-                    <p class="mb-4 text-gray-300">풀린 유동성은 실물 경제 대신 자산 시장으로 흘러가 S&P 500과 같은 주가 지수의 급등을 초래했습니다. 반면, 노동의
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">자산 인플레이션 vs 실질 임금 정체</h3>
+                    <p class="mb-4 text-gray-700">풀린 유동성은 실물 경제 대신 자산 시장으로 흘러가 S&P 500과 같은 주가 지수의 급등을 초래했습니다. 반면, 노동의
                         대가인 실질 임금 상승률은 이를 따라가지 못하며 '칸티용 효과'를 명백히 보여주었습니다.</p>
                     <div class="chart-container h-80 md:h-96">
                         <canvas id="assetVsWageChart"></canvas>
@@ -114,13 +107,13 @@ tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 
                 </div>
             </div>
 
-            <div class="mt-12 bg-[#1a2942] p-8 rounded-lg shadow-2xl">
-                <h3 class="text-2xl font-bold mb-4 text-center text-white">전통적 가치 저장 수단의 한계</h3>
-                <p class="max-w-3xl mx-auto text-center text-gray-300 mb-8">세일러는 금, 부동산, 우량주 등 전통 자산이 21세기 디지털 환경에서 더 이상
+            <div class="mt-12 bg-gray-50 p-8 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold mb-4 text-center text-gray-900">전통적 가치 저장 수단의 한계</h3>
+                <p class="max-w-3xl mx-auto text-center text-gray-700 mb-8">세일러는 금, 부동산, 우량주 등 전통 자산이 21세기 디지털 환경에서 더 이상
                     완벽한 가치 저장 수단이 될 수 없다고 판단했습니다. 각 자산은 이동성, 유지 비용, 희석 위험 등 명백한 취약점을 가지고 있습니다.</p>
                 <div class="overflow-x-auto">
                     <table class="w-full min-w-max text-left text-sm">
-                        <thead class="bg-[#0d1a2e] text-[#00e1ff]">
+                        <thead class="bg-gray-100 text-blue-600">
                             <tr>
                                 <th class="p-3">속성</th>
                                 <th class="p-3">금 (Gold)</th>
@@ -129,34 +122,34 @@ tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 
                                 <th class="p-3 font-bold">비트코인</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-gray-700">
-                            <tr class="hover:bg-[#2c3a54]">
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-100">
                                 <td class="p-3 font-semibold">희소성</td>
                                 <td class="p-3">높음 (총량 불확실)</td>
                                 <td class="p-3">낮음 (공급 가능)</td>
                                 <td class="p-3">낮음 (주식 발행으로 희석)</td>
-                                <td class="p-3 font-bold text-[#00e1ff]">최상 (절대적, 2100만개)</td>
+                                <td class="p-3 font-bold text-blue-600">최상 (절대적, 2100만개)</td>
                             </tr>
-                            <tr class="hover:bg-[#2c3a54]">
+                            <tr class="hover:bg-gray-100">
                                 <td class="p-3 font-semibold">이동성</td>
                                 <td class="p-3">매우 낮음</td>
                                 <td class="p-3">없음</td>
                                 <td class="p-3">높음</td>
-                                <td class="p-3 font-bold text-[#00e1ff]">최상 (무게 없이 전송)</td>
+                                <td class="p-3 font-bold text-blue-600">최상 (무게 없이 전송)</td>
                             </tr>
-                            <tr class="hover:bg-[#2c3a54]">
+                            <tr class="hover:bg-gray-100">
                                 <td class="p-3 font-semibold">유지 비용</td>
                                 <td class="p-3">높음</td>
                                 <td class="p-3">매우 높음</td>
                                 <td class="p-3">낮음</td>
-                                <td class="p-3 font-bold text-[#00e1ff]">매우 낮음 (디지털 지갑)</td>
+                                <td class="p-3 font-bold text-blue-600">매우 낮음 (디지털 지갑)</td>
                             </tr>
-                            <tr class="hover:bg-[#2c3a54]">
+                            <tr class="hover:bg-gray-100">
                                 <td class="p-3 font-semibold">압수/검열 저항성</td>
                                 <td class="p-3">낮음</td>
                                 <td class="p-3">낮음</td>
                                 <td class="p-3">중간</td>
-                                <td class="p-3 font-bold text-[#00e1ff]">최상 (개인키 보유 시)</td>
+                                <td class="p-3 font-bold text-blue-600">최상 (개인키 보유 시)</td>
                             </tr>
                         </tbody>
                     </table>
@@ -165,31 +158,31 @@ tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 
         </section>
 
         <section id="solution" class="mb-20">
-            <h2 class="text-3xl font-bold text-center mb-4 text-[#00e1ff]">Part 2. 해법 제시: 왜 '비트코인'이었는가?</h2>
-            <p class="max-w-3xl mx-auto text-center text-gray-300 mb-12">세일러는 비트코인이 기존 시스템의 결함을 해결할 수 있는 기술적, 경제적, 철학적
+            <h2 class="text-3xl font-bold text-center mb-4 text-blue-600">Part 2. 해법 제시: 왜 '비트코인'이었는가?</h2>
+            <p class="max-w-3xl mx-auto text-center text-gray-700 mb-12">세일러는 비트코인이 기존 시스템의 결함을 해결할 수 있는 기술적, 경제적, 철학적
                 발명품이라고 주장합니다. 그에게 비트코인은 궁극의 가치 저장 수단입니다.</p>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="bg-[#1a2942] p-6 rounded-lg shadow-2xl">
-                    <h3 class="text-xl font-bold mb-3 text-white">철학적 기반: 파괴에 저항하는 이념</h3>
-                    <p class="text-gray-300">탈중앙성, 검열 저항성, 불변성은 특정 주체를 신뢰할 필요 없는 '프로토콜로서의 자산'을 구현합니다. 이는 '규칙은 있으나 통치자는
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">철학적 기반: 파괴에 저항하는 이념</h3>
+                    <p class="text-gray-700">탈중앙성, 검열 저항성, 불변성은 특정 주체를 신뢰할 필요 없는 '프로토콜로서의 자산'을 구현합니다. 이는 '규칙은 있으나 통치자는
                         없는' 공정한 금융 시스템의 기반이 됩니다.</p>
                 </div>
-                <div class="bg-[#1a2942] p-6 rounded-lg shadow-2xl">
-                    <h3 class="text-xl font-bold mb-3 text-white">기술적 기반: '디지털 에너지'의 가치</h3>
-                    <p class="text-gray-300">작업증명(PoW)은 막대한 현실 에너지를 투입하여 디지털 공간의 보안과 진실을 보증합니다. 이는 비트코인을 '디지털 공간에 저장된 화폐
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">기술적 기반: '디지털 에너지'의 가치</h3>
+                    <p class="text-gray-700">작업증명(PoW)은 막대한 현실 에너지를 투입하여 디지털 공간의 보안과 진실을 보증합니다. 이는 비트코인을 '디지털 공간에 저장된 화폐
                         에너지'로 만들며 내재가치를 부여합니다.</p>
                 </div>
-                <div class="bg-[#1a2942] p-6 rounded-lg shadow-2xl">
-                    <h3 class="text-xl font-bold mb-3 text-white">경제적 기반: '디지털 희소성'</h3>
-                    <p class="text-gray-300">2,100만 개로 고정된 절대적 희소성은 무한정 팽창하는 법정화폐에 대한 완벽한 헤지 수단입니다. 공급이 고정되어 있기에, 가치는
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">경제적 기반: '디지털 희소성'</h3>
+                    <p class="text-gray-700">2,100만 개로 고정된 절대적 희소성은 무한정 팽창하는 법정화폐에 대한 완벽한 헤지 수단입니다. 공급이 고정되어 있기에, 가치는
                         수요에 의해서만 결정됩니다.</p>
                 </div>
             </div>
 
-            <div class="mt-12 bg-[#1a2942] p-8 rounded-lg shadow-2xl">
-                <h3 class="text-2xl font-bold mb-4 text-center text-white">작업증명(PoW)의 가치 창출 과정</h3>
-                <p class="max-w-3xl mx-auto text-center text-gray-300 mb-8">세일러는 작업증명을 '낭비'가 아닌, 디지털 자산에 현실 세계의 가치를 부여하는
+            <div class="mt-12 bg-gray-50 p-8 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold mb-4 text-center text-gray-900">작업증명(PoW)의 가치 창출 과정</h3>
+                <p class="max-w-3xl mx-auto text-center text-gray-700 mb-8">세일러는 작업증명을 '낭비'가 아닌, 디지털 자산에 현실 세계의 가치를 부여하는
                     '비용'으로 해석합니다. 이 과정은 버려지는 에너지를 경제적 가치로 변환하는 혁신을 포함합니다.</p>
                 <div class="flex flex-col md:flex-row justify-center items-center">
                     <div class="flowchart-item">
@@ -214,41 +207,41 @@ tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 
         </section>
 
         <section id="review" class="mb-12">
-            <h2 class="text-3xl font-bold text-center mb-4 text-[#00e1ff]">Part 3. 비판적 검토 및 미래 전망</h2>
-            <p class="max-w-3xl mx-auto text-center text-gray-300 mb-12">세일러의 비전은 강력하지만, 현실의 수많은 도전에 직면해 있습니다. 변동성, 규제,
+            <h2 class="text-3xl font-bold text-center mb-4 text-blue-600">Part 3. 비판적 검토 및 미래 전망</h2>
+            <p class="max-w-3xl mx-auto text-center text-gray-700 mb-12">세일러의 비전은 강력하지만, 현실의 수많은 도전에 직면해 있습니다. 변동성, 규제,
                 환경 문제는 비트코인의 미래를 결정할 중요한 변수입니다.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="kpi-card p-6 rounded-lg shadow-2xl">
-                    <h3 class="text-xl font-bold text-white">변동성 리스크</h3>
-                    <p class="mt-2 text-gray-300">'안정적 가치 저장 수단'이라는 주장과 달리, 비트코인의 극심한 가격 변동성은 단기적 자본 보존에 큰 위협이 됩니다. 이는
+                <div class="kpi-card">
+                    <h3 class="text-xl font-bold text-gray-900">변동성 리스크</h3>
+                    <p class="mt-2 text-gray-700">'안정적 가치 저장 수단'이라는 주장과 달리, 비트코인의 극심한 가격 변동성은 단기적 자본 보존에 큰 위협이 됩니다. 이는
                         자산 클래스의 성숙도와 투기적 수요에 기인합니다.</p>
                 </div>
-                <div class="kpi-card p-6 rounded-lg shadow-2xl">
-                    <h3 class="text-xl font-bold text-white">주권 리스크</h3>
-                    <p class="mt-2 text-gray-300">각국 정부의 강력한 규제나 금지 조치는 비트코인의 존립 자체를 위협할 수 있습니다. 이는 기술적 견고함과는 별개의 '주권
+                <div class="kpi-card">
+                    <h3 class="text-xl font-bold text-gray-900">주권 리스크</h3>
+                    <p class="mt-2 text-gray-700">각국 정부의 강력한 규제나 금지 조치는 비트코인의 존립 자체를 위협할 수 있습니다. 이는 기술적 견고함과는 별개의 '주권
                         리스크'로 작용합니다.</p>
                 </div>
-                <div class="kpi-card p-6 rounded-lg shadow-2xl">
-                    <h3 class="text-xl font-bold text-white">ESG 딜레마</h3>
-                    <p class="mt-2 text-gray-300">작업증명의 막대한 에너지 소비는 ESG를 중시하는 현대 투자 패러다임과 충돌합니다. 재생에너지 활용 등 반론도 있지만, 여전히
+                <div class="kpi-card">
+                    <h3 class="text-xl font-bold text-gray-900">ESG 딜레마</h3>
+                    <p class="mt-2 text-gray-700">작업증명의 막대한 에너지 소비는 ESG를 중시하는 현대 투자 패러다임과 충돌합니다. 재생에너지 활용 등 반론도 있지만, 여전히
                         논쟁의 중심에 있습니다.</p>
                 </div>
             </div>
 
-            <div class="mt-12 bg-[#1a2942] p-8 rounded-lg shadow-2xl">
-                <h3 class="text-2xl font-bold mb-4 text-center text-white">한국 시장에의 시사점</h3>
-                <p class="max-w-3xl mx-auto text-center text-gray-300 mb-8">원화 가치 하락과 부동산 편중 현상이 심한 한국에서 세일러의 논리는 중요한
+            <div class="mt-12 bg-gray-50 p-8 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold mb-4 text-center text-gray-900">한국 시장에의 시사점</h3>
+                <p class="max-w-3xl mx-auto text-center text-gray-700 mb-8">원화 가치 하락과 부동산 편중 현상이 심한 한국에서 세일러의 논리는 중요한
                     질문을 던집니다. 비트코인은 기회이자 위협이 될 수 있습니다.</p>
                 <div class="flex flex-col md:flex-row justify-around">
                     <div class="text-center p-4">
-                        <h4 class="text-lg font-bold text-[#00e1ff]">기회: 포트폴리오 다각화</h4>
-                        <p class="mt-2 text-gray-300 max-w-sm mx-auto">원화 가치 하락 헤지 및 부동산에 편중된 자산을 다각화할 수 있는 대안 자산으로 고려될
+                        <h4 class="text-lg font-bold text-blue-600">기회: 포트폴리오 다각화</h4>
+                        <p class="mt-2 text-gray-700 max-w-sm mx-auto">원화 가치 하락 헤지 및 부동산에 편중된 자산을 다각화할 수 있는 대안 자산으로 고려될
                             수 있습니다.</p>
                     </div>
                     <div class="text-center p-4 mt-4 md:mt-0">
-                        <h4 class="text-lg font-bold text-red-400">위협: 경제 주권 약화</h4>
-                        <p class="mt-2 text-gray-300 max-w-sm mx-auto">자본의 원화 시스템 이탈은 '디지털 달러화'와 유사한 문제를 야기하며, 국가의 통화 정책
+                        <h4 class="text-lg font-bold text-red-600">위협: 경제 주권 약화</h4>
+                        <p class="mt-2 text-gray-700 max-w-sm mx-auto">자본의 원화 시스템 이탈은 '디지털 달러화'와 유사한 문제를 야기하며, 국가의 통화 정책
                             능력을 약화시킬 수 있습니다.</p>
                     </div>
                 </div>
@@ -258,7 +251,7 @@ tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 
 
     </main>
 
-    <footer class="text-center py-8 border-t border-gray-800">
+    <footer class="text-center py-8 border-t border-gray-200">
         <p class="text-gray-500">&copy; 2025 Michael Saylor's Bitcoin Matrix Infographic. All rights reserved.</p>
         <p class="text-xs text-gray-600 mt-2">본 인포그래픽은 제공된 분석 자료를 기반으로 교육 및 정보 제공 목적으로 제작되었습니다.</p>
     </footer>
@@ -279,7 +272,7 @@ tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 
             plugins: {
                 legend: {
                     labels: {
-                        color: '#f0f8ff'
+                        color: '#343a40'
                     }
                 },
                 tooltip: {
@@ -291,31 +284,31 @@ tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 
             scales: {
                 x: {
                     ticks: {
-                        color: '#a0aec0'
+                        color: '#6c757d'
                     },
                     grid: {
-                        color: 'rgba(160, 174, 192, 0.2)'
+                        color: 'rgba(0, 0, 0, 0.1)'
                     }
                 },
                 y: {
                     ticks: {
-                        color: '#a0aec0'
+                        color: '#6c757d'
                     },
                     grid: {
-                        color: 'rgba(160, 174, 192, 0.2)'
+                        color: 'rgba(0, 0, 0, 0.1)'
                     }
                 }
             }
         };
 
-        const brilliantBlues = {
-            bg: '#0d1a2e',
-            card: '#1a2942',
-            text: '#f0f8ff',
-            accent1: '#00e1ff',
-            accent2: '#00aaff',
-            accent3: '#ff4081',
-            accent4: '#fdd835',
+        const lightThemeColors = {
+            bg: '#ffffff',
+            card: '#f8f9fa',
+            text: '#343a40',
+            accent1: '#007bff',
+            accent2: '#28a745',
+            accent3: '#dc3545',
+            accent4: '#ffc107',
         };
 
         new Chart(document.getElementById('m2SupplyChart'), {
@@ -325,8 +318,8 @@ tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 
                 datasets: [{
                     label: '미국 M2 통화 공급량 (조 달러)',
                     data: [15.3, 19.1, 21.5, 21.3, 20.9],
-                    borderColor: brilliantBlues.accent1,
-                    backgroundColor: 'rgba(0, 225, 255, 0.2)',
+                    borderColor: lightThemeColors.accent1,
+                    backgroundColor: 'rgba(0, 123, 255, 0.2)',
                     fill: true,
                     tension: 0.3
                 }]
@@ -342,15 +335,15 @@ tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 
                     {
                         label: 'S&P 500 총 수익률 (%)',
                         data: [18.4, 28.71, -18.11, 26.29],
-                        backgroundColor: brilliantBlues.accent2,
-                        borderColor: brilliantBlues.accent2,
+                        backgroundColor: lightThemeColors.accent2,
+                        borderColor: lightThemeColors.accent2,
                         borderWidth: 1
                     },
                     {
                         label: '미국 실질 주당 평균 소득 상승률 (%)',
                         data: [4.9, -0.1, -2.3, 0.5],
-                        backgroundColor: brilliantBlues.accent3,
-                        borderColor: brilliantBlues.accent3,
+                        backgroundColor: lightThemeColors.accent3,
+                        borderColor: lightThemeColors.accent3,
                         borderWidth: 1
                     }
                 ]
@@ -372,6 +365,4 @@ tags: [Bitcoin, Saylor, Matrix, Interactive, Analysis, 비트코인, 세일러, 
             }
         });
     </script>
-</body>
-
-</html>
+</div>
