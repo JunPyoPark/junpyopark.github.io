@@ -1,0 +1,345 @@
+---
+layout: post
+title: "가장 쉽게 이해하는 베이즈 정리 2025 리마스터 II: 실전 업데이트와 나이브 베이즈"
+date: 2025-08-08 11:20:00 +0900
+description: "베타-베르누이 업데이트로 사전→사후를 체득하고, 가능도비(LR) 누적으로 다중 증거를 결합, 미니 나이브 베이즈로 스팸 판별까지 한 번에 이해하는 2025 리마스터 후속편."
+img: bayes.jpg
+tags: [베이즈정리, 베타분포, 베르누이, 가능도비, LR, 나이브베이즈, 머신러닝, 통계, 데이터사이언스]
+permalink: "/bayes-2025-remaster/"
+canonical_url: "https://junpyopark.github.io/bayes-2025-remaster"
+author: "박준표"
+keywords: "베이즈 정리, 베타 베르누이, 사전 사후, 가능도비, 우도비, 나이브 베이즈, 스팸 필터, 조건부 독립, 업데이트 규칙"
+---
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+     data-ad-format="fluid" data-ad-client="ca-pub-4993132508717238" data-ad-slot="7426355186"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+  body { font-family: 'Noto Sans KR', sans-serif; background:#ffffff; }
+  .card { background:#fff; border:1px solid #e5e7eb; border-radius:0.75rem; }
+  .kpi { background:#f9fafb; border-radius:0.5rem; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; }
+  .input { width:100%; }
+</style>
+
+<div class="bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-6xl">
+    <header class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900">베이즈 정리 2025 리마스터 II</h1>
+      <p class="mt-3 text-gray-600 max-w-3xl mx-auto">베타-베르누이 업데이트, 가능도비(LR) 누적, 미니 나이브 베이즈로 <b>실전 베이즈</b>를 체득하세요.</p>
+    </header>
+
+    <!-- Section 1: Beta-Bernoulli Update -->
+    <section class="card p-6 mb-10">
+      <h2 class="text-2xl font-bold mb-2">1) 베타-베르누이 업데이트: 동전/성공률 추정</h2>
+      <p class="text-gray-700 mb-4">사전분포 <span class="mono">Beta(a, b)</span>와 베르누이 시행의 성공/실패 관측(<span class="mono">s, f</span>)이 주어지면,
+        사후분포는 <span class="mono">Beta(a+s, b+f)</span>가 됩니다.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div>
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">사전 a (성공 가중): <span id="aLabel" class="font-bold text-blue-700">2</span></label>
+              <input id="a" class="input" type="range" min="1" max="100" value="2">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">사전 b (실패 가중): <span id="bLabel" class="font-bold text-blue-700">2</span></label>
+              <input id="b" class="input" type="range" min="1" max="100" value="2">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">성공 s: <span id="sLabel" class="font-bold text-emerald-700">8</span></label>
+              <input id="s" class="input" type="range" min="0" max="1000" step="1" value="8">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">실패 f: <span id="fLabel" class="font-bold text-amber-700">12</span></label>
+              <input id="f" class="input" type="range" min="0" max="1000" step="1" value="12">
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button id="presetFair" class="px-3 py-2 rounded bg-gray-200 text-gray-800 text-sm font-semibold hover:bg-gray-300">균일 사전</button>
+              <button id="presetStrong" class="px-3 py-2 rounded bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700">강한 사전(0.7)</button>
+              <button id="presetWeak" class="px-3 py-2 rounded bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-700">약한 사전</button>
+            </div>
+          </div>
+        </div>
+        <div class="kpi p-4">
+          <h3 class="text-lg font-bold mb-3">핵심 지표</h3>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="p-3 bg-white border rounded">
+              <p class="text-xs text-gray-500">사후 평균</p>
+              <p id="postMean" class="text-xl font-extrabold">—</p>
+            </div>
+            <div class="p-3 bg-white border rounded">
+              <p class="text-xs text-gray-500">사후 MAP</p>
+              <p id="postMAP" class="text-xl font-extrabold">—</p>
+            </div>
+            <div class="p-3 bg-white border rounded">
+              <p class="text-xs text-gray-500">표준편차(근사)</p>
+              <p id="postSD" class="text-xl font-extrabold">—</p>
+            </div>
+            <div class="p-3 bg-white border rounded">
+              <p class="text-xs text-gray-500">95% 신뢰구간(근사)</p>
+              <p id="postCI" class="text-sm font-bold">—</p>
+            </div>
+          </div>
+          <p class="mt-3 text-sm text-gray-600">근사: <span class="mono">Var[Beta(a',b')] ≈ μ(1−μ)/(a'+b'+1)</span></p>
+        </div>
+        <div>
+          <div class="p-2">
+            <canvas id="betaChart" aria-label="베타 분포 사후 밀도 차트" role="img"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Likelihood Ratio Chain -->
+    <section class="card p-6 mb-10">
+      <h2 class="text-2xl font-bold mb-2">2) 가능도비 체인: 증거를 곱해서 누적 업데이트</h2>
+      <p class="text-gray-700 mb-4">오즈 업데이트: <span class="mono">O(H|E) = O(H) × LR</span>. 여러 증거가 독립이면 <span class="mono">O(H|E1..Ek) = O(H) × ∏ LRi</span>.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">사전확률 P(H): <span id="priorPLabel" class="font-bold text-blue-700">10%</span></label>
+            <input id="priorP" class="input" type="range" min="0" max="100" value="10">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">양성 증거 개수(+): <span id="nPosLabel" class="font-bold text-emerald-700">2</span></label>
+            <input id="nPos" class="input" type="range" min="0" max="10" value="2">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">음성 증거 개수(−): <span id="nNegLabel" class="font-bold text-amber-700">1</span></label>
+            <input id="nNeg" class="input" type="range" min="0" max="10" value="1">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">LR(+): <span id="lrPosLabel" class="font-bold text-gray-900">5.0</span></label>
+            <input id="lrPos" class="input" type="range" min="1" max="20" step="0.1" value="5">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">LR(−): <span id="lrNegLabel" class="font-bold text-gray-900">0.2</span></label>
+            <input id="lrNeg" class="input" type="range" min="0.05" max="1" step="0.05" value="0.2">
+          </div>
+        </div>
+        <div class="kpi p-4">
+          <h3 class="text-lg font-bold mb-3">업데이트 결과</h3>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="p-3 bg-white border rounded"><p class="text-xs text-gray-500">사전 오즈</p><p id="odds0" class="text-xl font-extrabold">—</p></div>
+            <div class="p-3 bg-white border rounded"><p class="text-xs text-gray-500">사후 오즈</p><p id="oddsK" class="text-xl font-extrabold">—</p></div>
+            <div class="p-3 bg-white border rounded"><p class="text-xs text-gray-500">사후 확률</p><p id="postP" class="text-xl font-extrabold text-blue-700">—</p></div>
+            <div class="p-3 bg-white border rounded"><p class="text-xs text-gray-500">총 LR</p><p id="lrTot" class="text-xl font-extrabold">—</p></div>
+          </div>
+        </div>
+        <div>
+          <div class="p-2">
+            <canvas id="lrChart" aria-label="증거 단계별 사후확률 변화 라인차트" role="img"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Mini Naive Bayes -->
+    <section class="card p-6 mb-6">
+      <h2 class="text-2xl font-bold mb-2">3) 미니 나이브 베이즈: 스팸 판별 토이 모델</h2>
+      <p class="text-gray-700 mb-4">단어 존재 여부가 조건부 독립이라고 가정할 때, <span class="mono">P(스팸|문서) ∝ P(스팸) ∏ P(단어i|스팸)</span>. 라플라스 스무딩을 사용합니다.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div>
+          <div class="mb-3">
+            <label class="block text-sm font-semibold text-gray-700">사전 스팸 확률 P(SPAM): <span id="spamPriorLabel" class="font-bold text-blue-700">30%</span></label>
+            <input id="spamPrior" class="input" type="range" min="0" max="100" value="30">
+          </div>
+          <div class="space-y-2">
+            <p class="text-sm font-semibold text-gray-700 mb-1">단어 체크(존재)</p>
+            <label class="flex items-center gap-2 text-sm"><input type="checkbox" id="w_free" checked> free</label>
+            <label class="flex items-center gap-2 text-sm"><input type="checkbox" id="w_win"> win</label>
+            <label class="flex items-center gap-2 text-sm"><input type="checkbox" id="w_offer"> offer</label>
+            <label class="flex items-center gap-2 text-sm"><input type="checkbox" id="w_meeting"> meeting</label>
+          </div>
+          <p class="text-xs text-gray-500 mt-2">사전 말뭉치(예시)에서 추정된 조건부 확률을 사용합니다.</p>
+        </div>
+        <div class="kpi p-4">
+          <h3 class="text-lg font-bold mb-3">결과</h3>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="p-3 bg-white border rounded"><p class="text-xs text-gray-500">P(SPAM|문서)</p><p id="pSpamDoc" class="text-xl font-extrabold text-red-600">—</p></div>
+            <div class="p-3 bg-white border rounded"><p class="text-xs text-gray-500">P(HAM|문서)</p><p id="pHamDoc" class="text-xl font-extrabold text-emerald-600">—</p></div>
+            <div class="p-3 bg-white border rounded col-span-2"><p class="text-xs text-gray-500">로그-오즈</p><p id="logOddsNB" class="text-xl font-extrabold">—</p></div>
+          </div>
+        </div>
+        <div>
+          <div class="p-2">
+            <canvas id="nbChart" aria-label="나이브 베이즈 사후확률 도넛차트" role="img"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-sm text-gray-500">
+      <p>참고: 조건부 독립 가정은 현실에서 완벽히 성립하지 않을 수 있으므로, 특징 상관관계를 다루는 모델(예: 로지스틱 회귀, 트리 기반 모델)과 비교 검증을 권장합니다.</p>
+    </section>
+  </div>
+</div>
+
+<script>
+  const $ = (id) => document.getElementById(id);
+
+  // ---------- Section 1: Beta-Bernoulli ----------
+  let aEl = $('a'), bEl = $('b'), sEl = $('s'), fEl = $('f');
+  let aLabel = $('aLabel'), bLabel = $('bLabel'), sLabel = $('sLabel'), fLabel = $('fLabel');
+  let postMean = $('postMean'), postMAP = $('postMAP'), postSD = $('postSD'), postCI = $('postCI');
+  let betaChart;
+
+  function lnGamma(z) { // Lanczos approximation
+    const g = 7;
+    const p = [
+      0.99999999999980993, 676.5203681218851, -1259.1392167224028,
+      771.32342877765313, -176.61502916214059, 12.507343278686905,
+      -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7
+    ];
+    if (z < 0.5) return Math.log(Math.PI) - Math.log(Math.sin(Math.PI*z)) - lnGamma(1 - z);
+    z -= 1;
+    let x = p[0];
+    for (let i = 1; i < g + 2; i++) x += p[i] / (z + i);
+    const t = z + g + 0.5;
+    return 0.5*Math.log(2*Math.PI) + (z+0.5)*Math.log(t) - t + Math.log(x) - Math.log(z+1);
+  }
+  function betaFunc(a,b){ return Math.exp(lnGamma(a)+lnGamma(b)-lnGamma(a+b)); }
+  function betaPDF(x,a,b){ if(x<=0||x>=1) return 0; return Math.exp((a-1)*Math.log(x)+(b-1)*Math.log(1-x)-Math.log(betaFunc(a,b))); }
+
+  function updateBeta() {
+    const a = Number(aEl.value), b = Number(bEl.value), s = Number(sEl.value), f = Number(fEl.value);
+    aLabel.textContent = a; bLabel.textContent = b; sLabel.textContent = s; fLabel.textContent = f;
+    const ap = a + s, bp = b + f; // posterior params
+    const mean = ap/(ap+bp);
+    const variance = (mean*(1-mean))/((ap+bp)+1);
+    const sd = Math.sqrt(variance);
+    const map = (ap>1 && bp>1) ? (ap-1)/(ap+bp-2) : mean; // mode approx
+    const lo = Math.max(0, mean - 1.96*sd), hi = Math.min(1, mean + 1.96*sd);
+
+    postMean.textContent = (mean*100).toFixed(2) + '%';
+    postMAP.textContent = (map*100).toFixed(2) + '%';
+    postSD.textContent = sd.toFixed(4);
+    postCI.textContent = `${(lo*100).toFixed(1)}% ~ ${(hi*100).toFixed(1)}%`;
+
+    // chart
+    const xs = [], ys = [];
+    for (let i=0;i<=100;i++){ const x=i/100; xs.push(x); ys.push(betaPDF(x, ap, bp)); }
+    const ctx = document.getElementById('betaChart').getContext('2d');
+    const cfg = {
+      type: 'line',
+      data: { labels: xs.map(v=>v.toFixed(2)), datasets: [{ label: '사후 밀도', data: ys, borderColor:'#2563eb', backgroundColor:'rgba(37,99,235,0.15)', fill:true, tension:0.25 }] },
+      options: { responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'bottom' } }, scales:{ x:{ ticks:{ callback:(v)=> xs[v] } } } }
+    };
+    if (betaChart) { betaChart.data.labels = cfg.data.labels; betaChart.data.datasets[0].data = ys; betaChart.update(); }
+    else { betaChart = new Chart(ctx, cfg); }
+  }
+
+  $('presetFair').addEventListener('click', ()=>{ aEl.value=1; bEl.value=1; sEl.value=8; fEl.value=12; updateBeta(); });
+  $('presetStrong').addEventListener('click', ()=>{ aEl.value=14; bEl.value=6; sEl.value=8; fEl.value=12; updateBeta(); }); // mean~0.7
+  $('presetWeak').addEventListener('click', ()=>{ aEl.value=2; bEl.value=2; sEl.value=8; fEl.value=12; updateBeta(); });
+  [aEl,bEl,sEl,fEl].forEach(el=> el.addEventListener('input', updateBeta));
+
+  // ---------- Section 2: LR Chain ----------
+  let priorP = $('priorP'), nPos = $('nPos'), nNeg = $('nNeg'), lrPos = $('lrPos'), lrNeg = $('lrNeg');
+  let priorPLabel = $('priorPLabel'), nPosLabel = $('nPosLabel'), nNegLabel = $('nNegLabel'), lrPosLabel = $('lrPosLabel'), lrNegLabel = $('lrNegLabel');
+  let odds0El = $('odds0'), oddsKEl = $('oddsK'), postPEl = $('postP'), lrTotEl = $('lrTot');
+  let lrChart;
+
+  function updateLR() {
+    const p0 = Number(priorP.value)/100;
+    const nP = Number(nPos.value), nN = Number(nNeg.value);
+    const lrp = Number(lrPos.value), lrn = Number(lrNeg.value);
+    priorPLabel.textContent = `${priorP.value}%`;
+    nPosLabel.textContent = nP; nNegLabel.textContent = nN;
+    lrPosLabel.textContent = lrp.toFixed(2); lrNegLabel.textContent = lrn.toFixed(2);
+
+    const O0 = p0/(1-p0 || 1e-12);
+    const LRtot = Math.pow(lrp, nP) * Math.pow(lrn, nN);
+    const Ok = O0 * LRtot;
+    const pk = Ok/(1+Ok);
+
+    odds0El.textContent = O0.toFixed(3);
+    oddsKEl.textContent = Ok.toFixed(3);
+    lrTotEl.textContent = LRtot.toFixed(3);
+    postPEl.textContent = (pk*100).toFixed(2) + '%';
+
+    // stepwise path: apply positives then negatives
+    const steps = [];
+    let Ostep = O0;
+    for (let i=0;i<nP;i++){ Ostep *= lrp; steps.push(Ostep/(1+Ostep)); }
+    for (let i=0;i<nN;i++){ Ostep *= lrn; steps.push(Ostep/(1+Ostep)); }
+
+    const labels = steps.map((_,i)=>`증거 ${i+1}`);
+    const ctx = document.getElementById('lrChart').getContext('2d');
+    const cfg = {
+      type: 'line',
+      data: { labels, datasets: [{ label:'사후확률(단계)', data: steps.map(v=> v*100), borderColor:'#16a34a', backgroundColor:'rgba(22,163,74,0.15)', fill:true, tension:0.25 }] },
+      options: { responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'bottom' } }, scales:{ y:{ min:0, max:100, ticks:{ callback:(v)=> v+'%' } } } }
+    };
+    if (lrChart) { lrChart.data.labels = labels; lrChart.data.datasets[0].data = cfg.data.datasets[0].data; lrChart.update(); }
+    else { lrChart = new Chart(ctx, cfg); }
+  }
+
+  [priorP, nPos, nNeg, lrPos, lrNeg].forEach(el=> el.addEventListener('input', updateLR));
+
+  // ---------- Section 3: Mini Naive Bayes ----------
+  const vocab = ['free','win','offer','meeting'];
+  const condSpam = { free:0.60, win:0.45, offer:0.30, meeting:0.05 };
+  const condHam  = { free:0.05, win:0.02, offer:0.08, meeting:0.40 };
+  let spamPrior = $('spamPrior'), spamPriorLabel = $('spamPriorLabel');
+  let pSpamDoc = $('pSpamDoc'), pHamDoc = $('pHamDoc'), logOddsNB = $('logOddsNB');
+  let nbChart;
+
+  function updateNB() {
+    const pSpam = Number(spamPrior.value)/100;
+    spamPriorLabel.textContent = `${spamPrior.value}%`;
+    const words = {
+      free: $('w_free').checked,
+      win: $('w_win').checked,
+      offer: $('w_offer').checked,
+      meeting: $('w_meeting').checked,
+    };
+
+    // Laplace smoothing on presence/absence for each word
+    const eps = 1e-6;
+    let logPDocGivenSpam = 0, logPDocGivenHam = 0;
+    for (const w of vocab) {
+      const p1s = condSpam[w], p1h = condHam[w];
+      const p0s = 1 - p1s, p0h = 1 - p1h;
+      if (words[w]) { logPDocGivenSpam += Math.log(p1s+eps); logPDocGivenHam += Math.log(p1h+eps); }
+      else { logPDocGivenSpam += Math.log(p0s+eps); logPDocGivenHam += Math.log(p0h+eps); }
+    }
+    const logPriorOdds = Math.log(pSpam+eps) - Math.log(1-pSpam+eps);
+    const logLR = logPDocGivenSpam - logPDocGivenHam;
+    const logOdds = logPriorOdds + logLR;
+    const odds = Math.exp(logOdds);
+    const pSpamPost = odds/(1+odds);
+    const pHamPost = 1 - pSpamPost;
+
+    pSpamDoc.textContent = (pSpamPost*100).toFixed(2) + '%';
+    pHamDoc.textContent = (pHamPost*100).toFixed(2) + '%';
+    logOddsNB.textContent = logOdds.toFixed(3);
+
+    const ctx = document.getElementById('nbChart').getContext('2d');
+    const cfg = {
+      type: 'doughnut',
+      data: { labels:['SPAM','HAM'], datasets:[{ data:[pSpamPost, pHamPost], backgroundColor:['#dc2626','#16a34a'], borderColor:'#fff', borderWidth:2 }] },
+      options: { responsive:true, maintainAspectRatio:false, cutout:'60%', plugins:{ legend:{ position:'bottom' } } }
+    };
+    if (nbChart) { nbChart.data.datasets[0].data = [pSpamPost, pHamPost]; nbChart.update(); }
+    else { nbChart = new Chart(ctx, cfg); }
+  }
+
+  ['w_free','w_win','w_offer','w_meeting'].forEach(id=> $(id).addEventListener('change', updateNB));
+  spamPrior.addEventListener('input', updateNB);
+
+  // initial renders
+  updateBeta();
+  updateLR();
+  updateNB();
+</script> 
