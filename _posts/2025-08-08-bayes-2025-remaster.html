@@ -59,6 +59,46 @@ keywords: "베이즈 정리, 베타 베르누이, 사전 사후, 가능도비, �
       </div>
     </section>
 
+    <!-- Section 0.5: 개념 정리 (초심자용 상세 설명) -->
+    <section class="card p-6 mb-10">
+      <h2 class="text-2xl font-bold mb-2">개념 정리: 조건부 확률 · 독립 · 베이즈 정리</h2>
+      <div class="prose prose-sm max-w-none text-gray-800">
+        <h3 class="text-lg font-bold">조건부 확률(Conditional Probability)</h3>
+        <p>사건 \(B\)가 일어났다는 정보가 주어졌을 때, 사건 \(A\)가 일어날 확률을 <b>조건부 확률</b>이라고 합니다.</p>
+        <p class="mono">\( P(A\mid B) = \dfrac{P(A\cap B)}{P(B)} \), \( P(B\mid A) = \dfrac{P(A\cap B)}{P(A)} \) (단, \(P(B)>0, P(A)>0\))</p>
+        <p>즉, ‘둘 다 일어남(교집합)’을 ‘조건이 된 사건의 확률’로 나눈 값입니다. \(B\)가 사실일수록, \(A\)와의 겹치는 정도가 크면 \(P(A\mid B)\)가 커집니다.</p>
+
+        <h3 class="text-lg font-bold mt-4">곱셈 법칙과 직관</h3>
+        <p>위 정의를 변형하면 <span class="mono">\(P(A\cap B)=P(A\mid B)P(B)=P(B\mid A)P(A)\)</span>를 얻습니다. 이는 ‘<b>부분×전체</b>’의 직관으로 이해할 수 있습니다. 전체 중 \(B\)의 비율만큼 먼저 줄이고, 그 안에서 다시 \(A\)의 비율만큼 줄이는 식입니다.</p>
+
+        <h3 class="text-lg font-bold mt-4">독립사건(Independence)</h3>
+        <p>두 사건이 서로 영향을 주지 않는다면 <span class="mono">\(P(A\cap B)=P(A)P(B)\)</span>가 성립합니다. 여러 사건 \(A_1,\dots,A_n\)에 대해서도 임의의 부분집합의 교집합 확률이 각 확률의 곱으로 분해되면 <b>상호 독립</b>이라고 부릅니다.</p>
+        <p>직관적으로, 한 사건의 발생이 다른 사건의 확률을 바꾸지 않는 상태입니다(예: 완벽한 공정의 동전 던지기 결과와 내일 날씨).</p>
+
+        <h3 class="text-lg font-bold mt-4">분할(Partition)과 전확률의 법칙</h3>
+        <p>표본공간 \(S\)를 서로 겹치지 않는 \(B_1,\dots,B_K\)로 <b>완전 분할</b>하면, 모든 사건 \(A\)는 \(A=(A\cap B_1)\cup\cdots\cup(A\cap B_K)\)로 쓸 수 있고</p>
+        <p class="mono">\( P(A) = \sum_{k=1}^{K} P(A\cap B_k) = \sum_{k=1}^{K} P(A\mid B_k)P(B_k) \)</p>
+        <p>이를 <b>전확률의 법칙</b>이라고 부릅니다. 다양한 원인(\(B_k\))이 뒤섞여 만들어낸 결과(\(A\))의 전체 확률을 ‘원인별 합’으로 계산합니다.</p>
+
+        <h3 class="text-lg font-bold mt-4">베이즈 정리(Bayes’ Theorem)</h3>
+        <p>우리는 보통 <b>원인을 알고 결과</b>를 예측하는 \(P(A\mid B_k)\)를 쉽게 구합니다. 하지만 실제 궁금한 것은 그 반대, <b>결과를 보고 원인</b>을 추정하는 \(P(B_j\mid A)\)인 경우가 많습니다. 이때 베이즈 정리는 다음을 말해줍니다.</p>
+        <p class="mono">\( P(B_j\mid A) = \dfrac{P(A\mid B_j)P(B_j)}{\sum_{k} P(A\mid B_k)P(B_k)} \)</p>
+        <p>즉, <b>사후확률</b>(결과를 관측한 뒤 원인의 확률) = <b>가능도</b>(원인 가정 하에서 결과의 그럴듯함) × <b>사전확률</b>(원인에 대한 사전 신념) / <b>정규화 상수</b>(전체 그럴듯함) 입니다.</p>
+
+        <h3 class="text-lg font-bold mt-4">예제: 주가 3일 연속 상승 관측</h3>
+        <p>어떤 주식의 하루 상승확률을 \(\theta\)라 할 때, 사전으로 \(P(\theta=0.4)=0.5\), \(P(\theta=0.6)=0.5\)라고 합시다. 서로 다른 날의 등락은 독립이라고 가정합니다.</p>
+        <p>이제 3일 연속 상승(사건 \(A\))을 관측했습니다. 그러면</p>
+        <p class="mono">\( P(A\mid\theta=0.6) = 0.6^3,\quad P(A\mid\theta=0.4) = 0.4^3 \)</p>
+        <p>베이즈 정리에 의해</p>
+        <p class="mono">\( P(\theta=0.6\mid A) = \dfrac{(0.6)^3\cdot 0.5}{(0.6)^3\cdot 0.5 + (0.4)^3\cdot 0.5} = 0.7714 \)</p>
+        <p>즉, 동일한 관측도 <b>사전 가정</b>과 <b>가능도</b>에 따라 결과가 달라집니다. 데이터가 조금일 때는 사전의 영향이 큽니다.</p>
+
+        <h3 class="text-lg font-bold mt-4">왜 중요한가</h3>
+        <p>베이즈 정리는 새로운 정보를 <b>얼마나</b> 반영해야 할지의 원리를 제공합니다. 우리는 종종 <b>베이스레이트 무시</b>나 <b>과잉반응</b>을 하곤 합니다. 베이즈 업데이트는 사전(기존 지식)과 가능도(새 정보)를 균형 있게 결합해 합리적인 의사결정을 돕습니다.</p>
+      </div>
+      <div class="mt-4 text-right text-sm text-gray-600">아래 상호작용 슬라이더로 사전/가능도/증거를 바꿔 보며 위 개념을 몸으로 익혀보세요.</div>
+    </section>
+
     <!-- Section 1: Beta-Bernoulli Update -->
     <section class="card p-6 mb-10">
       <h2 class="text-2xl font-bold mb-2">1) 베타-베르누이 업데이트: 동전/성공률 추정</h2>
