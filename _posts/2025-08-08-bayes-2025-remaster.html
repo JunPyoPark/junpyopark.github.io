@@ -17,6 +17,9 @@ keywords: "베이즈 정리, 베타 베르누이, 사전 사후, 가능도비, �
   (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]}};</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,14 +38,32 @@ keywords: "베이즈 정리, 베타 베르누이, 사전 사후, 가능도비, �
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-6xl">
     <header class="text-center mb-10">
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900">베이즈 정리 2025 리마스터 II</h1>
-      <p class="mt-3 text-gray-600 max-w-3xl mx-auto">베타-베르누이 업데이트, 가능도비(LR) 누적, 미니 나이브 베이즈로 <b>실전 베이즈</b>를 체득하세요.</p>
+      <p class="mt-3 text-gray-600 max-w-3xl mx-auto">1편의 정의와 성질을 바탕으로, 이번 편에서는 <b>수식 → 직관 → 실습</b> 흐름으로 연결합니다.</p>
     </header>
+
+    <!-- Section 0: Recap & Formula -->
+    <section class="card p-6 mb-10">
+      <h2 class="text-2xl font-bold mb-2">0) 1편 요약: 조건부확률 · 독립 · 베이즈 정리</h2>
+      <div class="prose prose-sm max-w-none text-gray-800">
+        <p>1편에서 다룬 핵심은 다음과 같습니다.</p>
+        <ul class="list-disc list-inside">
+          <li>조건부확률: \( P(A\mid B) = \dfrac{P(A\cap B)}{P(B)} \), \( P(B\mid A) = \dfrac{P(A\cap B)}{P(A)} \)</li>
+          <li>곱셈법칙: \( P(A\cap B) = P(A\mid B)P(B) = P(B\mid A)P(A) \)</li>
+          <li>독립: \( P(A\cap B) = P(A)P(B) \) (확장 시 임의의 부분집합 조합에 대해 곱으로 분해)</li>
+          <li>베이즈 정리: \[ P(B_j\mid A) = \frac{P(A\mid B_j)P(B_j)}{\sum_i P(A\mid B_i)P(B_i)} \]</li>
+        </ul>
+        <p class="mt-2">이제 이 공식을 <b>사전→사후 업데이트</b>, <b>가능도비 누적</b>, <b>나이브 베이즈</b>로 확장해 실전 감각을 쌓습니다.</p>
+      </div>
+      <div class="mt-4 text-right">
+        <a class="text-sm text-blue-700 underline" href="{{ '/bayes/' | prepend: site.baseurl }}">1편(정의/성질) 복습하기 →</a>
+      </div>
+    </section>
 
     <!-- Section 1: Beta-Bernoulli Update -->
     <section class="card p-6 mb-10">
       <h2 class="text-2xl font-bold mb-2">1) 베타-베르누이 업데이트: 동전/성공률 추정</h2>
-      <p class="text-gray-700 mb-4">사전분포 <span class="mono">Beta(a, b)</span>와 베르누이 시행의 성공/실패 관측(<span class="mono">s, f</span>)이 주어지면,
-        사후분포는 <span class="mono">Beta(a+s, b+f)</span>가 됩니다.</p>
+      <p class="text-gray-700 mb-2">베르누이 성공확률을 \(\theta\)라 할 때, 베타 사전 \(\text{Beta}(a,b)\)와 데이터 \(s\)번 성공, \(f\)번 실패를 관측하면</p>
+      <p class="text-gray-700 mb-4">사후는 \(\text{Beta}(a+s,\,b+f)\)가 됩니다. 평균/최빈값/분산 근사도 함께 확인하세요.</p>
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div>
           <div class="space-y-4">
@@ -97,12 +118,22 @@ keywords: "베이즈 정리, 베타 베르누이, 사전 사후, 가능도비, �
           </div>
         </div>
       </div>
+      <div class="prose prose-sm max-w-none text-gray-800 mt-6">
+        <h4 class="text-lg font-bold">왜 베타-베르누이인가?</h4>
+        <p>성공확률 \(\theta\)를 가진 베르누이 시행에서 데이터 \(D=(s,f)\)를 관측하면 가능도는 \(\theta^s (1-\theta)^f\)에 비례합니다. 사전이 \(\text{Beta}(a,b)\)일 때 사후는</p>
+        <p class="mono">Posterior \(\propto \theta^s(1-\theta)^f\) × Prior \(\propto \theta^{a-1}(1-\theta)^{b-1}\) = \(\theta^{a+s-1}(1-\theta)^{b+f-1}\)</p>
+        <p>즉 \(\text{Beta}(a+s,b+f)\)가 되어 계산과 해석이 쉬워집니다. \(a,b\)는 가상의 성공/실패 횟수처럼 해석(유효 표본)할 수 있어 ‘사전 신념의 강도’를 조절합니다.</p>
+        <h4 class="text-lg font-bold mt-4">사전이 결과에 미치는 영향</h4>
+        <p>데이터가 적을수록(\(s+f\)가 작을수록) 사후 평균 \(\dfrac{a+s}{a+b+s+f}\)은 사전에 더 끌려갑니다. 반대로 관측이 늘면 사전의 영향은 약해지고 빈도적 추정 \(s/(s+f)\)에 수렴합니다.</p>
+        <p>실무에서는 “초기 신뢰도”가 높은 상황(예: 이전 A/B 테스트, 장기간 운영된 시스템)에서는 큰 \(a+b\)를, 전혀 정보가 없다면 균일한 \(\text{Beta}(1,1)\) 같은 약한 사전을 씁니다.</p>
+      </div>
     </section>
 
     <!-- Section 2: Likelihood Ratio Chain -->
     <section class="card p-6 mb-10">
       <h2 class="text-2xl font-bold mb-2">2) 가능도비 체인: 증거를 곱해서 누적 업데이트</h2>
-      <p class="text-gray-700 mb-4">오즈 업데이트: <span class="mono">O(H|E) = O(H) × LR</span>. 여러 증거가 독립이면 <span class="mono">O(H|E1..Ek) = O(H) × ∏ LRi</span>.</p>
+      <p class="text-gray-700 mb-2">오즈 업데이트: \( O(H\mid E) = O(H) \times LR \). 여러 독립 증거 \(E_1,\dots,E_k\)에 대해</p>
+      <p class="text-gray-700 mb-4">\( O(H\mid E_{1:k}) = O(H) \times \prod_{i=1}^k LR_i \), \( P = \dfrac{O}{1+O} \)로 변환합니다.</p>
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div class="space-y-4">
           <div>
@@ -141,12 +172,18 @@ keywords: "베이즈 정리, 베타 베르누이, 사전 사후, 가능도비, �
           </div>
         </div>
       </div>
+      <div class="prose prose-sm max-w-none text-gray-800 mt-6">
+        <h4 class="text-lg font-bold">LR 해석과 직관</h4>
+        <p>가능도비 \(LR=\dfrac{P(E\mid H)}{P(E\mid \neg H)}\)는 ‘증거가 가설 하에서 얼마나 더 그럴듯한가’를 수치화합니다. \(LR>1\)이면 H에 우호적, \(<1\)이면 반대입니다.</p>
+        <p>오즈 업데이트는 곱셈이므로 여러 독립 증거에 대해 <b>로그 스케일</b>(합)로 생각하면 직관이 좋아집니다. 즉 \(\log O(H\mid E_{1:k}) = \log O(H) + \sum_i \log LR_i\).</p>
+        <p>진료/검사, 부정행위 탐지, 신용평가 등에서 서로 다른 신호를 단계적으로 반영할 때 널리 쓰입니다.</p>
+      </div>
     </section>
 
     <!-- Section 3: Mini Naive Bayes -->
     <section class="card p-6 mb-6">
       <h2 class="text-2xl font-bold mb-2">3) 미니 나이브 베이즈: 스팸 판별 토이 모델</h2>
-      <p class="text-gray-700 mb-4">단어 존재 여부가 조건부 독립이라고 가정할 때, <span class="mono">P(스팸|문서) ∝ P(스팸) ∏ P(단어i|스팸)</span>. 라플라스 스무딩을 사용합니다.</p>
+      <p class="text-gray-700 mb-4">단어 존재 여부가 조건부 독립일 때, \( P(SPAM\mid d) \propto P(SPAM) \prod_i P(w_i\mid SPAM) \). 라플라스 스무딩 사용.</p>
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div>
           <div class="mb-3">
@@ -175,6 +212,12 @@ keywords: "베이즈 정리, 베타 베르누이, 사전 사후, 가능도비, �
             <canvas id="nbChart" aria-label="나이브 베이즈 사후확률 도넛차트" role="img"></canvas>
           </div>
         </div>
+      </div>
+      <div class="prose prose-sm max-w-none text-gray-800 mt-6">
+        <h4 class="text-lg font-bold">나이브 가정과 스무딩</h4>
+        <p>나이브 베이즈는 특징 간 상관을 무시(조건부 독립)하여 계산을 단순화합니다. 현실에서는 완전 독립이 아니어도 surprisingly robust 합니다.</p>
+        <p>라플라스 스무딩은 관측이 0인 단어의 확률 붕괴를 막아주며, \(P(w\mid C)=\dfrac{\text{count}(w,C)+\alpha}{\sum_v \text{count}(v,C)+\alpha|V|}\) 형태를 자주 씁니다(\(\alpha=1\) 기본).</p>
+        <p>소규모 데이터에 강하고, 베이스라인 분류기로 유용합니다. 단, 긴 의존구조나 연속 변수를 다룰 때는 가우시안/멀티노미얼 변형 등으로 확장합니다.</p>
       </div>
     </section>
 
