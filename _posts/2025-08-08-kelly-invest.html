@@ -1,0 +1,259 @@
+---
+layout: post
+title: "묻고 더블로? 켈리 공식과 투자 이야기: 포지션 사이징, 하프 켈리, 인터랙티브 시뮬레이터"
+date: 2025-08-08 12:30:00 +0900
+description: "켈리 공식의 원리와 한계를 실제 사례(버핏, 소프, LTCM, 소로스)와 함께 해설하고, 승률·손익비 기반 인터랙티브 시뮬레이션으로 포지션 사이징을 체득하는 2025 리마스터 가이드. 하프 켈리 전략 포함."
+img: kelly.svg
+tags: [켈리공식, Kelly, 포지션사이징, 투자전략, 리스크관리, 복리, 하프켈리, 변동성, 퀀트, 정보이론]
+canonical_url: "https://junpyopark.github.io/kelly-invest"
+author: "박준표"
+keywords: "켈리 공식, Kelly criterion, 포지션 사이징, 승률, 손익비, 하프 켈리, 복리, 변동성, 투자 전략, 리스크 관리, 버핏, 에드워드 소프, LTCM, 조지 소로스"
+---
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+     data-ad-format="fluid" data-ad-client="ca-pub-4993132508717238" data-ad-slot="7426355186"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]}};</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+  body { font-family: 'Noto Sans KR', sans-serif; background-color: #111827; color: #F3F4F6; }
+  .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 300px; max-height: 400px; }
+  @media (min-width: 768px) { .chart-container { height: 350px; } }
+  .gradient-text { background: linear-gradient(90deg, #00F0B5, #0098F3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .card { background-color: #1F2937; border: 1px solid #374151; }
+  input[type=range] { -webkit-appearance: none; appearance: none; background: transparent; cursor: pointer; width: 100%; }
+  input[type=range]::-webkit-slider-runnable-track { background: #374151; height: 0.5rem; border-radius: 0.5rem; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; margin-top: -4px; background-color: #00F0B5; height: 1.25rem; width: 1.25rem; border-radius: 50%; border: 2px solid #111827; }
+  input[type=range]:focus::-webkit-slider-thumb { outline: 3px solid #0098F3; outline-offset: 0.125rem; }
+  .table-val-green { color: #34D399; }
+  .table-val-blue { color: #60A5FA; }
+  .table-val-red { color: #F87171; }
+</style>
+
+<div class="container mx-auto p-4 md:p-8">
+  <header class="text-center mb-12 md:mb-20">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 gradient-text">켈리 공식</h1>
+    <p class="text-xl md:text-2xl text-gray-300">행운의 공식인가, 파멸의 레시피인가?</p>
+    <p class="mt-4 max-w-3xl mx-auto text-gray-400">과학, 도박, 그리고 월스트리트를 관통하는 단 하나의 수학 공식. 자본 성장을 극대화하는 동시에 파산의 위험을 내포한 양날의 검, 켈리 공식을 심층 분석합니다.</p>
+  </header>
+
+  <main class="space-y-16">
+    <section id="origin">
+      <h2 class="text-3xl font-bold text-center mb-10">1. 기원: 통신 연구실에서 라스베이거스까지</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        <div class="card p-6 rounded-lg shadow-lg flex flex-col">
+          <h3 class="text-2xl font-bold mb-4 text-[#00F0B5]">🔬 존 켈리 주니어의 발견</h3>
+          <p class="text-gray-300 flex-grow">1956년, 벨 연구소의 과학자 존 켈리는 잡음이 섞인 통신 채널의 정보 전송률과 도박사의 자본 성장률 사이에 수학적 유사성을 발견했습니다. 그는 불확실성 속에서 '정보 우위'를 최적으로 자본화하는 공식을 탄생시켰습니다. 이는 단순한 도박 기술이 아닌, 정보 이론에 뿌리를 둔 과학적 발견이었습니다.</p>
+          <div class="mt-4 text-center text-xl p-4 bg-gray-800 rounded-md">$$f^* = \frac{p \cdot b - (1-p)}{b}$$</div>
+        </div>
+        <div class="card p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-bold mb-4 text-[#00E0D2]">🃏 에드워드 소프의 증명</h3>
+          <p class="text-gray-300">MIT 수학 교수 에드워드 소프는 카드 카운팅으로 블랙잭에서 우위를 점하고, 켈리 공식을 적용해 베팅 금액을 최적화했습니다. 그는 1만 달러의 투자금으로 라스베이거스에서 이론을 증명했고, 이후 월스트리트로 무대를 옮겨 최초의 퀀트 펀드 중 하나를 설립, 연평균 20%의 경이로운 수익률을 기록하며 켈리 공식의 힘을 현실 세계에 각인시켰습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="buffett">
+      <h2 class="text-3xl font-bold text-center mb-10">2. 거인의 어깨: 워런 버핏의 켈리적 본능</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="card p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-bold mb-4 text-[#00C1E5]">위대한 샐러드유 스캔들 (1963)</h3>
+          <p class="text-gray-300 mb-4">아메리칸 익스프레스가 대규모 대출 사기로 파산 위기에 몰렸을 때, 시장은 공포에 휩싸여 주식을 투매했습니다. 하지만 워런 버핏은 회사의 핵심 사업(여행자 수표, 신용카드)의 가치가 훼손되지 않았음을 간파했습니다.</p>
+          <p class="text-gray-300">그는 회복 확률(p)이 매우 높고, 잠재적 상승 여력(b)이 거대하다고 판단, 파트너십 자산의 <strong class="text-white font-bold text-lg">40%</strong>라는 막대한 금액을 단일 종목에 투자했습니다. 이 베팅은 대성공을 거두며, "기회가 왔을 때 크게 베팅하라"는 그의 철학이 켈리 원칙과 정확히 일치함을 보여주었습니다.</p>
+        </div>
+        <div class="card p-6 rounded-lg shadow-lg">
+          <div class="chart-container h-80 md:h-96">
+            <canvas id="buffettChart" aria-label="버핏의 아메리칸 익스프레스 투자 비중 도넛 차트" role="img"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reality">
+      <h2 class="text-3xl font-bold text-center mb-10">3. 현실의 벽: 공식 적용의 어려움</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-bold mb-4 text-[#0098F3]">변수 추정의 딜레마</h3>
+          <p class="text-gray-300">주식 시장에서는 승률(p)과 손익비(b)가 주어지지 않습니다. 투자자는 과거 데이터, 애널리스트 리포트, 목표 주가 등을 바탕으로 이 값들을 '추정'해야 합니다. 이 추정의 정확성이 켈리 공식 적용의 성패를 좌우하며, 여기에 가장 큰 어려움이 존재합니다.</p>
+        </div>
+        <div class="card p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-bold mb-4 text-[#0066FF]">변동성의 함정 (Variance Drag)</h3>
+          <p class="text-gray-300">변동성은 복리 수익률에 '세금'처럼 작용합니다. 50% 손실 후 50% 수익이 나도 원금은 회복되지 않습니다. 켈리 공식은 본질적으로 장기 복리 수익률을 극대화하므로, 변동성이 큰 자산(예: 암호화폐)에 대해서는 자연스럽게 베팅 비율을 낮춰 파산 위험을 회피합니다.</p>
+        </div>
+        <div class="card p-6 rounded-lg shadow-lg md:col-span-2 lg:col-span-1">
+          <h3 class="text-2xl font-bold mb-4 text-[#00F0B5]">전문가의 해법: 하프 켈리</h3>
+          <p class="text-gray-300">추정 오류의 위험과 극심한 변동성 때문에 대부분의 전문가는 '풀 켈리'가 아닌 '하프 켈리'를 권장합니다. 에드워드 소프에 따르면, 하프 켈리는 <strong class="text-white font-bold">변동성을 절반으로 줄이면서도 수익의 75%</strong>를 얻을 수 있는 훨씬 효율적이고 심리적으로 감당 가능한 전략입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="case-studies">
+      <h2 class="text-3xl font-bold text-center mb-10">4. 극과 극: 두 거인의 이야기</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="card p-6 rounded-lg shadow-lg border-l-4 border-red-500">
+          <h3 class="text-2xl font-bold mb-4 text-red-400"> 실패: LTCM의 오만</h3>
+          <p class="text-gray-300 mb-4">노벨상 수상자들이 포함된 드림팀 LTCM은 미세한 차익거래 기회에서 수익을 내기 위해 25:1이 넘는 극단적인 레버리지를 사용했습니다. 이는 작은 우위에 과도하게 베팅한, 켈리 원칙의 정면 위반이었습니다.</p>
+          <p class="text-gray-300">1998년 러시아의 채무 불이행 사태로 모델이 예측하지 못한 '꼬리 위험'이 현실화되자, 펀드는 단 4개월 만에 파산했고 금융 시스템 전체를 위협했습니다. 이는 리스크 관리와 포지션 사이징 실패의 가장 유명한 교훈입니다.</p>
+        </div>
+        <div class="card p-6 rounded-lg shadow-lg border-l-4 border-green-500">
+          <h3 class="text-2xl font-bold mb-4 text-green-400"> 성공: 조지 소로스의 결단</h3>
+          <p class="text-gray-300 mb-4">1992년, 조지 소로스와 스탠리 드러켄밀러는 영국 파운드화가 과대평가되었다는 높은 확신을 가졌습니다. 그들은 하방 위험은 제한적인 반면, 상방 잠재력은 엄청난 비대칭적 기회라고 판단했습니다.</p>
+          <p class="text-gray-300">그들은 "확신이 있다면 목을 노려라"는 원칙에 따라 100억 달러가 넘는 거대한 공매도 포지션을 구축, '영란은행을 무너뜨리며' 10억 달러 이상의 수익을 올렸습니다. 이는 켈리 공식의 핵심인 '유리한 손익비'를 극대화한 완벽한 사례입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="interactive-kelly">
+      <h2 class="text-3xl font-bold text-center mb-10">5. 인터랙티브 시뮬레이션: 직접 운명을 조작하라</h2>
+      <div class="card p-6 rounded-lg shadow-lg">
+        <p class="text-center text-gray-400 mb-6 max-w-3xl mx-auto">슬라이더를 조절하여 '승률'과 '손익비'를 설정하고, 아래의 성과 지표와 자산 변화 그래프를 확인해보세요. 모든 데이터는 <strong class="text-white">100개의 서로 다른 시나리오</strong>를 1000회씩 베팅한 후의 <strong class="text-white">평균값</strong>을 기반으로 합니다.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label for="winProb" class="block mb-2 text-sm font-medium text-gray-300">승률 (p): <span id="winProbValue" class="font-bold text-white">70</span>%</label>
+            <input id="winProb" type="range" min="1" max="99" value="70" class="w-full h-2 rounded-lg appearance-none cursor-pointer">
+          </div>
+          <div>
+            <label for="payoff" class="block mb-2 text-sm font-medium text-gray-300">손익비 (b): <span id="payoffValue" class="font-bold text-white">1.0</span></label>
+            <input id="payoff" type="range" min="0.1" max="5" value="1" step="0.1" class="w-full h-2 rounded-lg appearance-none cursor-pointer">
+          </div>
+        </div>
+        <div class="text-center mb-6 grid grid-cols-1 md:grid-cols-3 gap-2 items-center">
+          <p class="text-md">하프 켈리: <strong id="halfKellyFraction" class="text-lg text-green-400">20.0%</strong></p>
+          <p class="text-lg">풀 켈리: <strong id="kellyFraction" class="text-2xl gradient-text">40.0%</strong></p>
+          <p class="text-md">더블 켈리: <strong id="doubleKellyFraction" class="text-lg text-red-400">80.0%</strong></p>
+        </div>
+      </div>
+      <div class="mt-8 grid grid-cols-1 gap-8">
+        <div class="card p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-bold text-center mb-4">자산 변화 평균 경로 (로그 스케일)</h3>
+          <div class="chart-container">
+            <canvas id="interactiveSimChart" aria-label="전략별 자산 변화 평균 경로 (로그 스케일) 라인차트" role="img"></canvas>
+          </div>
+        </div>
+        <div class="card p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-bold text-center mb-4">전략별 성과 분석</h3>
+          <div class="overflow-x-auto">
+            <table class="min-w-full text-sm text-left text-gray-400">
+              <thead class="text-xs text-gray-300 uppercase bg-gray-700/50">
+                <tr>
+                  <th scope="col" class="px-4 py-3">성과 지표</th>
+                  <th scope="col" class="px-4 py-3 text-center">하프 켈리</th>
+                  <th scope="col" class="px-4 py-3 text-center">풀 켈리</th>
+                  <th scope="col" class="px-4 py-3 text-center">더블 켈리</th>
+                </tr>
+              </thead>
+              <tbody id="performanceTableBody"></tbody>
+            </table>
+          </div>
+          <div class="mt-4 text-xs text-gray-500 space-y-2">
+            <p><strong class="text-gray-400">CAGR (베팅당):</strong> 1회 베팅당 평균 복리 수익률. 장기적 성장성을 나타냅니다.</p>
+            <p><strong class="text-gray-400">샤프 지수 (베팅당):</strong> 감수한 위험(변동성) 대비 초과 수익률. 높을수록 효율적인 전략입니다. (이 값은 평균 자산 경로를 기반으로 계산됩니다.)</p>
+            <p><strong class="text-gray-400">최대 낙폭 (MDD):</strong> 전 고점 대비 최대 하락률. 전략이 겪을 수 있는 최악의 손실을 의미합니다.</p>
+            <p><strong class="text-gray-400">손실 확률:</strong> 1000회 베팅 후 초기 자본($100)보다 손실을 볼 확률입니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center mt-16 md:mt-24 pt-10 border-t border-gray-700">
+    <h2 class="text-3xl font-bold mb-6 gradient-text">결론: 공식이 아닌 사고방식</h2>
+    <p class="max-w-3xl mx-auto text-gray-300 mb-8">켈리 공식의 진정한 가치는 정답을 알려주는 계산기가 아니라, 투자자에게 규율 있는 사고의 틀을 제공하는 데 있습니다. 모든 투자 결정 앞에서 스스로에게 다음 질문을 던지게 합니다.</p>
+    <div class="max-w-2xl mx-auto text-left space-y-4 text-lg">
+      <p class="flex items-start"><span class="text-[#00F0B5] mr-3 text-2xl font-bold">1.</span><span>나의 실제적이고 정량화 가능한 <strong class="text-white font-bold">우위</strong>는 무엇인가?</span></p>
+      <p class="flex items-start"><span class="text-[#00C1E5] mr-3 text-2xl font-bold">2.</span><span>발생 가능한 결과의 범위와 그 <strong class="text-white font-bold">비대칭성</strong>은 어떠한가?</span></p>
+      <p class="flex items-start"><span class="text-[#0066FF] mr-3 text-2xl font-bold">3.</span><span>파산하지 않으면서 성장을 극대화할 <strong class="text-white font-bold">포지션 규모</strong>는 얼마인가?</span></p>
+    </div>
+    <p class="mt-8 text-gray-500 text-sm">이 인포그래픽은 교육 목적으로 제작되었으며, 특정 투자를 권유하지 않습니다.</p>
+  </footer>
+</div>
+
+<script>
+  const chartColors = { green: '#00F0B5', teal: '#00E0D2', cyan: '#00C1E5', blue: '#0098F3', red: '#EF4444', lightGray: '#9CA3AF', darkGray: '#374151' };
+  const createDefaultOptions = () => ({ maintainAspectRatio: false, responsive: true, animation: { duration: 0 }, plugins: { legend: { labels: { color: chartColors.lightGray, font: { size: 14 } } }, tooltip: { backgroundColor: '#1F2937', titleColor: '#F9FAFB', bodyColor: '#D1D5DB', borderColor: chartColors.darkGray, borderWidth: 1, mode: 'index', intersect: false } }, scales: { x: { ticks: { color: chartColors.lightGray }, grid: { color: chartColors.darkGray } } }, interaction: { mode: 'index', intersect: false } });
+
+  new Chart(document.getElementById('buffettChart'), { type: 'doughnut', data: { labels: ['아메리칸 익스프레스 투자', '기타 포트폴리오'], datasets: [{ label: '포트폴리오 비중', data: [40, 60], backgroundColor: [chartColors.cyan, chartColors.darkGray], borderColor: '#1F2937', borderWidth: 4 }] }, options: { ...createDefaultOptions(), cutout: '70%', scales: {}, plugins: { ...createDefaultOptions().plugins, title: { display: true, text: '버핏의 아메리칸 익스프레스 투자 비중 (1963)', color: '#F3F4F6', font: { size: 16 } } } } });
+
+  const winProbSlider = document.getElementById('winProb');
+  const payoffSlider = document.getElementById('payoff');
+  const winProbValue = document.getElementById('winProbValue');
+  const payoffValue = document.getElementById('payoffValue');
+  const kellyFractionEl = document.getElementById('kellyFraction');
+  const halfKellyFractionEl = document.getElementById('halfKellyFraction');
+  const doubleKellyFractionEl = document.getElementById('doubleKellyFraction');
+  const performanceTableBody = document.getElementById('performanceTableBody');
+  const simChartCanvas = document.getElementById('interactiveSimChart');
+  let simChartInstance;
+
+  function calculateKellyFractions() {
+    const p = parseFloat(winProbSlider.value) / 100;
+    const b = parseFloat(payoffSlider.value);
+    winProbValue.textContent = winProbSlider.value;
+    payoffValue.textContent = b.toFixed(1);
+    const kellyF = ((p * b) - (1 - p)) / b;
+    kellyFractionEl.textContent = `${Math.max(0, kellyF * 100).toFixed(1)}%`;
+    halfKellyFractionEl.textContent = `${Math.max(0, (kellyF / 2) * 100).toFixed(1)}%`;
+    doubleKellyFractionEl.textContent = `${Math.max(0, (kellyF * 2) * 100).toFixed(1)}%`;
+    return kellyF;
+  }
+
+  function runSimulation() {
+    const p = parseFloat(winProbSlider.value) / 100;
+    const b = parseFloat(payoffSlider.value);
+    const kellyF = calculateKellyFractions();
+    const numPaths = 100; const numTrials = 1000;
+    const strategies = { '하프 켈리': Math.max(0, kellyF / 2), '풀 켈리': Math.max(0, kellyF), '더블 켈리': Math.max(0, kellyF * 2) };
+    const averagedCapital = {}; const finalMetrics = {};
+    for (const key in strategies) { averagedCapital[key] = Array(numTrials + 1).fill(0); finalMetrics[key] = { cagrs: [], mdds: [], finalCapitals: [] }; }
+    for (let i = 0; i < numPaths; i++) {
+      for (const key in strategies) {
+        const f = strategies[key]; let capital = 100; let peak = 100; let maxDrawdown = 0; averagedCapital[key][0] += capital;
+        for (let j = 0; j < numTrials; j++) {
+          if (Math.random() < p) capital *= (1 + f * b); else capital *= (1 - f); capital = Math.max(0.01, capital);
+          peak = Math.max(peak, capital); const drawdown = (capital - peak) / peak; maxDrawdown = Math.min(maxDrawdown, drawdown);
+          averagedCapital[key][j + 1] += capital;
+        }
+        finalMetrics[key].finalCapitals.push(capital); finalMetrics[key].mdds.push(maxDrawdown);
+        const cagr = Math.pow(capital / 100, 1 / numTrials) - 1; finalMetrics[key].cagrs.push(cagr);
+      }
+    }
+    const results = { capital: {}, metrics: {} };
+    for (const key in strategies) {
+      results.capital[key] = averagedCapital[key].map(sum => sum / numPaths);
+      const metrics = finalMetrics[key]; const avg = arr => arr.reduce((a, b) => a + b, 0) / arr.length; const lossProb = metrics.finalCapitals.filter(c => c < 100).length / numPaths;
+      const avgPath = results.capital[key]; const avgPathReturns = []; for(let k = 1; k < avgPath.length; k++) { avgPathReturns.push(avgPath[k] / avgPath[k-1] - 1); }
+      const meanReturn = avgPathReturns.reduce((a, b) => a + b, 0) / avgPathReturns.length; const stdDev = Math.sqrt(avgPathReturns.map(x => Math.pow(x - meanReturn, 2)).reduce((a, b) => a + b, 0) / avgPathReturns.length); const sharpe = stdDev > 0 ? meanReturn / stdDev : 0;
+      results.metrics[key] = { cagr: avg(metrics.cagrs), sharpe: sharpe, mdd: avg(metrics.mdds), lossProb: lossProb };
+    }
+    return results;
+  }
+
+  function updatePerformanceTable(metrics) {
+    performanceTableBody.innerHTML = '';
+    const metricOrder = [ { key: 'cagr', name: 'CAGR (베팅당)', format: v => `${(v * 100).toFixed(2)}%` }, { key: 'sharpe', name: '샤프 지수 (베팅당)', format: v => v.toFixed(3) }, { key: 'mdd', name: '최대 낙폭 (MDD)', format: v => `${(v * 100).toFixed(1)}%` }, { key: 'lossProb', name: '손실 확률', format: v => `${(v * 100).toFixed(1)}%` } ];
+    const strategyKeys = ['하프 켈리', '풀 켈리', '더블 켈리']; const colors = ['table-val-green', 'table-val-blue', 'table-val-red'];
+    metricOrder.forEach(metricInfo => { const row = document.createElement('tr'); row.className = 'border-b border-gray-700'; let cells = `<th scope="row" class="px-4 py-3 font-medium text-gray-300 whitespace-nowrap">${metricInfo.name}</th>`; strategyKeys.forEach((key, i) => { const value = metrics[key][metricInfo.key]; cells += `<td class="px-4 py-3 text-center font-mono ${colors[i]}">${metricInfo.format(value)}</td>`; }); row.innerHTML = cells; performanceTableBody.appendChild(row); });
+  }
+
+  function updateUI() {
+    const results = runSimulation(); const labels = Array.from({ length: 1001 }, (_, i) => i);
+    const strategyKeys = ['하프 켈리', '풀 켈리', '더블 켈리']; const colors = [chartColors.green, chartColors.blue, chartColors.red]; const borderStyles = [{ width: 2 }, { width: 3 }, { width: 2, dash: [5, 5] }];
+    const capitalDatasets = strategyKeys.map((key, i) => ({ label: `${key}`, data: results.capital[key], borderColor: colors[i], backgroundColor: 'transparent', borderWidth: borderStyles[i].width, borderDash: borderStyles[i].dash || [], pointRadius: 0 }));
+      if (simChartInstance) { simChartInstance.data.datasets = capitalDatasets; simChartInstance.update(); }
+  else { const options = createDefaultOptions(); options.scales.y = { type: 'logarithmic', display: false }; options.plugins.title = { display: false }; simChartInstance = new Chart(simChartCanvas, { type: 'line', data: { labels, datasets: capitalDatasets }, options }); }
+    updatePerformanceTable(results.metrics);
+  }
+
+  function updateAll() { calculateKellyFractions(); updateUI(); }
+  winProbSlider.addEventListener('input', updateAll); payoffSlider.addEventListener('input', updateAll); updateAll();
+</script>
