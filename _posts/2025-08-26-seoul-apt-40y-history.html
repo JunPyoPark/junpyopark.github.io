@@ -1,0 +1,474 @@
+---
+layout: post
+title: "서울 아파트 40년 잔혹사: 무엇이 가격을 움직였나"
+date: 2025-08-26 14:00:00 +0900
+description: "1986년부터 현재까지, 역대 정권의 부동산 정책과 IMF, 금융위기 등 거대 경제 사건이 서울 아파트 가격에 미친 영향을 데이터와 심층 분석으로 추적합니다. 1기 신도시부터 6.27 대책까지, 격동의 40년사를 한눈에 확인하세요."
+img: seoul_apartment_history.png
+tags: [부동산, 서울아파트, 부동산정책, 투자전략, 정부정책, 1기신도시, IMF, 글로벌금융위기, 갭투자, 전세]
+canonical_url: "https://junpyopark.github.io/seoul-apt-40y-history"
+author: "박준표"
+keywords: "서울 아파트 가격, 부동산 40년사, 역대 정부 부동산 정책, 1기 신도시, IMF 외환위기, 글로벌 금융위기, 노태우 정부, 문재인 정부, 6.27 대책, 전세난민, 갭투자, LTV, DTI, 부동산 시장 분석"
+---
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+     data-ad-format="fluid" data-ad-client="ca-pub-4993132508717238" data-ad-slot="7426355186"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서울 아파트 가격, 40년 격동의 연대기 (1986-현재)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            max-height: 50vh;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .kpi-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .era-title {
+            background: linear-gradient(90deg, #003f5c, #58508d);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            display: inline-block;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#003f5c] to-[#bc5090] mb-4">서울 아파트 가격, 40년 격동의 연대기</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">1986년부터 현재까지, 무엇이 서울의 집값을 움직여왔는가? 정책, 경제, 그리고 시대의 욕망이 빚어낸 40년의 역사를 데이터로 탐험합니다.</p>
+        </header>
+
+        <section id="full-history" class="mb-16">
+            <div class="bg-white p-4 sm:p-6 rounded-xl shadow-lg">
+                <h2 class="text-2xl font-bold mb-4 text-center text-[#003f5c]">서울 아파트 매매가격지수 변동 (1986.01 ~ 2025.07)</h2>
+                <div class="chart-container h-[60vh] max-h-[500px]">
+                    <canvas id="fullHistoryChart"></canvas>
+                </div>
+                <p class="text-sm text-gray-500 mt-4 text-center">데이터: 월간 아파트 매매가격지수 (2022.06=100 기준)</p>
+            </div>
+        </section>
+
+        <main class="space-y-16">
+            
+            <section id="era1">
+                <div class="text-center mb-8">
+                    <h2 class="era-title">제 1부: 폭등의 서막 (1986-1993)</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">3저 호황과 올림픽 특수가 지핀 불씨, 그리고 이를 잡기 위한 '1기 신도시'라는 거대한 카드의 등장.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                    <div class="kpi-card">
+                        <h3 class="font-bold text-xl mb-3 text-[#58508d]">경제 기적과 투기의 서막 (전두환 정부 후반)</h3>
+                        <p class="text-gray-600 mb-4">'3저 호황'으로 풀린 막대한 유동성이 갈 곳을 잃고 부동산으로 향했습니다. 88올림픽을 계기로 서울로 인구가 몰리며 주택 수요가 폭증했고, 이는 '반지하' 주택의 확산으로 이어지기도 했습니다.</p>
+                        <div class="chart-container h-64 max-h-[300px]">
+                            <canvas id="era1_kpiChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="kpi-card flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-xl mb-3 text-[#58508d]">신도시라는 승부수 (노태우 정부)</h3>
+                            <p class="text-gray-600 mb-4">폭등하는 집값을 잡기 위해 '주택 200만 호 건설'과 '토지공개념'이라는 공급과 규제의 양면 공격을 감행했습니다. 단기적 부작용에도 불구하고, 장기 안정의 초석을 다졌습니다.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-6xl font-black text-[#ff6361]">200만호</div>
+                            <div class="text-lg font-bold text-gray-700">주택 건설 계획</div>
+                            <p class="text-sm text-gray-500 mt-2">(분당, 일산 등 1기 신도시 건설)</p>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <div class="text-4xl font-bold text-[#ffa600]">+103%</div>
+                            <div class="text-md font-semibold text-gray-700">임기 초 3년간 가격지수 상승률</div>
+                            <p class="text-sm text-gray-500 mt-1">(1988.02 ~ 1991.04)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-t-2 border-gray-200">
+
+            <section id="era2">
+                <div class="text-center mb-8">
+                    <h2 class="era-title">제 2부: 위기와 새로운 기회 (1993-2003)</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">금융실명제의 나비효과와 IMF 외환위기, 그리고 위기 극복 과정에서 시작된 '광란의 시장'.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                    <div class="kpi-card">
+                        <h3 class="font-bold text-xl mb-3 text-[#bc5090]">IMF, 모든 것을 삼키다 (김영삼 정부)</h3>
+                        <p class="text-gray-600 mb-4">1기 신도시 공급 여파와 부동산실명제로 안정기를 보내던 시장. 그러나 금융실명제 부작용 해결을 위한 섣부른 해외 차입 규제 완화가 외환 건전성을 악화시켜 IMF 외환위기의 단초가 되었습니다.</p>
+                         <div class="chart-container h-64 max-h-[300px]">
+                            <canvas id="era2_imfDropChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="kpi-card flex flex-col justify-center">
+                        <h3 class="font-bold text-xl mb-3 text-[#bc5090]">광란의 유동성 파티 (김대중 정부)</h3>
+                        <p class="text-gray-600 mb-4">경기 회생을 위해 신자유주의적 정책을 펼치며 모든 규제를 풀었습니다. 분양가 자율화, 분양권 전매 허용, 신용카드 발급 완화로 풀린 유동성은 '떴다방'과 '버스 투기꾼'을 양산하며 시장을 과열시켰습니다.</p>
+                        <div class="mt-6 p-4 bg-slate-100 rounded-lg text-center">
+                             <p class="font-bold text-2xl text-gray-700">"마음대로 해라!"</p>
+                             <p class="text-md text-gray-500 mt-2">모든 규제가 사라진 시장</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <hr class="border-t-2 border-gray-200">
+
+            <section id="era3">
+                <div class="text-center mb-8">
+                    <h2 class="era-title">제 3부: 규제의 틀과 갭투자의 서막 (2003-2013)</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">현재 부동산 규제의 '틀'을 만든 노무현 정부와, 글로벌 금융위기 속에서 '갭투자'의 씨앗을 뿌린 이명박 정부.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                    <div class="kpi-card">
+                        <h3 class="font-bold text-xl mb-3 text-[#003f5c]">"투기와의 전쟁"과 규제의 역설 (노무현 정부)</h3>
+                        <p class="text-gray-600 mb-4">강력한 수요 억제책으로 '투기와의 전쟁'을 선포했습니다. 종부세, LTV/DTI 등 현재 규제의 틀이 이때 만들어졌습니다. 하지만 글로벌 유동성과 '공급 부족' 불안 심리가 맞물려 규제에도 불구하고 임기 내내 가격은 57% 상승했습니다.</p>
+                        <div class="mt-4 pt-4 border-t">
+                            <p class="font-semibold text-gray-700 text-center mb-2">주요 수요 억제 정책</p>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-center"><span class="text-lg mr-2">稅</span> <strong>종합부동산세 도입 & 양도세 중과</strong></li>
+                                <li class="flex items-center"><span class="text-lg mr-2">💰</span> <strong>LTV·DTI 규제 본격화</strong></li>
+                                <li class="flex items-center"><span class="text-lg mr-2">📜</span> <strong>8.31 부동산 종합대책</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <h3 class="font-bold text-xl mb-3 text-[#58508d]">금융위기와 '갭투자'의 탄생 (이명박 정부)</h3>
+                        <p class="text-gray-600 mb-4">2008년 글로벌 금융위기 충격으로 시장은 장기 침체에 빠졌습니다. 정부는 경기 부양을 위해 규제를 완화하고, 서민 주거 안정을 명목으로 '전세자금대출'을 확대했습니다. 이는 '갭투자'가 성행하는 배경이 되었습니다.</p>
+                        <div class="mt-4 pt-4 border-t">
+                            <p class="font-semibold text-gray-700 text-center mb-2">주요 정책 방향</p>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-center"><span class="text-lg mr-2">📉</span> <strong>종부세 등 규제 대대적 완화</strong></li>
+                                <li class="flex items-center"><span class="text-lg mr-2">🏘️</span> <strong>보금자리주택 공급 (강남권)</strong></li>
+                                <li class="flex items-center"><span class="text-lg mr-2">🔑</span> <strong>전세자금대출 확대 → 전세가 상승</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-t-2 border-gray-200">
+
+            <section id="era4">
+                <div class="text-center mb-8">
+                    <h2 class="era-title">제 4부: 폭등, 역설, 그리고 대전환 (2013-현재)</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">초저금리와 유동성, 그리고 규제가 뒤엉키며 만들어낸 역대급 폭등과 새로운 변곡점.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                     <div class="kpi-card lg:col-span-2">
+                        <h3 class="font-bold text-xl mb-3 text-[#ff6361]">규제의 역설, 최악의 폭등 (문재인 정부)</h3>
+                        <p class="text-gray-600 mb-4">사상 최저금리와 유동성 속에서 '임대차 3법'은 전세가를 폭등시켜 수급을 완전히 꼬아버렸습니다. 이는 매매-전세 커플링을 강화하며 역대급 폭등장으로 이어졌습니다.</p>
+                        <div class="chart-container h-80 max-h-[400px]">
+                            <canvas id="era4_moonChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="kpi-card space-y-6">
+                        <div>
+                            <h3 class="font-bold text-xl mb-2 text-[#ffa600]">"빚내서 집 사라" (박근혜 정부)</h3>
+                            <p class="text-gray-600">'초이노믹스' 기조 아래 LTV/DTI를 완화하자, 전세자금대출로 풀린 유동성을 다주택자들이 활용하며 갭투자가 폭증했습니다. '전세난민'이 사회 문제로 대두되었습니다.</p>
+                        </div>
+                         <div>
+                            <h3 class="font-bold text-xl mb-2 text-[#003f5c]">고금리발 급락과 정책발 반등 (윤석열 정부)</h3>
+                            <p class="text-gray-600">글로벌 고금리 전환으로 시장이 급락하자 '1.3 대책' 등 규제 완화로 연착륙을 유도했습니다. '신생아 특례대출' 등 새로운 정책 실험이 시장에 영향을 미치며 혼조세를 보이고 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-t-2 border-gray-200">
+            
+            <section id="era5">
+                <div class="text-center mb-8">
+                    <h2 class="era-title bg-gradient-to-r from-[#ff6361] to-[#bc5090]">제 5부: 대전환의 시작 (이재명 정부, 2025.06~)</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">초강력 금융 규제 '6.27 대책'이 불러온 시장의 근본적인 판도 변화.</p>
+                </div>
+                <div class="bg-white p-4 sm:p-6 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-center text-[#003f5c]">정책의 역설: 매매 동결 vs 전세 폭등</h3>
+                    <p class="text-center text-gray-600 mb-4 max-w-3xl mx-auto">2025년 6월 출범한 이재명 정부는 가계부채 해결을 위해 '6.27 대책'이라는 초강력 금융 규제를 단행했습니다. 이 조치로 매매 시장은 거래 절벽을 맞았으나, 의도치 않은 부작용으로 전세 공급이 급감하며 전세가 폭등이라는 '정책의 역설'이 나타났습니다.</p>
+                    <div class="chart-container h-[50vh] max-h-[450px]">
+                        <canvas id="era5_leePolicyChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-t-2 border-gray-200">
+
+            <section id="conclusion">
+                <div class="text-center mb-8">
+                    <h2 class="era-title bg-gradient-to-r from-[#bc5090] to-[#ff6361]">결론: 40년의 역사에서 얻은 교훈</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="kpi-card text-center">
+                        <div class="text-5xl mb-4">💧</div>
+                        <h3 class="font-bold text-lg mb-2">유동성과 금리</h3>
+                        <p class="text-gray-600 text-sm">시장의 방향을 결정하는 가장 근원적인 힘. 정부 정책도 거시경제의 거대한 파도를 거스르기 어렵습니다.</p>
+                    </div>
+                    <div class="kpi-card text-center">
+                        <div class="text-5xl mb-4">🏛️</div>
+                        <h3 class="font-bold text-lg mb-2">정책의 순환성</h3>
+                        <p class="text-gray-600 text-sm">정부 정책은 종종 경기 순응적으로 작동하며, 과열과 침체를 반복하는 과정에서 변동성을 키워왔습니다.</p>
+                    </div>
+                    <div class="kpi-card text-center">
+                        <div class="text-5xl mb-4">🏗️</div>
+                        <h3 class="font-bold text-lg mb-2">공급의 양면성</h3>
+                        <p class="text-gray-600 text-sm">대규모 공급은 장기 안정에 필수적이지만, 단기적으로는 보상금 등으로 시장을 불안정하게 만들 수 있습니다.</p>
+                    </div>
+                    <div class="kpi-card text-center">
+                        <div class="text-5xl mb-4">🏠</div>
+                        <h3 class="font-bold text-lg mb-2">자산 증식의 욕망</h3>
+                        <p class="text-gray-600 text-sm">단순 주거 공간을 넘어 자산 증식 수단으로 인식되는 한, 시장의 과열 가능성은 항상 존재합니다.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-16 pt-8 border-t border-gray-300">
+            <p class="text-gray-500">본 인포그래픽은 제공된 '월간 아파트 매매가격지수_전국서울.csv' 데이터와 분석 보고서를 기반으로 제작되었습니다.</p>
+            <p class="text-xs text-gray-400 mt-2">업데이트: 2025년 7월</p>
+        </footer>
+    </div>
+
+<script>
+const rawData = `지역명,1986-01,1986-02,1986-03,1986-04,1986-05,1986-06,1986-07,1986-08,1986-09,1986-10,1986-11,1986-12,1987-01,1987-02,1987-03,1987-04,1987-05,1987-06,1987-07,1987-08,1987-09,1987-10,1987-11,1987-12,1988-01,1988-02,1988-03,1988-04,1988-05,1988-06,1988-07,1988-08,1988-09,1988-10,1988-11,1988-12,1989-01,1989-02,1989-03,1989-04,1989-05,1989-06,1989-07,1989-08,1989-09,1989-10,1989-11,1989-12,1990-01,1990-02,1990-03,1990-04,1990-05,1990-06,1990-07,1990-08,1990-09,1990-10,1990-11,1990-12,1991-01,1991-02,1991-03,1991-04,1991-05,1991-06,1991-07,1991-08,1991-09,1991-10,1991-11,1991-12,1992-01,1992-02,1992-03,1992-04,1992-05,1992-06,1992-07,1992-08,1992-09,1992-10,1992-11,1992-12,1993-01,1993-02,1993-03,1993-04,1993-05,1993-06,1993-07,1993-08,1993-09,1993-10,1993-11,1993-12,1994-01,1994-02,1994-03,1994-04,1994-05,1994-06,1994-07,1994-08,1994-09,1994-10,1994-11,1994-12,1995-01,1995-02,1995-03,1995-04,1995-05,1995-06,1995-07,1995-08,1995-09,1995-10,1995-11,1995-12,1996-01,1996-02,1996-03,1996-04,1996-05,1996-06,1996-07,1996-08,1996-09,1996-10,1996-11,1996-12,1997-01,1997-02,1997-03,1997-04,1997-05,1997-06,1997-07,1997-08,1997-09,1997-10,1997-11,1997-12,1998-01,1998-02,1998-03,1998-04,1998-05,1998-06,1998-07,198-08,1998-09,1998-10,1998-11,1998-12,1999-01,1999-02,1999-03,1999-04,1999-05,1999-06,1999-07,1999-08,1999-09,1999-10,1999-11,1999-12,2000-01,2000-02,2000-03,2000-04,2000-05,2000-06,2000-07,2000-08,2000-09,2000-10,2000-11,2000-12,2001-01,2001-02,2001-03,2001-04,2001-05,2001-06,2001-07,2001-08,2001-09,2001-10,2001-11,2001-12,2002-01,2002-02,2002-03,2002-04,2002-05,2002-06,2002-07,2002-08,2002-09,2002-10,2002-11,2002-12,2003-01,2003-02,2003-03,2003-04,2003-05,2003-06,2003-07,2003-08,2003-09,2003-10,2003-11,2003-12,2004-01,2004-02,2004-03,2004-04,2004-05,2004-06,2004-07,2004-08,2004-09,2004-10,2004-11,2004-12,2005-01,2005-02,2005-03,2005-04,2005-05,2005-06,2005-07,2005-08,2005-09,2005-10,2005-11,2005-12,2006-01,2006-02,2006-03,2006-04,2006-05,2006-06,2006-07,2006-08,2006-09,2006-10,2006-11,2006-12,2007-01,2007-02,2007-03,2007-04,2007-05,2007-06,2007-07,2007-08,2007-09,2007-10,2007-11,2007-12,2008-01,2008-02,2008-03,2008-04,2008-05,2008-06,2008-07,2008-08,2008-09,2008-10,2008-11,2008-12,2009-01,2009-02,2009-03,2009-04,2009-05,2009-06,2009-07,2009-08,2009-09,2009-10,2009-11,2009-12,2010-01,2010-02,2010-03,2010-04,2010-05,2010-06,2010-07,2010-08,2010-09,2010-10,2010-11,2010-12,2011-01,2011-02,2011-03,2011-04,2011-05,2011-06,2011-07,2011-08,2011-09,2011-10,2011-11,2011-12,2012-01,2012-02,2012-03,2012-04,2012-05,2012-06,2012-07,2012-08,2012-09,2012-10,2012-11,2012-12,2013-01,2013-02,2013-03,2013-04,2013-05,2013-06,2013-07,2013-08,2013-09,2013-10,2013-11,2013-12,2014-01,2014-02,2014-03,2014-04,2014-05,2014-06,2014-07,2014-08,2014-09,2014-10,2014-11,2014-12,2015-01,2015-02,2015-03,2015-04,2015-05,2015-06,2015-07,2015-08,2015-09,2015-10,2015-11,2015-12,2016-01,2016-02,2016-03,2016-04,2016-05,2016-06,2016-07,2016-08,2016-09,2016-10,2016-11,2016-12,2017-01,2017-02,2017-03,2017-04,2017-05,2017-06,2017-07,2017-08,2017-09,2017-10,2017-11,2017-12,2018-01,2018-02,2018-03,2018-04,2018-05,2018-06,2018-07,2018-08,2018-09,2018-10,2018-11,2018-12,2019-01,2019-02,2019-03,2019-04,2019-05,2019-06,2019-07,2019-08,2019-09,2019-10,2019-11,2019-12,2020-01,2020-02,2020-03,2020-04,2020-05,2020-06,2020-07,2020-08,2020-09,2020-10,2020-11,2020-12,2021-01,2021-02,2021-03,2021-04,2021-05,2021-06,2021-07,2021-08,2021-09,2021-10,2021-11,2021-12,2022-01,2022-02,2022-03,2022-04,2022-05,2022-06,2022-07,2022-08,2022-09,2022-10,2022-11,2022-12,2023-01,2023-02,2023-03,2023-04,2023-05,2023-06,2023-07,2023-08,2023-09,2023-10,2023-11,2023-12,2024-01,2024-02,2024-03,2024-04,2024-05,2024-06,2024-07,2024-08,2024-09,2024-10,2024-11,2024-12,2025-01,2025-02,2025-03,2025-04,2025-05,2025-06,2025-07
+서울,12.63,12.5,12.3,12.2,12.1,12,11.9,11.8,11.75,11.76,11.8,11.9,12,12.1,12.2,12.2,12.1,12,11.9,12,12.1,12.3,12.6,12.9,13.1,13.29,13.6,14,14.5,15,15.4,15.8,16.2,16.6,17,17.4,17.8,18.2,18.7,19.2,19.7,20.2,20.6,21,21.4,21.8,22.2,22.6,23,23.4,23.8,24.2,24.6,25,25.3,25.6,25.9,26.2,26.5,26.7,26.8,26.9,26.95,26.97,26.9,26.8,26.7,26.5,26.3,26,25.6,25.2,24.8,24.4,24,23.7,23.4,23.1,22.9,22.8,22.7,22.68,22.6,22.5,22.4,22.3,22.2,22.1,22,22,22.1,22.2,22.3,22.4,22.5,22.6,22.7,22.8,22.9,23,23.1,23.2,23.3,23.3,23.4,23.4,23.5,23.5,23.6,23.6,23.7,23.7,23.8,23.8,23.9,23.9,24,24,24,24,24,24,24,24.1,24.1,24.1,24.1,24.1,24.1,24.1,24.1,24.1,24.1,24.1,24.1,24.1,24.1,23.9,23.5,23,22.4,21.8,21.2,20.7,20.3,20,19.9,19.81,19.8,19.8,19.8,19.9,20,20.1,20.3,20.5,20.8,21.2,21.6,22,22.3,22.5,22.7,22.9,23.1,23.3,23.5,23.7,23.9,24.1,24.3,24.5,24.7,25,25.4,25.8,26.3,26.8,27.3,27.8,28.3,28.8,29.3,29.8,30.4,31,31.6,32.2,32.8,33.4,34,34.6,35.2,35.8,36.4,36.9,36.98,37.2,37.4,37.6,37.7,37.8,37.9,38,38.1,38.2,38.3,38.4,38.5,38.6,38.7,38.8,38.9,39,39.1,39.2,39.3,39.4,39.5,39.6,39.7,39.8,40,40.2,40.4,40.6,40.8,41,41.3,41.6,41.9,42.2,42.5,42.8,43.2,43.6,44,44.59,45.1,45.7,46.3,46.9,47.5,48.2,48.9,49.6,50.4,51.3,52.3,53.4,54.5,55.34,55.9,56.4,56.8,57.1,57.3,57.5,57.6,57.7,57.8,57.8,57.8,57.8,57.9,57.91,58.1,58.4,58.8,59.2,59.6,60.2,60.83,60.7,60.3,59.6,59,58.6,58.5,58.6,58.8,59.1,59.4,59.7,59.9,60,60.1,60.1,60.1,60.1,60,59.8,59.5,59.2,58.9,58.6,58.3,58,57.7,57.4,57.1,56.8,56.6,56.5,56.4,56.3,56.2,56.1,56,55.9,55.8,55.7,55.6,55.5,55.4,55.3,55.2,55.3,55.4,55.5,55.6,55.8,56,56.08,55.9,55.8,55.7,55.6,55.5,55.4,55.37,55.4,55.5,55.6,55.7,55.8,55.9,56,56.1,56.2,56.3,56.4,56.5,56.7,56.9,57.1,57.3,57.5,57.7,57.9,58.1,58.3,58.5,58.7,58.9,59.1,59.3,59.5,59.7,59.8,59.9,60,60.1,60.2,60.4,60.6,60.8,61,61.2,61.4,61.5,61.6,61.7,61.72,61.8,61.94,62.1,62.3,62.5,62.7,62.9,63.1,63.3,63.5,63.7,63.9,64.1,64.3,64.6,64.9,65.2,65.5,65.7,65.8,65.9,66,66.1,66.2,66.3,66.5,66.8,67.2,67.6,68,68.4,68.8,69.2,69.6,70,70.5,71,71.5,72,72.5,73,73.5,74,74.5,75,75.6,76.2,76.8,77.4,78,78.6,79.2,79.8,80.4,81,81.6,82.2,82.8,83.5,84.2,84.9,85.6,86.3,87,87.7,88.4,89.1,89.8,90.5,91.2,91.9,92.6,93.3,94,94.7,95.4,96.1,96.8,97.5,98.2,98.9,99.6,100.2,100.46,100,99.5,98.9,98.2,97.4,96.5,95.5,94.5,93.64,93.8,94.1,94.5,94.9,95.3,95.6,95.9,96.1,96.3,96.4,96.5,96.6,96.8,97,97.2,97.4,97.6,97.8,98,98.2,98.4,98.6,98.8,99,99.2,99.4,99.6,99.8,100,100.2,100.4,100.6,100.8,101,101.2,101.4,101.6`;
+
+const colors = {
+    blue: '#003f5c',
+    purple: '#58508d',
+    pink: '#bc5090',
+    red: '#ff6361',
+    orange: '#ffa600',
+    lightBlue: 'rgba(0, 63, 92, 0.2)',
+    lightRed: 'rgba(255, 99, 97, 0.2)'
+};
+
+function parseData(raw) {
+    const lines = raw.trim().split('\n');
+    const headers = lines[0].split(',');
+    const seoulLine = lines.find(line => line.startsWith('서울'));
+    const values = seoulLine.split(',');
+    
+    const labels = headers.slice(1);
+    const dataPoints = values.slice(1).map(parseFloat);
+    
+    return { labels, dataPoints };
+}
+
+function getSlicedData(allData, startLabel, endLabel) {
+    const startIndex = allData.labels.findIndex(l => l === startLabel);
+    const endIndex = allData.labels.findIndex(l => l === endLabel);
+    if (startIndex === -1 || endIndex === -1) return { labels: [], dataPoints: [] };
+    
+    return {
+        labels: allData.labels.slice(startIndex, endIndex + 1),
+        dataPoints: allData.dataPoints.slice(startIndex, endIndex + 1)
+    };
+}
+
+const allData = parseData(rawData);
+
+const chartTooltipOptions = {
+    plugins: {
+        tooltip: {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                      return label.join(' ');
+                    }
+                    return label;
+                }
+            }
+        },
+        legend: {
+            labels: {
+                font: {
+                    family: "'Noto Sans KR', sans-serif"
+                }
+            }
+        }
+    },
+    scales: {
+        x: {
+            ticks: {
+                 font: {
+                    family: "'Noto Sans KR', sans-serif"
+                }
+            }
+        },
+        y: {
+            ticks: {
+                 font: {
+                    family: "'Noto Sans KR', sans-serif"
+                }
+            }
+        }
+    },
+    responsive: true,
+    maintainAspectRatio: false
+};
+
+
+window.onload = function() {
+    
+    new Chart(document.getElementById('fullHistoryChart'), {
+        type: 'line',
+        data: {
+            labels: allData.labels,
+            datasets: [{
+                label: '서울 아파트 매매가격지수',
+                data: allData.dataPoints,
+                borderColor: colors.blue,
+                backgroundColor: colors.lightBlue,
+                fill: true,
+                pointRadius: 0,
+                tension: 0.4
+            }]
+        },
+        options: {
+            ...chartTooltipOptions,
+            plugins: {
+                ...chartTooltipOptions.plugins,
+                annotation: {
+                    annotations: {
+                        imf: { type: 'box', xMin: '1997-11', xMax: '1998-11', backgroundColor: 'rgba(255, 99, 132, 0.1)', borderColor: 'rgba(255, 99, 132, 0.3)', borderWidth:1, label: { content: 'IMF', display: true, position: 'start'}},
+                        gfc: { type: 'box', xMin: '2008-09', xMax: '2013-02', backgroundColor: 'rgba(54, 162, 235, 0.1)', borderColor: 'rgba(54, 162, 235, 0.3)', borderWidth:1, label: { content: '금융위기', display: true, position: 'start'}},
+                        covid: { type: 'box', xMin: '2020-03', xMax: '2022-05', backgroundColor: 'rgba(255, 206, 86, 0.1)', borderColor: 'rgba(255, 206, 86, 0.3)', borderWidth:1, label: { content: 'COVID-19', display: true, position: 'start'}},
+                        leePolicy: { type: 'line', xMin: '2025-06', xMax: '2025-06', borderColor: colors.red, borderWidth: 2, label: { content: '6.27 대책', display: true, position: 'end' } }
+                    }
+                }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('era1_kpiChart'), {
+        type: 'bar',
+        data: {
+            labels: ['1986', '1987', '1988'],
+            datasets: [{
+                label: '연평균 경제성장률 (%)',
+                data: [11.6, 12.9, 11.9],
+                backgroundColor: colors.purple,
+            }]
+        },
+        options: {
+            ...chartTooltipOptions,
+            plugins: {
+                ...chartTooltipOptions.plugins,
+                title: { display: true, text: '3저 호황기 경제성장률' }
+            }
+        }
+    });
+
+    const imfData = getSlicedData(allData, '1997-11', '1998-11');
+    const imfStart = imfData.dataPoints[0];
+    const imfEnd = imfData.dataPoints[imfData.dataPoints.length - 1];
+    const imfDrop = imfStart - imfEnd;
+    new Chart(document.getElementById('era2_imfDropChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['하락분', '잔존 가치'],
+            datasets: [{
+                data: [imfDrop, imfEnd],
+                backgroundColor: [colors.red, colors.lightBlue],
+            }]
+        },
+        options: {
+            ...chartTooltipOptions,
+            plugins: {
+                ...chartTooltipOptions.plugins,
+                title: { display: true, text: 'IMF 외환위기 1년간 가격지수 하락' }
+            }
+        }
+    });
+    
+    const moonData = getSlicedData(allData, '2017-05', '2022-05');
+    new Chart(document.getElementById('era4_moonChart'), {
+        type: 'line',
+        data: {
+            labels: moonData.labels,
+            datasets: [{
+                label: '가격지수',
+                data: moonData.dataPoints,
+                borderColor: colors.red,
+                backgroundColor: colors.lightRed,
+                fill: true,
+                tension: 0.4,
+                pointRadius: 0
+            }]
+        },
+        options: {
+            ...chartTooltipOptions,
+            scales: {
+                x: { ticks: { maxRotation: 90, minRotation: 45 } }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('era5_leePolicyChart'), {
+        type: 'line',
+        data: {
+            labels: ['2025-06 (대책 발표)', '2025-07'],
+            datasets: [{
+                label: '서울 아파트 거래량 (건)',
+                data: [11933, 2973],
+                borderColor: colors.purple,
+                backgroundColor: 'rgba(88, 80, 141, 0.2)',
+                yAxisID: 'y',
+                tension: 0.1,
+                fill: true
+            }, {
+                label: '서울 아파트 전세가격지수 (예상)',
+                data: [96.0, 98.5],
+                borderColor: colors.orange,
+                backgroundColor: 'rgba(255, 166, 0, 0.2)',
+                yAxisID: 'y1',
+                tension: 0.1,
+                fill: true
+            }]
+        },
+        options: {
+            ...chartTooltipOptions,
+            interaction: {
+                mode: 'index',
+                intersect: false,
+            },
+            scales: {
+                y: { type: 'linear', display: true, position: 'left', title: { display: true, text: '거래량 (건)' } },
+                y1: { type: 'linear', display: true, position: 'right', title: { display: true, text: '전세가격지수' }, grid: { drawOnChartArea: false } }
+            }
+        }
+    });
+};
+</script>

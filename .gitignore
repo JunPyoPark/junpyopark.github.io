@@ -32,3 +32,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Windows Zone.Identifier files
+*:Zone.Identifier
