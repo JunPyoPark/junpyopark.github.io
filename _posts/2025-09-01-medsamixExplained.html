@@ -1,0 +1,469 @@
+---
+layout: post
+title: "MedSAMix 혁명: 훈련 없이 의료 AI 성능 극대화하는 비밀 (2025 최신 연구)"
+date: 2025-09-01 17:00:00 +0900
+description: "재훈련 없이도 기존 의료 AI 모델들을 지능적으로 조합하여 성능을 6.67% 향상시키는 MedSAMix의 혁신적 접근법을 완벽 분석합니다. 전문가 vs 팔방미인 딜레마를 해결하는 차세대 모델 병합 기술의 모든 것."
+img: medsamix_explained.png
+tags: [의료AI, MedSAMix, 모델병합, 인공지능, 딥러닝, 의료기술, AI최적화, 머신러닝, 헬스케어AI, 모델앙상블]
+canonical_url: "https://junpyopark.github.io/medsamix-revolution-explained"
+author: "박준표"
+keywords: "MedSAMix, 의료 AI 모델 병합, 훈련 없는 최적화, 의료 인공지능, 모델 앙상블, AI 성능 향상, 의료 영상 분할, 딥러닝 모델 조합, 헬스케어 AI 기술, 메드샘믹스, 의료 기술 혁신, AI 모델 최적화"
+---
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+     data-ad-format="fluid" data-ad-client="ca-pub-4993132508717238" data-ad-slot="7426355186"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+    .chart-container {
+        position: relative;
+        width: 100%;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 350px;
+        max-height: 500px;
+    }
+    @media (min-width: 768px) {
+        .chart-container {
+            height: 500px;
+        }
+    }
+</style>
+
+<div class="bg-gray-50 text-gray-800">
+    <header class="bg-[#005f73] text-white p-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">MedSAMix</h1>
+        <p class="text-xl md:text-2xl font-light">훈련 없이 합치기만 해도 똑똑해지는 의료 AI 모델</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="problem" class="my-12">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-10 text-center">
+                <h2 class="text-3xl font-bold text-[#005f73] mb-4">의료 AI의 딜레마: 전문가 vs 팔방미인</h2>
+                <p class="max-w-3xl mx-auto text-lg mb-8">기존 의료 영상 분할 AI는 한 분야만 깊게 파는 '전문가'이거나, 여러 분야를 얕게 아는 '팔방미인'이었습니다. 두 가지 장점을 모두 가질 수는 없었을까요?</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <div class="border-l-4 border-[#ee9b00] p-6 bg-gray-50 rounded-r-lg">
+                        <h3 class="text-2xl font-bold mb-2 flex items-center"><span class="text-3xl mr-3">👨‍⚕️</span> 특화 모델 (전문가)</h3>
+                        <p class="font-semibold text-green-600">장점: 특정 의료 영상(예: 뇌종양)은 매우 정확하게 분할합니다.</p>
+                        <p class="font-semibold text-red-600">단점: 학습하지 않은 다른 종류의 영상에는 성능이 급격히 떨어집니다.</p>
+                    </div>
+                    <div class="border-l-4 border-[#0a9396] p-6 bg-gray-50 rounded-r-lg">
+                        <h3 class="text-2xl font-bold mb-2 flex items-center"><span class="text-3xl mr-3">🤖</span> 범용 모델 (팔방미인)</h3>
+                        <p class="font-semibold text-green-600">장점: 다양한 종류의 이미지를 무난하게 분할하는 범용성을 가집니다.</p>
+                        <p class="font-semibold text-red-600">단점: 특정 분야에서 전문가 모델만큼의 높은 정확도를 보여주지 못합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="process" class="my-12">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-10">
+                <h2 class="text-3xl font-bold text-[#005f73] mb-4 text-center">혁신적 해법: 지능적인 '메타 학습'으로 최적의 조합을 찾다</h2>
+                <p class="max-w-3xl mx-auto text-lg mb-8 text-center">MedSAMix는 모델 자체를 재훈련하는 대신, 이미 훌륭한 모델들을 '어떻게 조합할지' 그 최적의 레시피를 지능적으로 탐색합니다.</p>
+                
+                <div class="max-w-4xl mx-auto my-8 p-6 bg-amber-50 border-l-4 border-amber-400 rounded-r-lg">
+                    <h3 class="text-2xl font-bold text-[#ca6702] mb-3">잠깐! '훈련 없는 최적화'는 어떻게 가능할까요?</h3>
+                    <p class="text-base md:text-lg text-gray-700">이 과정을 '데이터 기반으로 최고의 요리 레시피를 찾는 스마트 셰프'에 비유할 수 있습니다.</p>
+                    <ul class="list-none mt-4 space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-xl mr-3 mt-1">🧠</span>
+                            <div>
+                                <strong class="text-blue-800">AI 모델 '훈련'은...</strong><br>
+                                재료(모델의 내부 가중치) 자체를 바꾸는 근본적인 과정입니다. 시간과 비용이 많이 들죠.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                             <span class="text-xl mr-3 mt-1">🍳</span>
+                            <div>
+                                <strong class="text-green-800">MedSAMix의 '최적화'는...</strong><br>
+                                이미 훌륭한 재료(모델)들을 가지고, 어떤 비율로 섞을지 '레시피(조합법)'를 탐색하는 과정입니다. 몇 번의 시도 결과를 바탕으로 <strong class="text-red-600">"어떤 조합이 더 성능이 좋을지" 예측</strong>하고, 그 예측을 바탕으로 다음 시도를 추천받는 지능적인 방식입니다.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="my-8">
+                    <img src="https://arxiv.org/html/2508.11032v1/x2.png" alt="MedSAMix 프레임워크 개요 - 모델 병합 최적화 과정 그래프" class="rounded-lg shadow-md mx-auto max-w-full h-auto">
+                    <div class="max-w-3xl mx-auto mt-4 p-4 bg-gray-100 rounded-lg">
+                        <h4 class="font-bold text-lg text-center text-gray-800">💡 위 그래프의 의미</h4>
+                        <p class="text-gray-700 text-center mt-2">시간(t, 탐색 횟수)이 지남에 따라 Dice 점수(성능)가 점점 올라가는 것은, MedSAMix가 이전 시도의 결과(보상)를 <strong class="text-red-600">학습</strong>하여 더 나은 조합을 효율적으로 찾아내고 있음을 보여줍니다. 이것이 바로 무작위 탐색이 아닌 지능적인 탐색의 힘입니다.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center space-y-4 mt-12">
+                     <h3 class="text-2xl font-bold text-center mb-6">자동화된 4단계 병합 프로세스</h3>
+                    <div class="w-full max-w-md p-4 bg-gray-100 border-2 border-gray-300 rounded-lg text-center">
+                        <span class="text-2xl font-bold text-[#005f73]">1. 모델 풀 준비</span>
+                        <p>범용(SAM) 및 특화(MedSAM 등) 모델들을 준비합니다.</p>
+                    </div>
+                    <div class="text-4xl text-gray-400">⬇️</div>
+                    <div class="w-full max-w-md p-4 bg-gray-100 border-2 border-gray-300 rounded-lg text-center">
+                        <span class="text-2xl font-bold text-[#0a9396]">2. 최적 조합 탐색 및 병합</span>
+                        <p>각 모델의 어느 계층을 어떤 비율로 합칠지 수많은 조합을 자동으로 탐색하고 병합합니다.</p>
+                    </div>
+                     <div class="text-4xl text-gray-400">⬇️</div>
+                    <div class="w-full max-w-md p-4 bg-gray-100 border-2 border-gray-300 rounded-lg text-center">
+                        <span class="text-2xl font-bold text-[#ee9b00]">3. 평가 및 피드백</span>
+                        <p>병합된 모델의 성능을 소량의 데이터로 평가하고, 그 결과를 '보상'으로 삼아 더 나은 조합을 찾도록 피드백합니다.</p>
+                    </div>
+                     <div class="text-4xl text-gray-400">⬇️</div>
+                    <div class="w-full max-w-md p-4 bg-[#ca6702] text-white rounded-lg text-center shadow-xl">
+                        <span class="text-2xl font-bold">4. 최종 모델 완성</span>
+                        <p>가장 높은 성능을 내는 '황금 레시피'를 통해 최종 MedSAMix 모델을 완성합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="anatomy" class="my-12">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-10">
+                <h2 class="text-3xl font-bold text-[#005f73] mb-4 text-center">MedSAMix 모델의 해부: 무엇을 어떻게 조합할까?</h2>
+                <p class="max-w-3xl mx-auto text-lg mb-8 text-center">MedSAMix는 모델 전체를 단순히 섞는 것이 아니라, 현미경으로 들여다보듯 각 계층(Layer)별로 최적의 조합법을 찾아냅니다. 이때 사용되는 다양한 '조합 도구(하이퍼파라미터)'들이 바로 MedSAMix의 비밀 병기입니다.</p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12 text-center p-6 bg-gray-50 rounded-lg">
+                    <div class="border-b-4 lg:border-b-0 lg:border-r-4 border-gray-200 pb-6 lg:pb-0 lg:pr-8">
+                        <h3 class="text-2xl font-bold text-gray-700 mb-2">1. 이미지 인코더</h3>
+                        <p class="text-base">이미지의 특징을 추출하는 부분. 모델의 '눈'과 같습니다.</p>
+                    </div>
+                    <div class="border-b-4 lg:border-b-0 lg:border-r-4 border-gray-200 pb-6 lg:pb-0 lg:pr-8">
+                        <h3 class="text-2xl font-bold text-gray-700 mb-2">2. 프롬프트 인코더</h3>
+                        <p class="text-base">사용자의 지시(점, 박스 등)를 이해하는 부분입니다.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-700 mb-2">3. 마스크 디코더</h3>
+                        <p class="text-base">추출된 특징과 지시를 종합해 최종 분할 결과를 만듭니다.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold text-center mb-6">최적화를 위한 4가지 핵심 조합 도구 (하이퍼파라미터)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-xl text-blue-800 mb-2">Linear / SLERP (단순/구면 보간)</h4>
+                        <p>두 모델의 가중치를 정해진 <strong class="text-red-600">비율(예: SAM 60%, MedSAM 40%)</strong>로 부드럽게 섞는 가장 기본적인 방법입니다.</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-xl text-green-800 mb-2">Task-Arithmetic (TA, 태스크 연산)</h4>
+                        <p>한 모델의 '능력치'를 다른 모델에 더하거나 뺄 때, 그 영향력을 조절하는 <strong class="text-red-600">스케일링 계수(0.0~1.0)</strong>를 결정합니다.</p>
+                    </div>
+                    <div class="bg-yellow-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-xl text-yellow-800 mb-2">TIES-Merging (TIES 병합)</h4>
+                        <p>여러 모델의 의견이 충돌할 때, 중요한 의견만 추려냅니다. 이때 상위 몇 <strong class="text-red-600">퍼센트(%)의 가중치만 남길지</strong> 그 비율을 결정합니다.</p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-xl text-purple-800 mb-2">Layer Granularity (레이어 단위)</h4>
+                        <p>하나의 조합법을 몇 개의 <strong class="text-red-600">레이어 그룹에 동시에 적용할지</strong> 그 묶음의 크기를 결정합니다. (예: 2개 레이어씩 묶기)</p>
+                    </div>
+                </div>
+
+                 <div class="mt-12 p-6 bg-gray-100 rounded-lg">
+                    <h3 class="text-2xl font-bold text-center mb-4">📜 실제 MedSAMix-M의 최종 레시피 (예시)</h3>
+                    <p class="text-center mb-6">논문에 따르면, 최종 완성된 모델은 각 부분마다 완전히 다른 조합법을 사용하고 있었습니다. 이는 MedSAMix가 얼마나 정교하게 최적화를 수행하는지 보여줍니다.</p>
+                    <ul class="space-y-3 list-none">
+                        <li class="p-3 bg-white rounded-md shadow-sm"><strong>이미지 인코더 1번 레이어:</strong> <span class="font-mono text-green-700">TIES 병합</span>을 사용하되, 상위 <span class="font-mono text-red-600">7%</span>의 가중치만 반영</li>
+                        <li class="p-3 bg-white rounded-md shadow-sm"><strong>이미지 인코더 4~5번 레이어:</strong> <span class="font-mono text-blue-700">Linear 병합</span>을 사용. <span class="font-mono text-red-600">(SAM: 60%, MedicoSAM: 59%, MedSAM: 12%)</span> 비율로 혼합</li>
+                        <li class="p-3 bg-white rounded-md shadow-sm"><strong>프롬프트 인코더 0번 레이어:</strong> <span class="font-mono text-blue-700">SLERP 병합</span>으로 <span class="font-mono text-red-600">(SAM: 95%, MedicoSAM: 75%)</span> 비율로 부드럽게 혼합</li>
+                        <li class="p-3 bg-white rounded-md shadow-sm"><strong>마스크 디코더 4번 레이어:</strong> <span class="font-mono text-green-700">TIES 병합</span>을 사용하되, 상위 <span class="font-mono text-red-600">18%</span>의 가중치만 반영</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="results" class="my-12">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-10">
+                <h2 class="text-3xl font-bold text-[#005f73] mb-6 text-center">증명된 성능: 압도적인 결과</h2>
+                <p class="max-w-3xl mx-auto text-lg mb-10 text-center">MedSAMix는 25개의 다양한 의료 영상 분할 테스트에서 기존의 어떤 모델보다 뛰어난 성능을 보였습니다. 상황에 따라 두 가지 모드로 최적화할 수 있습니다.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="text-center bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-[#ca6702] mb-2">👨‍⚕️ 전문가 모드 (Single-Task)</h3>
+                        <p class="text-lg mb-3">하나의 특정 과제에 집중하여 성능을 극대화합니다.</p>
+                        <p class="text-5xl font-black text-[#ae2012]">6.67%</p>
+                        <p class="text-lg font-semibold">평균 성능 향상</p>
+                    </div>
+                    <div class="text-center bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-[#0a9396] mb-2">🌍 팔방미인 모드 (Multi-Task)</h3>
+                        <p class="text-lg mb-3">다양한 과제에서 전반적으로 우수한 성능을 보입니다.</p>
+                        <p class="text-5xl font-black text-[#ae2012]">4.37%</p>
+                        <p class="text-lg font-semibold">평균 성능 향상</p>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <h3 class="text-2xl font-bold text-center mb-2">다중 작업 성능 비교</h3>
+                     <p class="max-w-3xl mx-auto text-base mb-6 text-center text-gray-600">아래 레이더 차트는 여러 의료 영상 분할 작업에 대한 모델별 성능(Dice 계수)을 보여줍니다. MedSAMix(주황색 선)가 다른 모델들의 성능을 대부분 감싸며 모든 면에서 더 우수함을 알 수 있습니다.</p>
+                    <div class="chart-container">
+                        <canvas id="radarChart" aria-label="MedSAMix vs 기존 모델들 다중 작업 성능 비교 레이더 차트" role="img"></canvas>
+                    </div>
+                </div>
+                
+                <div class="mt-16">
+                     <h3 class="text-2xl font-bold text-center mb-2">병합 방법론 성능 비교</h3>
+                     <p class="max-w-3xl mx-auto text-base mb-6 text-center text-gray-600">MedSAMix는 기존의 단순한 모델 병합 방법(TIES, TA 등)보다 월등히 높은 평균 성능을 달성했습니다. 이는 지능적인 탐색 기반의 병합 방식이 얼마나 효과적인지 보여줍니다.</p>
+                    <div class="chart-container h-96 md:h-[500px]">
+                        <canvas id="barChart" aria-label="MedSAMix vs 기존 병합 방법론 성능 비교 막대 차트" role="img"></canvas>
+                    </div>
+                </div>
+
+                <div class="mt-16">
+                    <h3 class="text-2xl font-bold text-center mb-2">실제 분할 결과 비교</h3>
+                    <p class="max-w-3xl mx-auto text-base mb-6 text-center text-gray-600">실제 의료 영상 분할 결과를 보면 MedSAMix의 정교함을 한눈에 확인할 수 있습니다. 특히 췌장(Pancreas), 쥐 폐(Mice-Lung), 뇌 혈관(Brain-Vascular)과 같이 복잡하고 미세한 구조에서 다른 모델들과의 성능 차이가 두드러집니다.</p>
+                    <div class="my-8">
+                        <img src="https://arxiv.org/html/2508.11032v1/x3.png" alt="MedSAMix vs 기존 모델들의 실제 의료 영상 분할 결과 비교 - 췌장, 쥐 폐, 뇌 혈관 시각화" class="rounded-lg shadow-md mx-auto max-w-full h-auto bg-white p-2">
+                        <p class="text-center text-sm text-gray-500 mt-2">Figure 3: 췌장, 쥐 폐, 뇌 혈관 분할 결과 시각화. MedSAMix(가장 오른쪽)가 Ground Truth(정답)와 가장 유사합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="my-12">
+             <div class="bg-white rounded-lg shadow-lg p-6 md:p-10">
+                <h2 class="text-3xl font-bold text-[#005f73] mb-8 text-center">MedSAMix가 가져올 미래</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <span class="text-5xl">⚡️</span>
+                        <h3 class="text-xl font-bold mt-4 mb-2">압도적 효율성</h3>
+                        <p>수일이 걸리는 재훈련 과정 없이, 수 시간 내에 더 뛰어난 모델을 만들 수 있습니다.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <span class="text-5xl">🔒</span>
+                        <h3 class="text-xl font-bold mt-4 mb-2">강력한 데이터 프라이버시</h3>
+                        <p>민감한 의료 데이터를 공유할 필요 없이, 각 기관의 모델을 안전하게 병합하여 협업할 수 있습니다.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <span class="text-5xl">🤝</span>
+                        <h3 class="text-xl font-bold mt-4 mb-2">상호 보완적 시너지</h3>
+                        <p>범용 모델의 '넓은 지식'과 특화 모델의 '깊은 지식'을 결합하여 단점을 보완하고 장점을 극대화합니다.</p>
+                    </div>
+                     <div class="bg-gray-50 p-6 rounded-lg">
+                        <span class="text-5xl">🏆</span>
+                        <h3 class="text-xl font-bold mt-4 mb-2">최고 수준의 성능</h3>
+                        <p>실제 25개 데이터셋 테스트에서 기존의 모든 접근법을 뛰어넘는 정확도를 입증했습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="critique" class="my-12">
+             <div class="bg-white rounded-lg shadow-lg p-6 md:p-10">
+                <h2 class="text-3xl font-bold text-[#ae2012] mb-4 text-center">비판적 시각: MedSAMix의 잠재적 한계</h2>
+                <p class="max-w-3xl mx-auto text-lg mb-8 text-center">MedSAMix는 혁신적인 방법론이지만, 모든 기술과 마찬가지로 잠재적인 약점과 고려해야 할 사항들이 존재합니다. 비판적인 시각으로 이 기술의 한계를 이해하는 것이 중요합니다.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-bold mb-3 flex items-center"><span class="text-3xl mr-3">🎯</span>'보정 데이터셋' 과적합 위험</h3>
+                        <p>최적화 과정에서 사용되는 소량의 '보정 데이터'에만 성능이 특화될 위험이 있습니다. 이 데이터가 실제 임상 환경의 데이터 분포와 다를 경우, 일반적인 상황에서는 성능이 기대에 미치지 못할 수 있습니다. 이는 결과의 신뢰도와 직결되는 가장 중요한 문제입니다.</p>
+                    </div>
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
+                         <h3 class="text-xl font-bold mb-3 flex items-center"><span class="text-3xl mr-3">🔗</span>'좋은 재료'에 대한 의존성</h3>
+                        <p>MedSAMix는 기존 모델들의 지식을 '조합'하는 기술이므로, 조합할 기본 모델들의 성능에 절대적으로 의존합니다. 만약 재료가 되는 모델들의 성능이 좋지 않거나 비슷한 단점을 공유한다면, 아무리 잘 섞어도 그 한계를 넘기 어렵습니다.</p>
+                    </div>
+                    <div class="bg-green-50 border-l-4 border-green-400 p-6 rounded-r-lg">
+                         <h3 class="text-xl font-bold mb-3 flex items-center"><span class="text-3xl mr-3">📈</span>확장성 문제</h3>
+                        <p>현재는 3개의 모델을 조합했지만, 5개, 10개 등 더 많은 모델을 조합하려고 하면 탐색해야 할 조합의 경우의 수가 기하급수적으로 늘어납니다. 이 경우, 최적의 조합을 찾는 데 너무 많은 시간이 걸려 '효율성'이라는 장점이 퇴색될 수 있습니다.</p>
+                    </div>
+                    <div class="bg-purple-50 border-l-4 border-purple-400 p-6 rounded-r-lg">
+                         <h3 class="text-xl font-bold mb-3 flex items-center"><span class="text-3xl mr-3">❓</span>해석 및 디버깅의 어려움</h3>
+                        <p>매우 복잡한 조합으로 만들어진 최종 모델이 왜 좋은 성능을 내는지, 혹은 특정 상황에서 왜 예측에 실패하는지 그 원인을 파악하기가 매우 어렵습니다. 이는 모델을 신뢰하고 개선하는 데 걸림돌이 될 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#001219] text-white text-center p-6">
+        <p>Infographic based on the research paper "MedSAMix: A Training-Free Model Merging Approach for Medical Image Segmentation".</p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const vibrantPalette = {
+            blue: '#005f73',
+            teal: '#0a9396',
+            yellow: '#ee9b00',
+            orange: '#ca6702',
+            red: '#ae2012',
+            bgBlue: 'rgba(0, 95, 115, 0.2)',
+            bgTeal: 'rgba(10, 147, 150, 0.2)',
+            bgOrange: 'rgba(202, 103, 2, 0.2)',
+        };
+
+        function wrapLabel(str, maxWidth = 16) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine.length > 0) {
+                lines.push(currentLine);
+            }
+            return lines;
+        }
+
+        const tooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            } else {
+              return label;
+            }
+        };
+
+        const radarCtx = document.getElementById('radarChart').getContext('2d');
+        const radarLabels = [
+            'Optic Disk', 'Nasal Pharynx', 'Kidney_R', 'Kidney_L', 
+            'Maxillary Sinus', 'Mice Intestine', 'Prostate', 'Liver (RAOS)', 
+            'Stomach (RAOS)', 'Liver (FLARE22)'
+        ].map(label => wrapLabel(label));
+
+        new Chart(radarCtx, {
+            type: 'radar',
+            data: {
+                labels: radarLabels,
+                datasets: [{
+                    label: 'MedSAMix',
+                    data: [9.6, 9.4, 9.7, 9.6, 8.5, 8.8, 9.2, 9.4, 8.9, 9.5],
+                    borderColor: vibrantPalette.orange,
+                    backgroundColor: vibrantPalette.bgOrange,
+                    borderWidth: 3,
+                    pointBackgroundColor: vibrantPalette.orange,
+                    pointRadius: 5,
+                }, {
+                    label: 'MedicoSAM/MedSAM',
+                    data: [9.5, 8.8, 9.1, 9.0, 6.1, 7.0, 8.9, 8.8, 8.6, 9.3],
+                    borderColor: vibrantPalette.blue,
+                    backgroundColor: vibrantPalette.bgBlue,
+                    borderWidth: 2,
+                    pointBackgroundColor: vibrantPalette.blue,
+                }, {
+                    label: 'SAM (Generalist)',
+                    data: [8.5, 8.6, 9.4, 9.3, 8.1, 8.0, 7.9, 8.5, 7.8, 8.6],
+                    borderColor: vibrantPalette.teal,
+                    backgroundColor: vibrantPalette.bgTeal,
+                    borderWidth: 2,
+                    pointBackgroundColor: vibrantPalette.teal,
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        pointLabels: {
+                            font: {
+                                size: 12,
+                                weight: 'bold'
+                            },
+                             color: '#333'
+                        },
+                        ticks: {
+                            display: false,
+                            stepSize: 2
+                        },
+                         min: 5,
+                         max: 10
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                             font: {
+                                size: 14,
+                                weight: '500'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                           title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: ['TIES', 'Task-Arithmetic (TA)', 'Linear', 'SLERP', 'SAM', 'MedSAM', 'MedicoSAM', 'MedSAMix-M', 'MedSAMix-S'],
+                datasets: [{
+                    label: 'Average Dice Score (%)',
+                    data: [66.31, 72.19, 74.00, 75.28, 70.81, 63.32, 72.97, 77.34, 79.64],
+                    backgroundColor: [
+                        '#bbdefb', '#bbdefb', '#64b5f6', '#64b5f6', 
+                        vibrantPalette.teal, vibrantPalette.blue, vibrantPalette.blue,
+                        vibrantPalette.orange, vibrantPalette.red
+                    ],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                         min: 50,
+                        max: 85,
+                         grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        },
+                        ticks: {
+                           font: { size: 12 }
+                        }
+                    },
+                    y: {
+                         grid: {
+                            display: false
+                        },
+                        ticks: {
+                           font: { size: 14, weight: '500' }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                         callbacks: {
+                           title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+    });
+    </script>
+</div>
+
