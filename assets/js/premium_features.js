@@ -239,3 +239,69 @@ function initScrollProgress() {
         progress.style.width = scrollPercent + '%';
     });
 }
+// JavaScript 초기화 수정
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM 로드 완료');
+    
+    // 모든 포스트를 표시
+    const posts = document.querySelectorAll('.post');
+    console.log('포스트 개수:', posts.length);
+    
+    posts.forEach((post, index) => {
+        post.style.display = 'block';
+        post.style.opacity = '1';
+        post.style.visibility = 'visible';
+        post.classList.add('visible');
+        console.log(`포스트 ${index + 1} 표시됨`);
+    });
+    
+    // 메이슨리 아이템 표시
+    const masonryItems = document.querySelectorAll('.masonry-item');
+    console.log('메이슨리 아이템 개수:', masonryItems.length);
+    
+    masonryItems.forEach((item, index) => {
+        item.style.opacity = '1';
+        item.style.transform = 'translateY(0)';
+        console.log(`메이슨리 아이템 ${index + 1} 표시됨`);
+    });
+    
+    // 필터 결과 업데이트
+    const resultsCount = document.querySelector('.filter-results');
+    if (resultsCount) {
+        resultsCount.textContent = `${posts.length}개의 포스트를 찾았습니다.`;
+    }
+    
+    // 기존 기능들 초기화
+    if (typeof initRealtimeSearch === 'function') {
+        initRealtimeSearch();
+    }
+    if (typeof initLazyLoading === 'function') {
+        initLazyLoading();
+    }
+    if (typeof initRelatedPosts === 'function') {
+        initRelatedPosts();
+    }
+    if (typeof initScrollProgress === 'function') {
+        initScrollProgress();
+    }
+});
+
+// 강제 표시 함수
+function forceShowPosts() {
+    const posts = document.querySelectorAll('.post');
+    posts.forEach(post => {
+        post.style.display = 'block';
+        post.style.opacity = '1';
+        post.style.visibility = 'visible';
+    });
+    
+    const masonryItems = document.querySelectorAll('.masonry-item');
+    masonryItems.forEach(item => {
+        item.style.opacity = '1';
+        item.style.transform = 'translateY(0)';
+    });
+}
+
+// 1초 후 강제 표시
+setTimeout(forceShowPosts, 1000);

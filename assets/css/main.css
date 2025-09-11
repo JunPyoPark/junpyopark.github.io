@@ -4314,3 +4314,49 @@ button:focus {
   border-color: #4a5568 !important;
   border-top-color: #90cdf4 !important;
 }
+/* 메이슨리 표시 문제 수정 */
+
+/* 메이슨리 아이템 초기 표시 */
+.masonry-item {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  animation: masonryFadeIn 0.6s ease-out forwards !important;
+}
+
+/* 메이슨리 컨테이너 표시 확인 */
+.masonry-container {
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* 포스트 표시 확인 */
+.post {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* 애니메이션 수정 */
+@keyframes masonryFadeIn {
+  from {
+    opacity: 0.3 !important;
+    transform: translateY(10px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
+/* 필터링 시 표시 */
+.post.visible {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.post.hidden {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
