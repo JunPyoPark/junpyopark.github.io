@@ -4557,12 +4557,6 @@ button:focus {
   }
 }
 
-/* ===== 모드별 오버레이 색상 및 강도 조정 ===== */
-
-/* 화이트 모드 - Featured 카드 (흰색 글씨) */
-.post.featured::before {
-  background: rgba(0, 0, 0, 0.8) !important;
-}
 
 .post.featured:hover::before {
   background: rgba(0, 0, 0, 0.7) !important;
@@ -4571,6 +4565,109 @@ button:focus {
 /* 화이트 모드 - 일반 카드 (검정 글씨) */
 .post:not(.featured)::before {
   background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.post:not(.featured):hover::before {
+  background: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* 다크 모드 - Featured 카드 (흰색 글씨 유지) */
+[data-theme="dark"] .post.featured::before {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme="dark"] .post.featured:hover::before {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* 다크 모드 - 일반 카드 (흰색 글씨로 변경) */
+[data-theme="dark"] .post:not(.featured)::before {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme="dark"] .post:not(.featured):hover::before {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* 다크 모드에서 일반 카드 텍스트 색상 변경 */
+[data-theme="dark"] .post:not(.featured) .post-content h2 a {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .post:not(.featured) .post-content p {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .post:not(.featured) .post-tag {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .post:not(.featured) .post-tag:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .post:not(.featured) .post-date,
+[data-theme="dark"] .post:not(.featured) .post-words {
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 모바일에서 더 강한 오버레이 */
+@media (max-width: 768px) {
+  .post.featured::before {
+    background: rgba(0, 0, 0, 0.85) !important;
+  }
+  
+  .post:not(.featured)::before {
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+  
+  [data-theme="dark"] .post:not(.featured)::before {
+    background: rgba(0, 0, 0, 0.85) !important;
+  }
+}
+
+/* ===== 호버 효과 복구 및 모드별 오버레이 완성 ===== */
+
+/* 화이트 모드 - Featured 카드 호버 효과 */
+.post.featured::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  z-index: 2 !important;
+  transition: background 0.3s ease !important;
+  display: block !important;
+}
+
+.post.featured:hover::before {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* 화이트 모드 - 일반 카드 호버 효과 */
+.post:not(.featured)::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  z-index: 2 !important;
+  transition: background 0.3s ease !important;
+  display: block !important;
 }
 
 .post:not(.featured):hover::before {
