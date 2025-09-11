@@ -3035,3 +3035,678 @@ button:focus {
   color: #a0aec0 !important;
   background: rgba(160, 174, 192, 0.1) !important;
 }
+/* 카테고리 태그 스타일 */
+
+.post-meta {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  margin-bottom: 1rem !important;
+  flex-wrap: wrap !important;
+}
+
+.post-tags {
+  display: flex !important;
+  gap: 0.5rem !important;
+  flex-wrap: wrap !important;
+}
+
+.post-tag {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  color: #667eea !important;
+  background: rgba(102, 126, 234, 0.1) !important;
+  padding: 0.25rem 0.75rem !important;
+  border-radius: 1rem !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid rgba(102, 126, 234, 0.2) !important;
+  letter-spacing: 0.025em !important;
+}
+
+.post-tag:hover {
+  background: #667eea !important;
+  color: white !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3) !important;
+}
+
+.post-tag.philosophy {
+  color: #9f7aea !important;
+  background: rgba(159, 122, 234, 0.1) !important;
+  border-color: rgba(159, 122, 234, 0.2) !important;
+}
+
+.post-tag.philosophy:hover {
+  background: #9f7aea !important;
+  color: white !important;
+}
+
+.post-tag.politics {
+  color: #ed8936 !important;
+  background: rgba(237, 137, 54, 0.1) !important;
+  border-color: rgba(237, 137, 54, 0.2) !important;
+}
+
+.post-tag.politics:hover {
+  background: #ed8936 !important;
+  color: white !important;
+}
+
+.post-tag.technology {
+  color: #38b2ac !important;
+  background: rgba(56, 178, 172, 0.1) !important;
+  border-color: rgba(56, 178, 172, 0.2) !important;
+}
+
+.post-tag.technology:hover {
+  background: #38b2ac !important;
+  color: white !important;
+}
+
+.post-tag.economics {
+  color: #e53e3e !important;
+  background: rgba(229, 62, 62, 0.1) !important;
+  border-color: rgba(229, 62, 62, 0.2) !important;
+}
+
+.post-tag.economics:hover {
+  background: #e53e3e !important;
+  color: white !important;
+}
+
+.post-tag.analysis {
+  color: #805ad5 !important;
+  background: rgba(128, 90, 213, 0.1) !important;
+  border-color: rgba(128, 90, 213, 0.2) !important;
+}
+
+.post-tag.analysis:hover {
+  background: #805ad5 !important;
+  color: white !important;
+}
+
+/* 다크 모드 지원 */
+[data-theme="dark"] .post-tag {
+  color: #90cdf4 !important;
+  background: rgba(144, 205, 244, 0.1) !important;
+  border-color: rgba(144, 205, 244, 0.2) !important;
+}
+
+[data-theme="dark"] .post-tag:hover {
+  background: #90cdf4 !important;
+  color: #1a202c !important;
+}
+/* 이미지 상단 배치 레이아웃 */
+
+.post {
+  display: flex !important;
+  flex-direction: column !important;
+  background: #ffffff !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  margin-bottom: 2rem !important;
+  overflow: hidden !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  position: relative !important;
+}
+
+.post:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(102, 126, 234, 0.3) !important;
+}
+
+/* 썸네일을 상단에 전체 너비로 배치 */
+.post-thumbnail {
+  width: 100% !important;
+  height: 200px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+  order: 1 !important;
+}
+
+.post-thumbnail::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)) !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.post:hover .post-thumbnail::after {
+  opacity: 1 !important;
+}
+
+/* 콘텐츠 영역 */
+.post-content {
+  padding: 1.5rem !important;
+  order: 2 !important;
+  position: relative !important;
+  flex: 1 !important;
+}
+
+/* 제목 스타일 */
+.post-title {
+  margin-bottom: 0.75rem !important;
+}
+
+.post-title a {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #1a202c !important;
+  text-decoration: none !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.025em !important;
+  transition: all 0.3s ease !important;
+  display: block !important;
+  position: relative !important;
+}
+
+.post-title a:hover {
+  color: #667eea !important;
+  transform: translateX(4px) !important;
+}
+
+.post-title a::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, #667eea, #764ba2) !important;
+  transition: width 0.3s ease !important;
+}
+
+.post-title a:hover::after {
+  width: 100% !important;
+}
+
+/* 설명 텍스트 */
+.post-content p {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
+  color: #4a5568 !important;
+  line-height: 1.6 !important;
+  margin-bottom: 1rem !important;
+  letter-spacing: 0.01em !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+/* 메타데이터 */
+.post-date {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: #718096 !important;
+  letter-spacing: 0.025em !important;
+  display: inline-block !important;
+  background: rgba(113, 128, 150, 0.1) !important;
+  padding: 0.25rem 0.75rem !important;
+  border-radius: 1rem !important;
+  margin-right: 0.5rem !important;
+}
+
+.post-words {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: #718096 !important;
+  letter-spacing: 0.025em !important;
+  display: inline-block !important;
+  background: rgba(113, 128, 150, 0.1) !important;
+  padding: 0.25rem 0.75rem !important;
+  border-radius: 1rem !important;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .post-thumbnail {
+    height: 160px !important;
+  }
+  
+  .post-content {
+    padding: 1.25rem !important;
+  }
+  
+  .post-title a {
+    font-size: 1.25rem !important;
+  }
+  
+  .post-content p {
+    font-size: 0.9rem !important;
+    -webkit-line-clamp: 2 !important;
+  }
+}
+
+/* 다크 모드 지원 */
+[data-theme="dark"] .post {
+  background: #2d3748 !important;
+  border-color: rgba(74, 85, 104, 0.8) !important;
+}
+
+[data-theme="dark"] .post-title a {
+  color: #f7fafc !important;
+}
+
+[data-theme="dark"] .post-content p {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .post-date,
+[data-theme="dark"] .post-words {
+  color: #a0aec0 !important;
+  background: rgba(160, 174, 192, 0.1) !important;
+}
+/* 강화된 호버 효과 */
+
+.post {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* 카드 호버 시 전체적인 효과 */
+.post:hover {
+  transform: translateY(-12px) scale(1.02) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+  border-color: rgba(102, 126, 234, 0.4) !important;
+}
+
+/* 썸네일 호버 효과 */
+.post-thumbnail {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  overflow: hidden !important;
+}
+
+.post:hover .post-thumbnail {
+  transform: scale(1.05) !important;
+}
+
+.post-thumbnail::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2)) !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.post:hover .post-thumbnail::after {
+  opacity: 1 !important;
+}
+
+/* 제목 호버 효과 */
+.post-title a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.post:hover .post-title a {
+  color: #667eea !important;
+  transform: translateX(8px) !important;
+}
+
+/* 태그 호버 효과 */
+.post-tag {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.post-tag:hover {
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 메타데이터 호버 효과 */
+.post-date,
+.post-words {
+  transition: all 0.3s ease !important;
+}
+
+.post:hover .post-date,
+.post:hover .post-words {
+  background: rgba(102, 126, 234, 0.1) !important;
+  color: #667eea !important;
+  transform: translateY(-1px) !important;
+}
+
+/* 카드 좌측 액센트 바 */
+.post::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 4px !important;
+  height: 100% !important;
+  background: linear-gradient(180deg, #667eea, #764ba2) !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+  z-index: 1 !important;
+}
+
+.post:hover::before {
+  opacity: 1 !important;
+}
+
+/* 카드 하단 그라데이션 */
+.post::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, transparent, #667eea, #764ba2, transparent) !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.post:hover::after {
+  opacity: 1 !important;
+}
+
+/* 부드러운 로딩 애니메이션 */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.post {
+  animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 0;
+}
+
+.post:nth-child(1) { animation-delay: 0.1s; }
+.post:nth-child(2) { animation-delay: 0.2s; }
+.post:nth-child(3) { animation-delay: 0.3s; }
+.post:nth-child(4) { animation-delay: 0.4s; }
+.post:nth-child(5) { animation-delay: 0.5s; }
+.post:nth-child(6) { animation-delay: 0.6s; }
+.post:nth-child(7) { animation-delay: 0.7s; }
+.post:nth-child(8) { animation-delay: 0.8s; }
+
+/* 포커스 스타일 */
+.post:focus-within {
+  outline: 2px solid #667eea !important;
+  outline-offset: 4px !important;
+}
+
+/* 선택 효과 */
+.post:active {
+  transform: translateY(-4px) scale(0.98) !important;
+}
+/* 주요 게시물 강조 레이아웃 */
+
+/* 피처드 포스트 스타일 */
+.post.featured {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  margin-bottom: 3rem !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.post.featured::before {
+  content: 'FEATURED' !important;
+  position: absolute !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  padding: 0.25rem 0.75rem !important;
+  border-radius: 1rem !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  z-index: 2 !important;
+}
+
+.post.featured .post-thumbnail {
+  height: 300px !important;
+  position: relative !important;
+}
+
+.post.featured .post-thumbnail::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)) !important;
+  z-index: 1 !important;
+}
+
+.post.featured .post-content {
+  padding: 2rem !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.post.featured .post-title a {
+  color: white !important;
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.post.featured .post-title a:hover {
+  color: rgba(255, 255, 255, 0.9) !important;
+  transform: translateX(8px) !important;
+}
+
+.post.featured .post-content p {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 1.1rem !important;
+  line-height: 1.7 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.post.featured .post-tag {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.post.featured .post-tag:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+  color: white !important;
+}
+
+.post.featured .post-date,
+.post.featured .post-words {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+/* 일반 포스트 그리드 레이아웃 */
+.posts-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+  gap: 2rem !important;
+  margin-top: 2rem !important;
+}
+
+.post:not(.featured) {
+  margin-bottom: 0 !important;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .post.featured .post-thumbnail {
+    height: 200px !important;
+  }
+  
+  .post.featured .post-content {
+    padding: 1.5rem !important;
+  }
+  
+  .post.featured .post-title a {
+    font-size: 1.5rem !important;
+  }
+  
+  .posts-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* 다크 모드 지원 */
+[data-theme="dark"] .post.featured {
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%) !important;
+}
+/* 카테고리 필터링 스타일 */
+
+/* 필터 컨트롤 */
+.filter-controls {
+  background: white !important;
+  padding: 1.5rem !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
+  margin-bottom: 2rem !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.filter-title {
+  font-family: 'Noto Sans KR', sans-serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #1a202c !important;
+  margin-bottom: 1rem !important;
+  text-align: center !important;
+}
+
+.filter-buttons {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+  flex-wrap: wrap !important;
+}
+
+.filter-btn {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1rem !important;
+  border: 2px solid #e2e8f0 !important;
+  border-radius: 2rem !important;
+  background: white !important;
+  color: #4a5568 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+}
+
+.filter-btn:hover {
+  border-color: #667eea !important;
+  color: #667eea !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2) !important;
+}
+
+.filter-btn.active {
+  background: #667eea !important;
+  border-color: #667eea !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* 포스트 숨김/표시 애니메이션 */
+.post {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.post.hidden {
+  opacity: 0 !important;
+  transform: scale(0.95) !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.post.visible {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  height: auto !important;
+}
+
+/* 필터 결과 카운터 */
+.filter-results {
+  text-align: center !important;
+  margin-top: 1rem !important;
+  font-size: 0.875rem !important;
+  color: #718096 !important;
+  font-weight: 500 !important;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .filter-controls {
+    padding: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .filter-buttons {
+    gap: 0.5rem !important;
+  }
+  
+  .filter-btn {
+    font-size: 0.8rem !important;
+    padding: 0.4rem 0.8rem !important;
+  }
+}
+
+/* 다크 모드 지원 */
+[data-theme="dark"] .filter-controls {
+  background: #2d3748 !important;
+  border-color: #4a5568 !important;
+}
+
+[data-theme="dark"] .filter-title {
+  color: #f7fafc !important;
+}
+
+[data-theme="dark"] .filter-btn {
+  background: #2d3748 !important;
+  border-color: #4a5568 !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .filter-btn:hover {
+  border-color: #90cdf4 !important;
+  color: #90cdf4 !important;
+}
+
+[data-theme="dark"] .filter-btn.active {
+  background: #90cdf4 !important;
+  border-color: #90cdf4 !important;
+  color: #1a202c !important;
+}
+
+[data-theme="dark"] .filter-results {
+  color: #a0aec0 !important;
+}

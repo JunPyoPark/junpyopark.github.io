@@ -1,19 +1,69 @@
 ---
 layout: main
 ---
-{% for post in paginator.posts %}
-<article class="post">
-  {% if post.img %}
-    <a class="post-thumbnail" style="background-image: url({{"/assets/img/" | prepend: site.baseurl | append : post.img}})" href="{{post.url | prepend: site.baseurl}}"></a>
-  {% else %}
-  {% endif %}
-  <div class="post-content">
-    <h2 class="post-title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
-    <p>{{ post.content | strip_html | truncatewords: 15 }}</p>
-    <span class="post-date">{{post.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;—&nbsp;</span>
-    <span class="post-words">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " minute read" }}{% endunless %}</span>
-  </div>
+
+<!-- 카테고리 필터링 UI -->
+<div class="filter-controls">
+    <h3 class="filter-title">카테고리별 보기</h3>
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">전체</button>
+        <button class="filter-btn" data-filter="philosophy">철학</button>
+        <button class="filter-btn" data-filter="politics">정치</button>
+        <button class="filter-btn" data-filter="technology">기술</button>
+        <button class="filter-btn" data-filter="economics">경제</button>
+        <button class="filter-btn" data-filter="analysis">분석</button>
+    </div>
+    <div class="filter-results"></div>
+</div>
+
+<!-- 피처드 포스트 (첫 번째 포스트) -->
+{% assign featured_post = paginator.posts.first %}
+{% if featured_post %}
+<article class="post featured">
+    {% if featured_post.img %}
+        <a class="post-thumbnail" style="background-image: url({{"/assets/img/" | prepend: site.baseurl | append : featured_post.img}})" href="{{featured_post.url | prepend: site.baseurl}}"></a>
+    {% endif %}
+    <div class="post-content">
+        <div class="post-meta">
+            <div class="post-tags">
+                {% for tag in featured_post.tags limit: 3 %}
+                    <a href="#" class="post-tag {{ tag | downcase }}">{{ tag }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <h2 class="post-title"><a href="{{featured_post.url | prepend: site.baseurl}}">{{featured_post.title}}</a></h2>
+        <p>{{ featured_post.content | strip_html | truncatewords: 25 }}</p>
+        <span class="post-date">{{featured_post.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;—&nbsp;</span>
+        <span class="post-words">{% capture words %}{{ featured_post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " minute read" }}{% endunless %}</span>
+    </div>
 </article>
-{% endfor %}
+{% endif %}
+
+<!-- 일반 포스트 그리드 -->
+<div class="posts-grid">
+    {% for post in paginator.posts offset: 1 %}
+    <article class="post">
+        {% if post.img %}
+            <a class="post-thumbnail" style="background-image: url({{"/assets/img/" | prepend: site.baseurl | append : post.img}})" href="{{post.url | prepend: site.baseurl}}"></a>
+        {% endif %}
+        <div class="post-content">
+            <div class="post-meta">
+                <div class="post-tags">
+                    {% for tag in post.tags limit: 3 %}
+                        <a href="#" class="post-tag {{ tag | downcase }}">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <h2 class="post-title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
+            <p>{{ post.content | strip_html | truncatewords: 15 }}</p>
+            <span class="post-date">{{post.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;—&nbsp;</span>
+            <span class="post-words">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " minute read" }}{% endunless %}</span>
+        </div>
+    </article>
+    {% endfor %}
+</div>
 
 {% include pagination.html %}
+
+<!-- 필터링 JavaScript -->
+<script src="{{ site.baseurl }}/assets/js/category_filter.js"></script>
