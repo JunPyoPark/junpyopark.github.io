@@ -5349,3 +5349,163 @@ button:focus {
     font-size: 0.8rem;
   }
 }
+
+/* ===== 페이지네이션 강제 표시 ===== */
+
+.pagination-container {
+  display: block !important;
+  margin: 3rem 0 2rem 0 !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+.pagination {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  margin-bottom: 1rem !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+}
+
+.pagination-btn {
+  display: inline-block !important;
+  padding: 0.75rem 1.5rem !important;
+  background: #667eea !important;
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 0.5rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+  cursor: pointer !important;
+  min-width: 80px !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.pagination-btn:hover:not(.disabled) {
+  background: #5a67d8 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3) !important;
+}
+
+.pagination-btn.disabled {
+  background: #e2e8f0 !important;
+  color: #a0aec0 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.pagination-numbers {
+  display: flex !important;
+  gap: 0.25rem !important;
+  margin: 0 1rem !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+}
+
+.pagination-number {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: #f7fafc !important;
+  color: #4a5568 !important;
+  text-decoration: none !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 0.375rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.pagination-number:hover {
+  background: #edf2f7 !important;
+  border-color: #cbd5e0 !important;
+  color: #2d3748 !important;
+}
+
+.pagination-number.current {
+  background: #667eea !important;
+  color: white !important;
+  border-color: #667eea !important;
+}
+
+.pagination-info {
+  display: block !important;
+  font-size: 0.875rem !important;
+  color: #718096 !important;
+  font-weight: 500 !important;
+  margin-top: 0.5rem !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* 다크 모드 */
+[data-theme="dark"] .pagination-btn {
+  background: #4c51bf !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .pagination-btn:hover:not(.disabled) {
+  background: #434190 !important;
+}
+
+[data-theme="dark"] .pagination-btn.disabled {
+  background: #2d3748 !important;
+  color: #718096 !important;
+}
+
+[data-theme="dark"] .pagination-number {
+  background: #2d3748 !important;
+  color: #e2e8f0 !important;
+  border-color: #4a5568 !important;
+}
+
+[data-theme="dark"] .pagination-number:hover {
+  background: #4a5568 !important;
+  border-color: #718096 !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .pagination-number.current {
+  background: #4c51bf !important;
+  color: white !important;
+  border-color: #4c51bf !important;
+}
+
+[data-theme="dark"] .pagination-info {
+  color: #a0aec0 !important;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .pagination {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  
+  .pagination-numbers {
+    margin: 0 !important;
+    gap: 0.5rem !important;
+  }
+  
+  .pagination-number {
+    width: 35px !important;
+    height: 35px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .pagination-btn {
+    min-width: 70px !important;
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.8rem !important;
+  }
+}
