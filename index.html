@@ -36,6 +36,7 @@ layout: main
     <div class="masonry-item">
         <article class="post featured">
             {% if featured_post.img %}
+            <div class="post-background" style="background-image: url({{"/assets/img/" | prepend: site.baseurl | append : featured_post.img}});"></div>
                 <a class="post-thumbnail" style="background-image: url({{"/assets/img/" | prepend: site.baseurl | append : featured_post.img}})" href="{{featured_post.url | prepend: site.baseurl}}"></a>
             {% endif %}
             <div class="post-content">
@@ -60,6 +61,7 @@ layout: main
     <div class="masonry-item">
         <article class="post">
             {% if post.img %}
+            <div class="post-background" style="background-image: url({{"/assets/img/" | prepend: site.baseurl | append : post.img}});"></div>
                 <a class="post-thumbnail" style="background-image: url({{"/assets/img/" | prepend: site.baseurl | append : post.img}})" href="{{post.url | prepend: site.baseurl}}"></a>
             {% endif %}
             <div class="post-content">
