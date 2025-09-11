@@ -1847,3 +1847,191 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-color);
 }
+/* 사이드바 레이아웃 수정 */
+
+/* 기존 사이드바 스타일 초기화 */
+.sidebar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 280px !important;
+  height: 100vh !important;
+  background: var(--bg-card) !important;
+  border-right: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow-md) !important;
+  z-index: 100 !important;
+  overflow-y: auto !important;
+  transition: all 0.3s ease !important;
+}
+
+/* 프로필 이미지 고정 */
+.cover-author-image {
+  text-align: center !important;
+  margin-bottom: 1.5rem !important;
+  padding: 0 1rem !important;
+}
+
+.cover-author-image img {
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: 50% !important;
+  border: 4px solid var(--primary-color) !important;
+  box-shadow: var(--shadow-lg) !important;
+  transition: transform 0.3s ease !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+.cover-author-image a {
+  display: block !important;
+  text-decoration: none !important;
+}
+
+/* 작성자 정보 고정 */
+.author-name {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 0.75rem !important;
+  text-align: center !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.2 !important;
+}
+
+.about p {
+  color: var(--text-secondary) !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 1.5rem !important;
+  text-align: center !important;
+  padding: 0 1rem !important;
+}
+
+/* Contact 섹션 고정 */
+.contact {
+  padding: 1.5rem !important;
+  border-top: 1px solid var(--border-color) !important;
+  margin-top: 1rem !important;
+}
+
+.contact-title {
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 1rem !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.contact ul {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  flex-wrap: wrap !important;
+}
+
+.contact li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.contact li a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: var(--primary-gradient) !important;
+  color: white !important;
+  border-radius: 50% !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: var(--shadow-sm) !important;
+  font-size: 16px !important;
+}
+
+.contact li a:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* Copyright 고정 */
+.copyright {
+  padding: 1rem 1.5rem !important;
+  text-align: center !important;
+  border-top: 1px solid var(--border-color) !important;
+  margin-top: auto !important;
+}
+
+.copyright p {
+  color: var(--text-muted) !important;
+  font-size: 0.75rem !important;
+  margin: 0 !important;
+}
+
+/* 메인 콘텐츠 영역 고정 */
+.content-box {
+  margin-left: 280px !important;
+  padding: 2rem !important;
+  min-height: 100vh !important;
+  background: var(--bg-secondary) !important;
+  transition: margin-left 0.3s ease !important;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%) !important;
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+  
+  .sidebar.open {
+    transform: translateX(0) !important;
+  }
+  
+  .content-box {
+    margin-left: 0 !important;
+    padding: 1rem !important;
+  }
+  
+  .contact ul {
+    gap: 1rem !important;
+  }
+  
+  .contact li a {
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 18px !important;
+  }
+}
+
+/* 테마 토글 버튼 위치 고정 */
+.theme-toggle {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  z-index: 1000 !important;
+  background: var(--bg-color) !important;
+  border: 2px solid var(--border-color) !important;
+  border-radius: 50% !important;
+  width: 50px !important;
+  height: 50px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 20px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1) !important;
+  box-shadow: var(--shadow-xl) !important;
+}

@@ -2,21 +2,31 @@
 layout: default
 ---
 <script data-ad-client="ca-pub-4993132508717238" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- 모바일 메뉴 토글 -->
+<button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="메뉴 열기">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
 <aside class="sidebar">
   <header>
     <div class="about">
       <div class="cover-author-image">
-        <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}"></a>
+        <a href="{{site.baseurl}}/">
+          <img src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}">
+        </a>
       </div>
       <div class="author-name">{{site.author}}</div>
       <p>{{site.about-author}}</p>
     </div>
-  </header> <!-- End Header -->
+  </header>
+  
   <footer>
     <section class="contact">
       <h3 class="contact-title">Contact me</h3>
       <ul>
-
         {% if site.social-instagram %}
           <li class="instagram"><a href="https://instagram.com/{{site.social-instagram}}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
         {% else %}
@@ -39,15 +49,17 @@ layout: default
           <li class="email"><a href="mailto:example.david@blog.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
         {% endif %}
       </ul>
-    </section> <!-- End Section Contact -->
+    </section>
     <div class="copyright">
       <p>{{site.time | date: '%Y'}} &copy; {{site.author}}</p>
     </div>
-  </footer> <!-- End Footer -->
-</aside> <!-- End Sidebar -->
+  </footer>
+</aside>
+
 <div class="content-box clearfix">
   {{ content }}
 </div>
+
 <!-- 다크 모드 토글 버튼 -->
 <button class="theme-toggle" onclick="toggleTheme()" aria-label="테마 전환">
   <span class="sun-icon">☀️</span>
@@ -90,74 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-</script>
-<!-- 모바일 메뉴 토글 -->
-<button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="메뉴 열기">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
 
-<style>
-.mobile-menu-toggle {
-  display: none;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1001;
-  background: var(--primary-gradient);
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  box-shadow: var(--shadow-lg);
-  transition: all 0.3s ease;
-}
-
-.mobile-menu-toggle span {
-  width: 20px;
-  height: 2px;
-  background: white;
-  border-radius: 1px;
-  transition: all 0.3s ease;
-}
-
-.mobile-menu-toggle:hover {
-  transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-  .mobile-menu-toggle {
-    display: flex;
-  }
-  
-  .sidebar {
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-  }
-  
-  .sidebar.open {
-    transform: translateX(0);
-  }
-  
-  .content-box {
-    margin-left: 0;
-  }
-}
-
-@media (min-width: 769px) {
-  .mobile-menu-toggle {
-    display: none;
-  }
-}
-</style>
-
-<script>
+// 모바일 메뉴 토글
 function toggleMobileMenu() {
   const sidebar = document.querySelector('.sidebar');
   const toggle = document.querySelector('.mobile-menu-toggle');
