@@ -5509,3 +5509,135 @@ button:focus {
     font-size: 0.8rem !important;
   }
 }
+
+/* ===== 페이지네이션 최고 우선순위 강제 적용 ===== */
+
+body .pagination-container {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 3rem 0 2rem 0 !important;
+  text-align: center !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 999 !important;
+}
+
+body .pagination {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  margin-bottom: 1rem !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+body .pagination-btn {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  padding: 0.75rem 1.5rem !important;
+  background: #667eea !important;
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 0.5rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+  cursor: pointer !important;
+  min-width: 80px !important;
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+body .pagination-btn:hover:not(.disabled) {
+  background: #5a67d8 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3) !important;
+}
+
+body .pagination-btn.disabled {
+  background: #e2e8f0 !important;
+  color: #a0aec0 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+body .pagination-numbers {
+  display: flex !important;
+  gap: 0.25rem !important;
+  margin: 0 1rem !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+body .pagination-number {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: #f7fafc !important;
+  color: #4a5568 !important;
+  text-decoration: none !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 0.375rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+body .pagination-number:hover {
+  background: #edf2f7 !important;
+  border-color: #cbd5e0 !important;
+  color: #2d3748 !important;
+}
+
+body .pagination-number.current {
+  background: #667eea !important;
+  color: white !important;
+  border-color: #667eea !important;
+}
+
+body .pagination-info {
+  display: block !important;
+  font-size: 0.875rem !important;
+  color: #718096 !important;
+  font-weight: 500 !important;
+  margin-top: 0.5rem !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+/* 모든 상태에서 강제 표시 */
+.pagination-container,
+.pagination,
+.pagination-btn,
+.pagination-number,
+.pagination-info {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.pagination {
+  display: flex !important;
+}
+
+.pagination-btn,
+.pagination-number {
+  display: inline-block !important;
+}
