@@ -207,3 +207,41 @@ sed -i 's/<img/<img aria-label="설명" /g' _posts/파일명.html
 - [ ] 접근성 속성 추가 완료
 - [ ] 이미지 로컬 저장 완료
 - [ ] `img` 필드에 로컬 파일명 사용 완료
+
+## 🔗 Jekyll URL 규칙 정정
+
+### 실제 Jekyll URL 생성 규칙
+- Jekyll은 파일명에서 날짜 부분(`YYYY-MM-DD-`)만 제거하고 나머지는 **그대로** 사용
+- **kebab-case 자동 변환은 하지 않음**
+- 파일명: `2025-09-10-camelCaseName.html` → 실제 URL: `/camelCaseName/`
+
+### 올바른 canonical_url 설정
+```yaml
+# 파일명: 2025-09-10-collectiveIllusions.html
+canonical_url: "https://junpyopark.github.io/collectiveIllusions"
+
+# 파일명: 2025-09-10-propertyAndFreedom.html  
+canonical_url: "https://junpyopark.github.io/propertyAndFreedom"
+
+# 파일명: 2025-09-10-whatNations.html
+canonical_url: "https://junpyopark.github.io/whatNations"
+```
+
+### ❌ 잘못된 예시 (kebab-case)
+```yaml
+canonical_url: "https://junpyopark.github.io/collective-illusions"  # ❌
+canonical_url: "https://junpyopark.github.io/property-and-freedom"  # ❌
+canonical_url: "https://junpyopark.github.io/what-nations"         # ❌
+```
+
+### ✅ 올바른 예시 (camelCase 그대로)
+```yaml
+canonical_url: "https://junpyopark.github.io/collectiveIllusions"   # ✅
+canonical_url: "https://junpyopark.github.io/propertyAndFreedom"    # ✅
+canonical_url: "https://junpyopark.github.io/whatNations"           # ✅
+```
+
+### 체크리스트 업데이트
+- [ ] 파일명에서 날짜 부분 제거한 나머지가 canonical_url과 일치하는지 확인
+- [ ] kebab-case 변환하지 말고 원본 camelCase 그대로 사용
+- [ ] 실제 Jekyll URL과 canonical_url이 정확히 일치하는지 검증
