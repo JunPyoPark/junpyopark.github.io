@@ -1421,3 +1421,144 @@ a.newer-posts:hover {
     font-size: 21px;
   }
 }
+/* 다크 모드 CSS 변수 및 스타일 */
+
+:root {
+  /* 라이트 모드 색상 */
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+  --link-color: #007acc;
+  --link-hover: #005999;
+  --sidebar-bg: #f8f9fa;
+  --post-bg: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --code-bg: #f4f4f4;
+  --code-text: #333333;
+}
+
+[data-theme="dark"] {
+  /* 다크 모드 색상 */
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --border-color: #404040;
+  --link-color: #4a9eff;
+  --link-hover: #66b3ff;
+  --sidebar-bg: #2d2d2d;
+  --post-bg: #252525;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --code-bg: #3a3a3a;
+  --code-text: #e0e0e0;
+}
+
+/* 다크 모드 적용 */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg);
+  transition: background-color 0.3s ease;
+}
+
+.post, .article-page {
+  background-color: var(--post-bg);
+  transition: background-color 0.3s ease;
+}
+
+.post-title a {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+  color: var(--link-hover);
+}
+
+.post-content p {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.author-name {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.about p {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.contact-title {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.copyright {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+/* 링크 색상 */
+a {
+  color: var(--link-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+/* 코드 블록 */
+pre, code {
+  background-color: var(--code-bg);
+  color: var(--code-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 테마 토글 버튼 */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+/* 다크 모드 아이콘 */
+.theme-toggle .sun-icon {
+  display: block;
+}
+
+.theme-toggle .moon-icon {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+  display: block;
+}

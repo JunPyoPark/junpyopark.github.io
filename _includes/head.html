@@ -6,6 +6,8 @@
   <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
 
   <!-- Enhanced SEO Meta Tags -->
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | xml_escape }} RSS Feed" href="{{ site.url }}{{ site.baseurl }}/feed.xml">
   {% if page.description %}
     <meta name="description" content="{{ page.description }}">
   {% else %}
