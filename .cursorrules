@@ -133,3 +133,77 @@ sed -i '/<div class="container mx-auto p-4 md:p-8">/a\        <style>\n         
 - [ ] `div.container` 요소에도 배경색 적용
 - [ ] `main` 요소에도 배경색 적용
 - [ ] 모든 컨테이너 요소가 일관된 배경색을 가지는지 확인
+
+## 🤖 Gemini HTML → Jekyll 포스트 변환 가이드
+
+### 변환 프로세스
+1. **HTML 구조 제거**: `<!DOCTYPE html>`, `<html>`, `<head>`, `<body>` 태그 제거
+2. **Jekyll Front Matter 추가**: 제목, 날짜, 설명, 태그, 이미지 등
+3. **AdSense 스크립트 추가**: 수익화를 위한 광고 코드
+4. **배경색 강제 적용**: `body`, `.container`, `main` 요소에 `!important` 적용
+5. **접근성 개선**: `aria-label`, `role="img"` 속성 추가
+
+### 필수 변환 규칙
+
+#### 1. Front Matter 구조
+```yaml
+---
+layout: post
+title: "제목"
+date: 2025-09-10 20:00:00 +0900
+description: "설명"
+tags: [태그1, 태그2, 태그3]
+canonical_url: "https://junpyopark.github.io/url-slug"
+author: "박준표"
+img: "이미지파일명.jpg"
+keywords: "키워드1, 키워드2, 키워드3"
+---
+```
+
+#### 2. AdSense 코드 추가
+```html
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+     data-ad-format="fluid" data-ad-client="ca-pub-4993132508717238" data-ad-slot="7426355186"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+```
+
+#### 3. 배경색 강제 적용
+```html
+<div class="container mx-auto p-4 md:p-8">
+    <style>
+        body { background-color: #색상코드 !important; }
+        .container { background-color: #색상코드 !important; }
+        main { background-color: #색상코드 !important; }
+    </style>
+    <!-- 컨텐츠 -->
+</div>
+```
+
+#### 4. 접근성 개선
+- 모든 `img` 태그에 `aria-label` 추가
+- `canvas` 요소에 `aria-label` 및 `role="img"` 추가
+- 버튼에 `aria-expanded`, `title` 속성 추가
+
+### 자동화 스크립트
+```bash
+# 1. 이미지 다운로드
+wget -O assets/img/파일명.jpg "https://이미지URL"
+
+# 2. 배경색 강제 적용
+sed -i '/<div class="container mx-auto p-4 md:p-8">/a\        <style>\n            body { background-color: #색상코드 !important; }\n            .container { background-color: #색상코드 !important; }\n            main { background-color: #색상코드 !important; }\n        </style>' _posts/파일명.html
+
+# 3. 접근성 속성 추가
+sed -i 's/<img/<img aria-label="설명" /g' _posts/파일명.html
+```
+
+### 체크리스트
+- [ ] HTML 구조 태그 제거 완료
+- [ ] Jekyll Front Matter 추가 완료
+- [ ] AdSense 스크립트 추가 완료
+- [ ] 배경색 강제 적용 완료
+- [ ] 접근성 속성 추가 완료
+- [ ] 이미지 로컬 저장 완료
+- [ ] `img` 필드에 로컬 파일명 사용 완료
