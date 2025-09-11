@@ -65,3 +65,40 @@ layout: main
 <!-- 전체 게시물 검색 시스템 -->
 <script src="{{ site.baseurl }}/assets/js/jekyll-data.js"></script>
 <script src="{{ site.baseurl }}/assets/js/complete_search_system.js"></script>
+
+<!-- 페이지네이션 UI -->
+<div class="pagination-container">
+    <div class="pagination">
+        {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="pagination-btn prev-btn">
+                ← 이전
+            </a>
+        {% else %}
+            <span class="pagination-btn prev-btn disabled">← 이전</span>
+        {% endif %}
+        
+        <div class="pagination-numbers">
+            {% for page in (1..paginator.total_pages) %}
+                {% if page == paginator.page %}
+                    <span class="pagination-number current">{{ page }}</span>
+                {% elsif page == 1 %}
+                    <a href="{{ site.baseurl }}" class="pagination-number">{{ page }}</a>
+                {% else %}
+                    <a href="{{ site.paginate_path | replace: ':num', page | prepend: site.baseurl }}" class="pagination-number">{{ page }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="pagination-btn next-btn">
+                다음 →
+            </a>
+        {% else %}
+            <span class="pagination-btn next-btn disabled">다음 →</span>
+        {% endif %}
+    </div>
+    
+    <div class="pagination-info">
+        페이지 {{ paginator.page }} / {{ paginator.total_pages }}
+    </div>
+</div>
