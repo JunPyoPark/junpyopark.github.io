@@ -4501,3 +4501,94 @@ button:focus {
     min-height: 180px !important;
   }
 }
+
+/* 썸네일 강제 표시 - 최고 우선순위 오버라이드 */
+.masonry-container .post .post-thumbnail,
+.post .post-thumbnail,
+article .post-thumbnail,
+a.post-thumbnail {
+  height: 200px !important;
+  display: block !important;
+  min-height: 200px !important;
+  max-height: 300px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 0.75rem 0.75rem 0 0 !important;
+  transition: transform 0.3s ease !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+.masonry-container .post .post-thumbnail:hover,
+.post .post-thumbnail:hover,
+article .post-thumbnail:hover,
+a.post-thumbnail:hover {
+  transform: scale(1.05) !important;
+}
+
+/* 메이슨리 레이아웃 강제 적용 - 최고 우선순위 */
+.masonry-container {
+  column-count: 3 !important;
+  column-gap: 2rem !important;
+  column-fill: balance !important;
+  margin-top: 2rem !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.masonry-item {
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
+  margin-bottom: 2rem !important;
+  display: inline-block !important;
+  width: 100% !important;
+  vertical-align: top !important;
+}
+
+/* 포스트 카드 강제 스타일 */
+.masonry-container .post,
+.post {
+  background: #ffffff !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  margin-bottom: 2rem !important;
+  overflow: hidden !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+}
+
+.masonry-container .post:hover,
+.post:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(102, 126, 234, 0.3) !important;
+}
+
+/* 반응형 디자인 강화 */
+@media (max-width: 1200px) {
+  .masonry-container {
+    column-count: 2 !important;
+    column-gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry-container {
+    column-count: 1 !important;
+    column-gap: 0 !important;
+  }
+  
+  .masonry-container .post .post-thumbnail,
+  .post .post-thumbnail,
+  article .post-thumbnail,
+  a.post-thumbnail {
+    height: 180px !important;
+    min-height: 180px !important;
+  }
+}
