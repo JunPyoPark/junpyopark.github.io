@@ -4870,3 +4870,46 @@ button:focus {
   color: rgba(255, 255, 255, 0.8) !important;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
 }
+
+/* ===== Featured 게시물 호버 효과 위치 조정 ===== */
+
+/* Featured 게시물 호버 시 수평 막대와 글씨 위치 조정 */
+.post.featured:hover .post-thumbnail::after {
+  content: 'Read More' !important;
+  position: absolute !important;
+  top: 2rem !important; /* 기존 0에서 2rem으로 변경 */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #333 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.5rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Featured 게시물 호버 시 수평 막대 추가 */
+.post.featured:hover .post-thumbnail::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 1.5rem !important; /* 태그보다 위에 위치 */
+  left: 1rem !important;
+  right: 1rem !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, #667eea, #764ba2) !important;
+  z-index: 4 !important;
+  opacity: 1 !important;
+  transition: all 0.3s ease !important;
+}
+
+/* 다크 모드에서 Featured 호버 효과 */
+[data-theme="dark"] .post.featured:hover .post-thumbnail::after {
+  background: rgba(0, 0, 0, 0.8) !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
