@@ -6,7 +6,7 @@
  * 2. Prevent adjustments of font size after orientation changes in
  *    IE on Windows Phone and in iOS.
  */
- html {
+html {
   line-height: 1.15;
   /* 1 */
   -ms-text-size-adjust: 100%;
@@ -3651,7 +3651,8 @@ button:focus {
 .post.visible {
   opacity: 1 !important;
   transform: scale(1) !important;
-  height: auto !important;
+  height: 200px !important;
+  display: block !important;
 }
 
 /* 필터 결과 카운터 */
@@ -3740,12 +3741,14 @@ button:focus {
 /* 일반 포스트 스타일 조정 */
 .post:not(.featured) {
   margin-bottom: 0 !important;
-  height: auto !important;
+  height: 200px !important;
+  display: block !important;
 }
 
 /* 썸네일 높이 자동 조정 */
 .post:not(.featured) .post-thumbnail {
-  height: auto !important;
+  height: 200px !important;
+  display: block !important;
   min-height: 200px !important;
   max-height: 300px !important;
   background-size: cover !important;
@@ -4359,4 +4362,233 @@ button:focus {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
+}
+
+/* 썸네일 호버 효과 개선 */
+.post:not(.featured) .post-thumbnail {
+  border-radius: 0.75rem 0.75rem 0 0 !important;
+  transition: transform 0.3s ease !important;
+  overflow: hidden !important;
+}
+
+.post:not(.featured) .post-thumbnail:hover {
+  transform: scale(1.05) !important;
+}
+
+/* 썸네일 그라데이션 오버레이 */
+.post:not(.featured) .post-thumbnail::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(135deg, rgba(0,0,0,0.1), rgba(0,0,0,0.3)) !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.post:not(.featured) .post-thumbnail:hover::after {
+  opacity: 1 !important;
+}
+
+/* 모바일 썸네일 개선 */
+@media (max-width: 768px) {
+  .post:not(.featured) .post-thumbnail {
+    height: 180px !important;
+    min-height: 180px !important;
+    max-height: 220px !important;
+  }
+}
+
+/* 태블릿 썸네일 개선 */
+@media (max-width: 1200px) and (min-width: 769px) {
+  .post:not(.featured) .post-thumbnail {
+    height: 190px !important;
+    min-height: 190px !important;
+    max-height: 250px !important;
+  }
+}
+
+/* 썸네일이 없는 포스트를 위한 기본 스타일 */
+.post:not(.featured):not(:has(.post-thumbnail)) {
+  border-top: 4px solid #667eea !important;
+}
+
+/* 썸네일 로딩 상태 */
+.post-thumbnail {
+  background-color: #f7fafc !important;
+  background-image: linear-gradient(45deg, #f7fafc 25%, transparent 25%), 
+                    linear-gradient(-45deg, #f7fafc 25%, transparent 25%), 
+                    linear-gradient(45deg, transparent 75%, #f7fafc 75%), 
+                    linear-gradient(-45deg, transparent 75%, #f7fafc 75%) !important;
+  background-size: 20px 20px !important;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px !important;
+}
+
+/* 썸네일 강제 표시 - 최고 우선순위 */
+.post-thumbnail {
+  height: 200px !important;
+  display: block !important;
+  min-height: 200px !important;
+  max-height: 300px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 0.75rem 0.75rem 0 0 !important;
+  transition: transform 0.3s ease !important;
+  overflow: hidden !important;
+}
+
+.post-thumbnail:hover {
+  transform: scale(1.05) !important;
+}
+
+/* 메이슨리 레이아웃 강제 적용 */
+.masonry-container {
+  column-count: 3 !important;
+  column-gap: 2rem !important;
+  column-fill: balance !important;
+  margin-top: 2rem !important;
+  display: block !important;
+}
+
+.masonry-item {
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
+  margin-bottom: 2rem !important;
+  display: inline-block !important;
+  width: 100% !important;
+  vertical-align: top !important;
+}
+
+/* 포스트 카드 스타일 강화 */
+.post {
+  background: #ffffff !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  margin-bottom: 2rem !important;
+  overflow: hidden !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.post:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(102, 126, 234, 0.3) !important;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+  .masonry-container {
+    column-count: 2 !important;
+    column-gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry-container {
+    column-count: 1 !important;
+    column-gap: 0 !important;
+  }
+  
+  .post-thumbnail {
+    height: 180px !important;
+    min-height: 180px !important;
+  }
+}
+
+/* 썸네일 강제 표시 - 최고 우선순위 오버라이드 */
+.masonry-container .post .post-thumbnail,
+.post .post-thumbnail,
+article .post-thumbnail,
+a.post-thumbnail {
+  height: 200px !important;
+  display: block !important;
+  min-height: 200px !important;
+  max-height: 300px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 0.75rem 0.75rem 0 0 !important;
+  transition: transform 0.3s ease !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+.masonry-container .post .post-thumbnail:hover,
+.post .post-thumbnail:hover,
+article .post-thumbnail:hover,
+a.post-thumbnail:hover {
+  transform: scale(1.05) !important;
+}
+
+/* 메이슨리 레이아웃 강제 적용 - 최고 우선순위 */
+.masonry-container {
+  column-count: 3 !important;
+  column-gap: 2rem !important;
+  column-fill: balance !important;
+  margin-top: 2rem !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.masonry-item {
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
+  margin-bottom: 2rem !important;
+  display: inline-block !important;
+  width: 100% !important;
+  vertical-align: top !important;
+}
+
+/* 포스트 카드 강제 스타일 */
+.masonry-container .post,
+.post {
+  background: #ffffff !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  margin-bottom: 2rem !important;
+  overflow: hidden !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+}
+
+.masonry-container .post:hover,
+.post:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(102, 126, 234, 0.3) !important;
+}
+
+/* 반응형 디자인 강화 */
+@media (max-width: 1200px) {
+  .masonry-container {
+    column-count: 2 !important;
+    column-gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry-container {
+    column-count: 1 !important;
+    column-gap: 0 !important;
+  }
+  
+  .masonry-container .post .post-thumbnail,
+  .post .post-thumbnail,
+  article .post-thumbnail,
+  a.post-thumbnail {
+    height: 180px !important;
+    min-height: 180px !important;
+  }
 }
