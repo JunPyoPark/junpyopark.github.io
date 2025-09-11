@@ -1,4 +1,4 @@
-// 전체 게시물 검색 및 필터링 시스템 (수정된 버전)
+// 전체 게시물 검색 및 필터링 시스템
 
 class GlobalSearch {
     constructor() {
@@ -8,44 +8,17 @@ class GlobalSearch {
         this.postsPerPage = 8;
         this.currentFilter = 'all';
         this.currentQuery = '';
-        this.isInitialized = false;
         
         this.init();
     }
     
     async init() {
-        // 먼저 현재 페이지의 포스트들을 로드
-        this.loadCurrentPagePosts();
+        await this.loadAllPosts();
         this.setupEventListeners();
-        
-        // 백그라운드에서 전체 데이터 로드 시도
-        this.loadAllPosts().then(() => {
-            this.isInitialized = true;
-            console.log('전체 게시물 데이터 로드 완료');
-        }).catch(error => {
-            console.warn('전체 데이터 로드 실패, 현재 페이지 데이터만 사용:', error);
-        });
-    }
-    
-    // 현재 페이지의 포스트들 로드 (기본 동작)
-    loadCurrentPagePosts() {
-        const posts = document.querySelectorAll('.post');
-        this.allPosts = Array.from(posts).map(post => ({
-            url: post.querySelector('.post-title a')?.href || '',
-            title: post.querySelector('.post-title a')?.textContent?.trim() || '',
-            content: post.querySelector('.post-content p')?.textContent?.trim() || '',
-            date: post.querySelector('.post-date')?.textContent?.trim() || '',
-            tags: Array.from(post.querySelectorAll('.post-tag')).map(tag => tag.textContent.trim()),
-            excerpt: post.querySelector('.post-content p')?.textContent?.trim() || '',
-            isFeatured: post.classList.contains('featured'),
-            element: post // 원본 요소 참조 보존
-        }));
-        
-        this.filteredPosts = [...this.allPosts];
         this.renderPosts();
     }
     
-    // 모든 게시물 데이터 로드 (선택적)
+    // 모든 게시물 데이터 로드
     async loadAllPosts() {
         try {
             // Jekyll의 site.posts 데이터를 JavaScript로 가져오기
@@ -60,7 +33,7 @@ class GlobalSearch {
                 .filter(url => url.includes('/posts/') || url.match(/\d{4}-\d{2}-\d{2}/));
             
             // 각 포스트의 메타데이터 로드
-            const additionalPosts = await Promise.all(
+            this.allPosts = await Promise.all(
                 urls.map(async (url) => {
                     try {
                         const postResponse = await fetch(url);
@@ -73,9 +46,7 @@ class GlobalSearch {
                             content: postDoc.querySelector('.post-content, .content')?.textContent?.trim() || '',
                             date: postDoc.querySelector('time, .post-date')?.textContent?.trim() || '',
                             tags: Array.from(postDoc.querySelectorAll('.post-tag, .tag')).map(tag => tag.textContent.trim()),
-                            excerpt: postDoc.querySelector('.post-excerpt, .excerpt')?.textContent?.trim() || '',
-                            isFeatured: false,
-                            element: null
+                            excerpt: postDoc.querySelector('.post-excerpt, .excerpt')?.textContent?.trim() || ''
                         };
                     } catch (error) {
                         console.warn('Failed to load post:', url, error);
@@ -84,16 +55,24 @@ class GlobalSearch {
                 })
             ).then(posts => posts.filter(post => post !== null));
             
-            // 현재 페이지 포스트와 병합 (중복 제거)
-            const existingUrls = this.allPosts.map(p => p.url);
-            const newPosts = additionalPosts.filter(p => !existingUrls.includes(p.url));
-            this.allPosts = [...this.allPosts, ...newPosts];
-            this.filteredPosts = [...this.allPosts];
-            
         } catch (error) {
-            console.error('Failed to load additional posts:', error);
-            // 폴백: 현재 페이지 데이터만 사용
+            console.error('Failed to load posts:', error);
+            // 폴백: 현재 페이지의 포스트들만 사용
+            this.loadCurrentPagePosts();
         }
+    }
+    
+    // 현재 페이지의 포스트들만 로드 (폴백)
+    loadCurrentPagePosts() {
+        const posts = document.querySelectorAll('.post');
+        this.allPosts = Array.from(posts).map(post => ({
+            url: post.querySelector('.post-title a')?.href || '',
+            title: post.querySelector('.post-title a')?.textContent?.trim() || '',
+            content: post.querySelector('.post-content p')?.textContent?.trim() || '',
+            date: post.querySelector('.post-date')?.textContent?.trim() || '',
+            tags: Array.from(post.querySelectorAll('.post-tag')).map(tag => tag.textContent.trim()),
+            excerpt: post.querySelector('.post-content p')?.textContent?.trim() || ''
+        }));
     }
     
     // 이벤트 리스너 설정
@@ -159,62 +138,22 @@ class GlobalSearch {
         const container = document.querySelector('.masonry-container');
         if (!container) return;
         
-        // 검색이나 필터가 활성화되지 않은 경우 기존 포스트들 표시
-        if (!this.currentQuery && this.currentFilter === 'all') {
-            this.showAllPosts();
-            return;
-        }
-        
         // 현재 페이지의 포스트들 계산
         const startIndex = (this.currentPage - 1) * this.postsPerPage;
         const endIndex = startIndex + this.postsPerPage;
         const postsToShow = this.filteredPosts.slice(startIndex, endIndex);
         
-        // 기존 포스트들 숨기기
-        this.hideAllPosts();
+        // 기존 포스트들 제거
+        container.innerHTML = '';
         
-        // 필터된 포스트들 표시
+        // 포스트들 렌더링
         postsToShow.forEach((post, index) => {
-            if (post.element) {
-                // 기존 요소가 있는 경우
-                post.element.style.display = 'block';
-                post.element.classList.add('visible');
-                post.element.classList.remove('hidden');
-            } else {
-                // 새로 생성해야 하는 경우
-                const postElement = this.createPostElement(post, index === 0);
-                container.appendChild(postElement);
-            }
+            const postElement = this.createPostElement(post, index === 0);
+            container.appendChild(postElement);
         });
         
         // 페이지네이션 렌더링
         this.renderPagination();
-    }
-    
-    // 모든 포스트 표시
-    showAllPosts() {
-        const posts = document.querySelectorAll('.post');
-        posts.forEach(post => {
-            post.style.display = 'block';
-            post.classList.add('visible');
-            post.classList.remove('hidden');
-        });
-        
-        // 페이지네이션 제거
-        const existingPagination = document.querySelector('.pagination');
-        if (existingPagination) {
-            existingPagination.remove();
-        }
-    }
-    
-    // 모든 포스트 숨기기
-    hideAllPosts() {
-        const posts = document.querySelectorAll('.post');
-        posts.forEach(post => {
-            post.style.display = 'none';
-            post.classList.add('hidden');
-            post.classList.remove('visible');
-        });
     }
     
     // 포스트 요소 생성
@@ -246,13 +185,7 @@ class GlobalSearch {
     // 페이지네이션 렌더링
     renderPagination() {
         const totalPages = Math.ceil(this.filteredPosts.length / this.postsPerPage);
-        if (totalPages <= 1) {
-            const existingPagination = document.querySelector('.pagination');
-            if (existingPagination) {
-                existingPagination.remove();
-            }
-            return;
-        }
+        if (totalPages <= 1) return;
         
         const pagination = document.createElement('div');
         pagination.className = 'pagination';
@@ -279,8 +212,7 @@ class GlobalSearch {
     updateResultsCount() {
         const resultsCount = document.querySelector('.search-results-count, .filter-results');
         if (resultsCount) {
-            const count = this.currentQuery || this.currentFilter !== 'all' ? this.filteredPosts.length : this.allPosts.length;
-            resultsCount.textContent = `${count}개의 포스트를 찾았습니다.`;
+            resultsCount.textContent = `${this.filteredPosts.length}개의 포스트를 찾았습니다.`;
         }
     }
 }
