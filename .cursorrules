@@ -102,3 +102,34 @@ body {
 - `!important` 남용은 CSS 유지보수를 어렵게 만들 수 있음
 - 포스트별 CSS는 최소한으로 사용하고 전역 스타일과 충돌하지 않도록 주의
 - 이미지 파일명은 영문과 하이픈만 사용 (공백, 특수문자 금지)
+
+## 🔧 추가 배경색 문제 해결
+
+### 컨테이너 요소 배경색 문제
+- `body`에 `!important`를 적용해도 `div.container`나 `main` 요소가 흰색으로 보이는 경우
+- Jekyll 레이아웃에서 컨테이너 요소들이 별도로 렌더링됨
+
+### 해결 방법
+각 포스트의 컨테이너 요소에도 배경색을 강제 적용:
+
+```html
+<div class="container mx-auto p-4 md:p-8">
+    <style>
+        .container { background-color: #원하는색상 !important; }
+        main { background-color: #원하는색상 !important; }
+    </style>
+    <!-- 포스트 내용 -->
+</div>
+```
+
+### 자동화 스크립트
+```bash
+# 특정 포스트에 컨테이너 배경색 추가
+sed -i '/<div class="container mx-auto p-4 md:p-8">/a\        <style>\n            .container { background-color: #색상코드 !important; }\n            main { background-color: #색상코드 !important; }\n        </style>' _posts/파일명.html
+```
+
+### 체크리스트 업데이트
+- [ ] `body` CSS에 `!important` 적용
+- [ ] `div.container` 요소에도 배경색 적용
+- [ ] `main` 요소에도 배경색 적용
+- [ ] 모든 컨테이너 요소가 일관된 배경색을 가지는지 확인
