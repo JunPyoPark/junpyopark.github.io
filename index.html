@@ -10,8 +10,8 @@ layout: main
     <div class="masonry-item">
         <article class="post featured">
             {% if featured_post.img %}
-            <div class="post-background" style="background-image: url({{"/assets/img/" | prepend: site.baseurl | append : featured_post.img}});"></div>
-                <a class="post-thumbnail" style="background-image: url({{"/assets/img/" | prepend: site.baseurl | append : featured_post.img}})" href="{{featured_post.url | prepend: site.baseurl}}"></a>
+            <div class="post-background" style="background-image: url({{"/assets/img/" |  | append : featured_post.img}});"></div>
+                <a class="post-thumbnail" style="background-image: url({{"/assets/img/" |  | append : featured_post.img}})" href="{{featured_post.url | }}"></a>
             {% endif %}
             <div class="post-content">
                 <div class="post-meta">
@@ -21,7 +21,7 @@ layout: main
                         {% endfor %}
                     </div>
                 </div>
-                <h2 class="post-title"><a href="{{featured_post.url | prepend: site.baseurl}}">{{featured_post.title}}</a></h2>
+                <h2 class="post-title"><a href="{{featured_post.url | }}">{{featured_post.title}}</a></h2>
                 <p>{{ featured_post.content | strip_html | truncatewords: 25 }}</p>
                 <span class="post-date">{{featured_post.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;—&nbsp;</span>
                 <span class="post-words">{% capture words %}{{ featured_post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " minute read" }}{% endunless %}</span>
@@ -35,8 +35,8 @@ layout: main
     <div class="masonry-item">
         <article class="post">
             {% if post.img %}
-            <div class="post-background" style="background-image: url({{"/assets/img/" | prepend: site.baseurl | append : post.img}});"></div>
-                <a class="post-thumbnail" style="background-image: url({{"/assets/img/" | prepend: site.baseurl | append : post.img}})" href="{{post.url | prepend: site.baseurl}}"></a>
+            <div class="post-background" style="background-image: url({{"/assets/img/" |  | append : post.img}});"></div>
+                <a class="post-thumbnail" style="background-image: url({{"/assets/img/" |  | append : post.img}})" href="{{post.url | }}"></a>
             {% endif %}
             <div class="post-content">
                 <div class="post-meta">
@@ -46,7 +46,7 @@ layout: main
                         {% endfor %}
                     </div>
                 </div>
-                <h2 class="post-title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
+                <h2 class="post-title"><a href="{{post.url | }}">{{post.title}}</a></h2>
                 <p>{{ post.content | strip_html | truncatewords: 15 }}</p>
                 <span class="post-date">{{post.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;—&nbsp;</span>
                 <span class="post-words">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " minute read" }}{% endunless %}</span>
@@ -69,7 +69,7 @@ layout: main
 <div class="pagination-container">
     <div class="pagination">
         {% if paginator.previous_page %}
-            <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="pagination-btn prev-btn">
+            <a href="{{ paginator.previous_page_path }}" class="pagination-btn prev-btn">
                 ← 이전
             </a>
         {% else %}
@@ -81,15 +81,15 @@ layout: main
                 {% if page == paginator.page %}
                     <span class="pagination-number current">{{ page }}</span>
                 {% elsif page == 1 %}
-                    <a href="{{ site.baseurl }}" class="pagination-number">{{ page }}</a>
+                    <a href="/" class="pagination-number">{{ page }}</a>
                 {% else %}
-                    <a href="{{ site.paginate_path | replace: ':num', page | prepend: site.baseurl }}" class="pagination-number">{{ page }}</a>
+                    <a href="{{ site.paginate_path | replace: ':num', page }}" class="pagination-number">{{ page }}</a>
                 {% endif %}
             {% endfor %}
         </div>
         
         {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="pagination-btn next-btn">
+            <a href="{{ paginator.next_page_path }}" class="pagination-btn next-btn">
                 다음 →
             </a>
         {% else %}
