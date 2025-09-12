@@ -1872,8 +1872,9 @@ body {
 }
 
 .cover-author-image img {
-  width: 80px !important;
-  height: 80px !important;
+  width: 120px !important;
+  height: 120px !important;
+  object-fit: cover !important;
   border-radius: 50% !important;
   border: 4px solid var(--primary-color) !important;
   box-shadow: var(--shadow-lg) !important;
@@ -2560,8 +2561,9 @@ button:focus {
 }
 
 .cover-author-image img {
-  width: 80px !important;
-  height: 80px !important;
+  width: 120px !important;
+  height: 120px !important;
+  object-fit: cover !important;
   border-radius: 50% !important;
   border: 3px solid #667eea !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
@@ -4050,6 +4052,7 @@ button:focus {
 
 .related-post-thumbnail {
   height: 120px !important;
+  object-fit: cover !important;
   background-size: cover !important;
   background-position: center !important;
   position: relative !important;
@@ -5381,7 +5384,7 @@ button:focus {
   transition: all 0.3s ease !important;
   border: none !important;
   cursor: pointer !important;
-  min-width: 80px !important;
+  min-width: 120px !important;
   visibility: visible !important;
   opacity: 1 !important;
 }
@@ -5549,7 +5552,7 @@ body .pagination-btn {
   transition: all 0.3s ease !important;
   border: none !important;
   cursor: pointer !important;
-  min-width: 80px !important;
+  min-width: 120px !important;
   position: relative !important;
   z-index: 1000 !important;
 }
