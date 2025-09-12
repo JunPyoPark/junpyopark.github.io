@@ -883,15 +883,7 @@ pre code {
   text-align: center;
 }
 
-.about .cover-author-image {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 10px;
-  -webkit-border-radius: 100%;
-          border-radius: 100%;
-  overflow: hidden;
-  background-color: #333030;
-}
+.about 
 
 .about img {
   width: 100%;
@@ -1627,25 +1619,6 @@ body {
   border-bottom: 1px solid var(--border-color);
 }
 
-.cover-author-image {
-  margin-bottom: 1rem;
-}
-
-.cover-author-image img {
-  width: 120px !important;
-  height: 120px !important;
-  border-radius: 50% !important;
-  border: 3px solid #667eea !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-  transition: transform 0.3s ease !important;
-  display: block !important;
-  margin: 0 auto !important;
-}
-
-.cover-author-image img:hover {
-  transform: scale(1.05);
-}
-
 .author-name {
   font-size: 1.25rem;
   font-weight: 700;
@@ -1867,27 +1840,6 @@ body {
 }
 
 /* 프로필 이미지 고정 */
-.cover-author-image {
-  text-align: center !important;
-  margin-bottom: 1.5rem !important;
-  padding: 0 1rem !important;
-}
-
-.cover-author-image img {
-  width: 120px !important;
-  height: 120px !important;
-  border-radius: 50% !important;
-  border: 3px solid #667eea !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-  transition: transform 0.3s ease !important;
-  display: block !important;
-  margin: 0 auto !important;
-}
-
-.cover-author-image a {
-  display: block !important;
-  text-decoration: none !important;
-}
 
 /* 작성자 정보 고정 */
 .author-name {
@@ -2187,26 +2139,6 @@ h6 { font-size: var(--text-base); }
   padding: var(--space-8) var(--space-6);
   text-align: center;
   border-bottom: 1px solid var(--border-light);
-}
-
-.cover-author-image {
-  margin-bottom: var(--space-6);
-}
-
-.cover-author-image img {
-  width: 120px !important;
-  height: 120px !important;
-  border-radius: 50% !important;
-  border: 3px solid #667eea !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-  transition: transform 0.3s ease !important;
-  display: block !important;
-  margin: 0 auto !important;
-}
-
-.cover-author-image img:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-floating);
 }
 
 .author-name {
@@ -2557,25 +2489,6 @@ button:focus {
   padding: 2rem 1.5rem !important;
   text-align: center !important;
   border-bottom: 1px solid #e2e8f0 !important;
-}
-
-.cover-author-image {
-  margin-bottom: 1.5rem !important;
-}
-
-.cover-author-image img {
-  width: 120px !important;
-  height: 120px !important;
-  border-radius: 50% !important;
-  border: 3px solid #667eea !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-  transition: transform 0.3s ease !important;
-  display: block !important;
-  margin: 0 auto !important;
-}
-
-.cover-author-image img:hover {
-  transform: scale(1.05) !important;
 }
 
 .author-name {
@@ -4563,7 +4476,6 @@ button:focus {
   }
 }
 
-
 .post.featured:hover::before {
   background: rgba(0, 0, 0, 0.7) !important;
 }
@@ -4637,7 +4549,6 @@ button:focus {
     background: rgba(0, 0, 0, 0.85) !important;
   }
 }
-
 
 .post.featured:hover::before {
   background: rgba(0, 0, 0, 0.7) !important;
@@ -4725,7 +4636,6 @@ button:focus {
 }
 
 /* ===== Featured 표시 복구 및 일반 카드 개선 ===== */
-
 
 /* 일반 카드 오버레이 조정 - 썸네일이 조금 더 보이도록 */
 .post:not(.featured)::before {
@@ -5646,4 +5556,33 @@ body .pagination-info {
 .pagination-btn,
 .pagination-number {
   display: inline-block !important;
+}
+
+/* ===== 프로필 사진 스타일 (최종 버전) ===== */
+.cover-author-image {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.cover-author-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+  transition: all 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cover-author-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.cover-author-image a {
+  display: inline-block;
+  text-decoration: none;
 }
