@@ -1875,6 +1875,7 @@ body {
   width: 120px !important;
   height: 120px !important;
   object-fit: cover !important;
+  object-position: center 30% !important;
   border-radius: 50% !important;
   border: 4px solid var(--primary-color) !important;
   box-shadow: var(--shadow-lg) !important;
@@ -2564,6 +2565,7 @@ button:focus {
   width: 120px !important;
   height: 120px !important;
   object-fit: cover !important;
+  object-position: center 30% !important;
   border-radius: 50% !important;
   border: 3px solid #667eea !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
@@ -4053,6 +4055,7 @@ button:focus {
 .related-post-thumbnail {
   height: 120px !important;
   object-fit: cover !important;
+  object-position: center 30% !important;
   background-size: cover !important;
   background-position: center !important;
   position: relative !important;
