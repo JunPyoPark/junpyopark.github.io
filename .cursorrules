@@ -381,3 +381,37 @@ document.addEventListener('DOMContentLoaded', () => {
 git commit -m 'Style: 배경색 !important 적용'
 ```
  
+
+## 🚫 외부 이미지 다운로드 실패 처리
+
+### 나무위키 이미지 처리
+- 나무위키는 봇 차단으로 직접 다운로드가 불가능한 경우가 많음
+- 이 경우 원본 URL을 그대로 유지하고 `onerror` 속성으로 대체 이미지 표시
+
+### 처리 방법
+```html
+<!-- 나무위키 이미지: 원본 URL 유지 + onerror 대체 -->
+<img src="https://i.namu.wiki/i/이미지ID.webp" 
+     alt="설명" 
+     onerror="this.onerror=null;this.src='https://placehold.co/400x300/색상코드/텍스트색상?text=이미지+설명';" 
+     aria-label="설명">
+
+<!-- 일반 외부 이미지: 로컬 다운로드 후 교체 -->
+<img src="/assets/img/로컬파일명.jpg" alt="설명" aria-label="설명">
+```
+
+### 자동화 스크립트
+```bash
+# 나무위키 URL은 그대로 유지하고 onerror 속성만 추가
+sed -i 's|<img src="https://i.namu.wiki/|<img src="https://i.namu.wiki/|g' _posts/파일명.html
+
+# 다른 외부 이미지는 로컬로 교체
+sed -i 's|https://i.imgur.com/이미지ID|/assets/img/이미지ID|g' _posts/파일명.html
+```
+
+### 체크리스트
+- [ ] 나무위키 URL은 원본 유지 (다운로드 시도하지 않음)
+- [ ] `onerror` 속성으로 대체 이미지 설정
+- [ ] 다른 외부 이미지는 로컬 다운로드 후 교체
+- [ ] 모든 이미지에 `aria-label` 속성 추가
+
