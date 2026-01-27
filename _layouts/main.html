@@ -11,7 +11,8 @@ layout: default
   <span></span>
 </button>
 
-<aside class="sidebar">
+<aside class="sidebar" {% if page.background_color %}style="background-color: {{ page.background_color }} !important;"
+  {% endif %}>
   <header>
     <div class="about">
       <div class="cover-author-image">
@@ -66,7 +67,8 @@ layout: default
   </footer>
 </aside>
 
-<div class="content-box clearfix">
+<div class="content-box clearfix" {% if page.background_color
+  %}style="background-color: {{ page.background_color }} !important;" {% endif %}>
   {{ content }}
 </div>
 
