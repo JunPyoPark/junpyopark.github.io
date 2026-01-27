@@ -1,13 +1,47 @@
 <!DOCTYPE html>
-<html lang="en" {% if page.background_color %}style="background-color: {{ page.background_color }} !important;" {% endif
-  %}>
+<html lang="en">
 {% include head.html %}
 
-<body {% if page.background_color %}style="background-color: {{ page.background_color }} !important; min-height: 100vh;"
-  {% endif %}>
+<body>
+  {% if page.background_color %}
+  <style>
+    html,
+    body,
+    .wrapper,
+    .content-box,
+    .article-page,
+    .page-content,
+    .wrap-content,
+    .post {
+      background-color: {
+          {
+          page.background_color
+        }
+      }
 
-  <div class="wrapper" {% if page.background_color %}style="background-color: {{ page.background_color }} !important;"
-    {% endif %}>
+      !important;
+    }
+
+    /* Ensure sidebar remains white (or default color) */
+    .sidebar,
+    .sidebar .about,
+    .sidebar .contact,
+    .sidebar footer {
+      background-color: #ffffff !important;
+    }
+
+    /* Ensure text colors in sidebar don't get lost if they were relying on inheritance (optional safety) */
+    .sidebar {
+      color: #515151;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+  </style>
+  {% endif %}
+
+  <div class="wrapper">
     <script data-ad-client="ca-pub-4993132508717238" async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     {{ content }}
