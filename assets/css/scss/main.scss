@@ -147,3 +147,68 @@ table tfoot td {
 
 /* - - - - - - - - - - Media Styles - - - - - - - - - - */
 @import 'media';
+
+/* - - - - - - - - - - Theme Mode Overrides - - - - - - - - - - */
+body[data-theme-mode="dark"] {
+  background-color: #0f0f0f !important;
+  color: #ffffff;
+
+  .sidebar {
+    background-color: #1a1a1a;
+    border-right: 1px solid #333;
+    
+    .author-name {
+      color: #ffffff;
+    }
+    
+    p {
+      color: #b0b0b0;
+    }
+    
+    footer {
+      .contact-title {
+        color: #ffffff;
+      }
+      
+      .copyright p {
+        color: #666;
+      }
+    }
+  }
+
+  .post, .article-page {
+    background-color: #0f0f0f !important;
+    color: #ffffff;
+  }
+
+  .page-cover-image {
+    background-color: #1a1a1a;
+  }
+
+  .page-title {
+    color: #ffffff;
+  }
+  
+  .page-date {
+    color: #888;
+  }
+
+  .page-footer {
+    border-bottom-color: #333;
+    
+    .page-share a {
+      background-color: #1a1a1a;
+      color: #fff;
+      border-color: #333;
+      
+      &:hover {
+        background-color: #333;
+      }
+    }
+    
+    .page-tag a {
+      color: #00d2ff;
+      border-color: #00d2ff;
+    }
+  }
+}
