@@ -8,15 +8,40 @@
     body,
     .article-page,
     .wrapper {
-      background-color: {
-          {
-          page.background_color
-        }
-      }
-
-      !important;
+      background-color: {{ page.background_color }} !important;
     }
   </style>
+  <script>
+    (function () {
+      var bgColor = "{{ page.background_color }}";
+      if (bgColor) {
+        var r, g, b;
+        if (bgColor.startsWith('#')) {
+          var hex = bgColor.substring(1);
+          if (hex.length === 3) {
+            hex = hex.split('').map(function (c) { return c + c; }).join('');
+          }
+          var bigint = parseInt(hex, 16);
+          r = (bigint >> 16) & 255;
+          g = (bigint >> 8) & 255;
+          b = bigint & 255;
+        } else if (bgColor.startsWith('rgb')) {
+          var rgb = bgColor.match(/\d+/g);
+          r = parseInt(rgb[0]);
+          g = parseInt(rgb[1]);
+          b = parseInt(rgb[2]);
+        }
+
+        // Calculate luminance (Y = 0.299R + 0.587G + 0.114B)
+        var luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+        // If dark background (low luminance), use dark theme (white text)
+        // If light background (high luminance), use light theme (dark text)
+        var themeMode = luminance < 0.5 ? 'dark' : 'light';
+        document.body.setAttribute('data-theme-mode', themeMode);
+      }
+    })();
+  </script>
   {% endif %}
 
   <div class="wrapper">
