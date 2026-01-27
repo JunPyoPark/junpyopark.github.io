@@ -2,7 +2,9 @@
 @import 'syntax';
 @import 'variables';
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -29,7 +31,7 @@ img {
   display: inline-block;
 }
 
-img + em {
+img+em {
   text-align: center;
   display: block;
   margin-top: 10px;
@@ -71,27 +73,34 @@ table {
   text-align: left;
   border-collapse: collapse;
 }
-table td, table.blueTable th {
+
+table td,
+table.blueTable th {
   border: 1px solid #aaa;
   padding: 3px 2px;
 }
+
 table tbody td {
   font-size: 13px;
 }
+
 table tr:nth-child(even) {
   background: #fff;
 }
+
 table thead {
   background: #a9c4d1;
   background: linear-gradient(to bottom, #bed3dc 0%, #b1cad5 66%, #A9C4D1 100%);
   border-bottom: 1px solid #8c8c8c;
 }
+
 table thead th {
   font-size: 14px;
   font-weight: bold;
   color: #fff;
   border-left: 1px solid #d0e4f5;
 }
+
 table thead th:first-child {
   border-left: none;
 }
@@ -104,6 +113,7 @@ table tfoot {
   background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
   border-top: 2px solid #444;
 }
+
 table tfoot td {
   font-size: 14px;
 }
@@ -113,7 +123,8 @@ table tfoot td {
   position: relative;
 }
 
-.post, .article-page {
+.post,
+.article-page {
   background-color: #fff;
 }
 
@@ -127,7 +138,8 @@ table tfoot td {
   color: $white;
 }
 
-.clearfix::before, .clearfix::after {
+.clearfix::before,
+.clearfix::after {
   content: "";
   display: table;
 }
@@ -147,68 +159,3 @@ table tfoot td {
 
 /* - - - - - - - - - - Media Styles - - - - - - - - - - */
 @import 'media';
-
-/* - - - - - - - - - - Theme Mode Overrides - - - - - - - - - - */
-body[data-theme-mode="dark"] {
-  background-color: #0f0f0f !important;
-  color: #ffffff;
-
-  .sidebar {
-    background-color: #1a1a1a;
-    border-right: 1px solid #333;
-    
-    .author-name {
-      color: #ffffff;
-    }
-    
-    p {
-      color: #b0b0b0;
-    }
-    
-    footer {
-      .contact-title {
-        color: #ffffff;
-      }
-      
-      .copyright p {
-        color: #666;
-      }
-    }
-  }
-
-  .post, .article-page {
-    background-color: #0f0f0f !important;
-    color: #ffffff;
-  }
-
-  .page-cover-image {
-    background-color: #1a1a1a;
-  }
-
-  .page-title {
-    color: #ffffff;
-  }
-  
-  .page-date {
-    color: #888;
-  }
-
-  .page-footer {
-    border-bottom-color: #333;
-    
-    .page-share a {
-      background-color: #1a1a1a;
-      color: #fff;
-      border-color: #333;
-      
-      &:hover {
-        background-color: #333;
-      }
-    }
-    
-    .page-tag a {
-      color: #00d2ff;
-      border-color: #00d2ff;
-    }
-  }
-}
