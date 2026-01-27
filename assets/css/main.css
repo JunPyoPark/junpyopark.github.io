@@ -1671,7 +1671,8 @@ body {
   margin-left: 280px;
   padding: 2rem;
   min-height: 100vh;
-  background: var(--bg-secondary);
+  /* background: var(--bg-secondary); */
+  /* Removed to allow page.background_color to apply */
 }
 
 /* 모던 포스트 카드 */
