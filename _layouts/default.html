@@ -2,36 +2,30 @@
 <html lang="en">
 {% include head.html %}
 
-<body>
-
-  <!DOCTYPE html>
-  <html lang="en">
-  {% include head.html %}
-
-  <body data-theme-mode="{{ page.theme_mode }}">
-    {% if page.background_color %}
-    <style>
-      body,
-      .article-page,
-      .wrapper {
-        background-color: {
-            {
-            page.background_color
-          }
+<body data-theme-mode="{{ page.theme_mode }}">
+  {% if page.background_color %}
+  <style>
+    body,
+    .article-page,
+    .wrapper {
+      background-color: {
+          {
+          page.background_color
         }
-
-        !important;
       }
-    </style>
-    {% endif %}
 
-    <div class="wrapper">
-      <script data-ad-client="ca-pub-4993132508717238" async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      {{ content }}
-    </div>
+      !important;
+    }
+  </style>
+  {% endif %}
 
-    {% include analytics.html %}
-  </body>
+  <div class="wrapper">
+    <script data-ad-client="ca-pub-4993132508717238" async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    {{ content }}
+  </div>
 
-  </html>
+  {% include analytics.html %}
+</body>
+
+</html>
