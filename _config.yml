@@ -1,49 +1,184 @@
-title: Hello, world! I'm JunPyoPark
-description: > # this means to ignore newlines until "baseurl:"
-  Welcome to JP's Blog
-permalink: ':title/'
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://junpyopark.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-site-twitter: #if your site has a twitter account, enter it here
+# Site Settings
+title: "JunPyo Park"
+subtitle: "AI Systems Architect | Medical AI Researcher"
+name: "박준표"
+description: "Deep Tech Portfolio - From Research to Production"
+url: "https://junpyopark.github.io"
+baseurl: ""
+repository: "JunPyoPark/junpyopark.github.io"
 
-# Author Settings
-author: JunPyo Park # add your name
-author-img: JP.jpg # add your photo
-about-author: "🚶Homo Viator<br>🎓UNIST, KAIST<br>👨🏻‍💻GCU Medicine"
-social-twitter: # add your Twitter handle
-social-instagram: ticket.park # add your Instagram handle
-social-github: JunPyoPark # add your Github handle
-social-linkedin: junpyopark # add your Linkedin handle
-social-email: given_ticket@outlook.kr # add your Email address
+# Theme
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
-# SEO Settings
-lang: ko_KR
-timezone: Asia/Seoul
+# Site Author
+author:
+  name: "박준표 (JunPyo Park)"
+  bio: "AI Systems Architect / Full-cycle Developer<br>퀀트 금융 및 의료 AI 분야에서 연구부터 상용화까지 주도"
+  avatar: "/assets/images/bio-photo.jpg"
+  location: "Seoul, South Korea"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:junpyopark@example.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/JunPyoPark"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/junpyopark"
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=YOUR_ID"
 
-# Disqus
-discus-identifier: mr-JP # add your discus identifier
+# Site Footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/JunPyoPark"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/junpyopark"
 
-# Tracker
-analytics: UA-121651076-1 # Google Analytics
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - Rakefile
+  - README
+  - tmp
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-# Build Settings
+# Conversion
 markdown: kramdown
-plugins:
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jemoji
-  - jekyll-seo-tag
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
 
-paginate: 8
-paginate_path: "/page/:num"
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
 
-exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:path/
 
-# SEO Plugin settings
+# Defaults
 defaults:
+  # _posts
   - scope:
       path: ""
-      type: "posts"
+      type: posts
     values:
-      layout: "post"
-      author: "JunPyo Park"
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: false
+      share: true
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Outputting
+permalink: /:categories/:title/
+paginate: 10
+paginate_path: /page:num/
+timezone: Asia/Seoul
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-seo-tag
+
+# Archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# HTML Compression
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+# SEO
+google_site_verification: ""
+bing_site_verification: ""
+
+# Analytics
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: ""
+    anonymize_ip: false
+
+# Google AdSense
+google_adsense:
+  client: "ca-pub-4993132508717238"
+  slot: ""
+
+# Search
+search: true
+search_full_content: true
+search_provider: lunr
