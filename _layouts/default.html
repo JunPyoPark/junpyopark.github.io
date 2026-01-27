@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" {% if page.background_color %}style="background-color: {{ page.background_color }} !important;" {% endif
+  %}>
 {% include head.html %}
 
-<body {% if page.background_color %}style="background-color: {{ page.background_color }} !important;" {% endif %}>
+<body {% if page.background_color %}style="background-color: {{ page.background_color }} !important; min-height: 100vh;"
+  {% endif %}>
 
   <div class="wrapper" {% if page.background_color %}style="background-color: {{ page.background_color }} !important;"
     {% endif %}>
