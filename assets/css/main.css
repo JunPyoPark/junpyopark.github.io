@@ -1926,7 +1926,7 @@ body {
   margin-left: 280px !important;
   padding: 2rem !important;
   min-height: 100vh !important;
-  background: var(--bg-secondary) !important;
+  /* background: var(--bg-secondary) !important; */
   transition: margin-left 0.3s ease !important;
 }
 
@@ -2261,7 +2261,7 @@ h6 {
   margin-left: 300px;
   padding: var(--space-8);
   min-height: 100vh;
-  background: var(--bg-secondary);
+  /* background: var(--bg-secondary); */
   transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -2647,7 +2647,7 @@ button:focus {
   margin-left: 280px !important;
   padding: 2rem !important;
   min-height: 100vh !important;
-  background: #f7fafc !important;
+  /* background: #f7fafc !important; */
   transition: margin-left 0.3s ease !important;
 }
 
@@ -2756,7 +2756,7 @@ button:focus {
   margin-left: 280px !important;
   padding: 3rem 2rem !important;
   min-height: 100vh !important;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  /* background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important; */
   transition: margin-left 0.3s ease !important;
 }
 
