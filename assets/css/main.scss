@@ -1,0 +1,44 @@
+--- --- @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'air' }}";
+@import "minimal-mistakes";
+
+/* 콘텐츠 폭 넓히기 */
+.page {
+    @include breakpoint($large) {
+        float: left;
+        width: calc(100% - 300px);
+        padding-right: 3rem;
+    }
+
+    @include breakpoint($x-large) {
+        width: calc(100% - 350px);
+    }
+}
+
+.page__content {
+    max-width: 100%;
+}
+
+/* 사이드바 있을 때 콘텐츠 폭 최대화 */
+.page__inner-wrap {
+    max-width: 100%;
+}
+
+/* 메인 콘텐츠 영역 확장 */
+.archive {
+    @include breakpoint($large) {
+        float: left;
+        width: calc(100% - 300px);
+        padding-right: 3rem;
+    }
+
+    @include breakpoint($x-large) {
+        width: calc(100% - 350px);
+    }
+}
+
+/* 포스트 본문 가독성을 위한 최대폭 설정 (너무 넓으면 읽기 어려움) */
+.page__content p,
+.page__content li,
+.page__content dl {
+    max-width: 100%;
+}
