@@ -39,11 +39,34 @@ related: true
         --alert-color: #ff4757;
     }
 
-    /* Force Dark Background for this post */
-    /* body style removed - handled by global theme_mode */
+    /* Force Dark Background for this post - Override theme styles */
+    html,
+    body {
+        background-color: var(--bg-color) !important;
+    }
 
-    /* Override theme container if needed */
-    /* .page-content, main, .site-content styles removed - handled by layout background_color */
+    /* Override Minimal Mistakes theme background */
+    .layout--single,
+    .page,
+    .page__content,
+    main,
+    #main,
+    .archive,
+    .initial-content,
+    .masthead,
+    .page__inner-wrap {
+        background-color: var(--bg-color) !important;
+    }
+
+    /* Ensure all text is visible on dark background */
+    .page__content,
+    .page__content p,
+    .page__content h1,
+    .page__content h2,
+    .page__content h3,
+    .page__content h4 {
+        color: var(--text-main) !important;
+    }
 
     .meme-container {
         width: 100%;
