@@ -62,6 +62,5 @@ author_profile: true
 - 📧 Email: [given_ticket@outlook.kr](mailto:given_ticket@outlook.kr)
 - 💼 LinkedIn: [linkedin.com/in/junpyopark](https://linkedin.com/in/junpyopark)
 - 🐙 GitHub: [github.com/JunPyoPark](https://github.com/JunPyoPark)
-- 🎓 Google Scholar: [Profile](https://scholar.google.com/)
 
 [View Full CV (PDF)](/assets/files/cv.pdf){: .btn .btn--primary}
