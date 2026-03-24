@@ -373,6 +373,7 @@ export const PACKAGE_DATA = {
   author: {
     email: "given_ticket@outlook.kr",
     name: "JunPyoPark",
+    npub: "",
     url: "https://junpyopark.github.io",
   },
   description: "Transmuting bits into existence at 7,000 RPM.", 
