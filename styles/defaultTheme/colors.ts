@@ -7,16 +7,17 @@ const colors = {
     border: "hsla(207, 30%, 72%, 30%)",
     borderFocused: "hsla(207, 60%, 72%, 35%)",
     borderFocusedHover: "hsla(207, 90%, 72%, 40%)",
-    text: "#FFF",
-    textShadow: `
-      0 0 1px rgba(0, 0, 0, 75%),
-      0 0 2px rgba(0, 0, 0, 50%),
+    text: "#2D3436",
+    textShadow: "none",
+    // textShadow: `
+    //   0 0 1px rgba(0, 0, 0, 75%),
+    //   0 0 2px rgba(0, 0, 0, 50%),
 
-      0 1px 1px rgba(0, 0, 0, 75%),
-      0 1px 2px rgba(0, 0, 0, 50%),
+    //   0 1px 1px rgba(0, 0, 0, 75%),
+    //   0 1px 2px rgba(0, 0, 0, 50%),
 
-      0 2px 1px rgba(0, 0, 0, 75%),
-      0 2px 2px rgba(0, 0, 0, 50%)`,
+    //   0 2px 1px rgba(0, 0, 0, 75%),
+    //   0 2px 2px rgba(0, 0, 0, 50%)`,
   },
   highlight: "hsla(207, 100%, 72%, 90%)",
   progress: "hsla(113, 78%, 56%, 90%)",
