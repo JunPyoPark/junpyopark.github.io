@@ -23,7 +23,7 @@ const StyledFileManager = styled.ol<StyledFileManagerProps>`
   pointer-events: ${({ $selecting }) => ($selecting ? "auto" : undefined)};
 
   main > & {
-    grid-auto-flow: column;
+    grid-auto-flow: row;
     height: calc(100% - ${TASKBAR_HEIGHT}px);
     overflow: visible;
     padding-bottom: 21px;
