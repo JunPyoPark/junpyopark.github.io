@@ -26,8 +26,6 @@ public/Users/Public/**
 !public/Users/Public/Music
 !public/Users/Public/Pictures
 !public/Users/Public/Pictures/**
-!public/Users/Public/Pictures/Garage
-!public/Users/Public/Pictures/Garage/**
 !public/Users/Public/Pictures/prompts.json
 !public/Users/Public/Pictures/slideshow.json
 !public/Users/Public/Start Menu
@@ -45,3 +43,7 @@ public/Users/Public/**
 # Wallpapers 폴더와 그 안의 모든 파일은 추적하도록 예외 추가
 !public/Users/Public/Pictures/Wallpapers/
 !public/Users/Public/Pictures/Wallpapers/**
+
+# Garage 폴더와 그 안의 모든 파일은 추적하도록 예외 추가
+!public/Users/Public/Pictures/Garage/
+!public/Users/Public/Pictures/Garage/**
