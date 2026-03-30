@@ -26,6 +26,8 @@ public/Users/Public/**
 !public/Users/Public/Music
 !public/Users/Public/Pictures
 !public/Users/Public/Pictures/**
+!public/Users/Public/Pictures/Garage
+!public/Users/Public/Pictures/Garage/**
 !public/Users/Public/Pictures/prompts.json
 !public/Users/Public/Pictures/slideshow.json
 !public/Users/Public/Start Menu
